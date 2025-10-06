@@ -1,0 +1,287 @@
+{
+  "$id": "https://snekops.dev/schemas/pokedata-card.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Pokémon TCG Card (Basics + Card Text)",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 0,
+      "default": ""
+    },
+    "stage": {
+      "type": "string",
+      "description": "Printed evolution stage.",
+      "minLength": 0,
+      "default": ""
+    },
+    "evolvesFrom": {
+      "type": "string",
+      "description": "Printed 'Evolves from …' line, empty if none.",
+      "default": ""
+    },
+    "hp": {
+      "oneOf": [
+        {
+          "type": "integer",
+          "minimum": 0
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "types": {
+      "type": "array",
+      "minItems": 0,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/PokeType"
+      },
+      "default": []
+    },
+    "stamps": {
+      "type": "array",
+      "description": "Printed stamps or logos on the card face.",
+      "items": {
+        "type": "string",
+        "enum": [
+          "pre-release",
+          "staff",
+          "league",
+          "winner",
+          "pokemon-center",
+          "worlds",
+          "none"
+        ]
+      },
+      "uniqueItems": true,
+      "default": []
+    },
+    "promo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["isPromo"],
+      "properties": {
+        "isPromo": {
+          "type": "boolean"
+        },
+        "series": {
+          "type": "string",
+          "description": "Promo series name, e.g., 'SWSH Black Star'."
+        },
+        "promoNumber": {
+          "type": "string",
+          "description": "Printed promo number, e.g., 'SWSH039'."
+        }
+      },
+      "default": {
+        "isPromo": false
+      }
+    },
+    "number": {
+      "type": "string",
+      "description": "Printed card number (supports TG01, 001/165, etc.)."
+    },
+    "set": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [],
+      "properties": {
+        "name": {
+          "type": "string",
+          "default": ""
+        },
+        "code": {
+          "type": "string",
+          "description": "Optional short code, e.g., 'SV01'."
+        },
+        "total": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Set size denominator as printed."
+        },
+        "symbolCode": {
+          "type": "string",
+          "description": "Optional shorthand for the set symbol."
+        }
+      },
+      "default": {}
+    },
+    "setboxLetters": {
+      "type": "string",
+      "description": "Letters printed in the set box (e.g., 'MEG')."
+    },
+    "printYear": {
+      "type": "integer",
+      "minimum": 1996,
+      "maximum": 2100
+    },
+    "illustrator": {
+      "type": "string"
+    },
+    "text": {
+      "type": "object",
+      "description": "Gameplay text sections.",
+      "additionalProperties": false,
+      "properties": {
+        "abilities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Ability"
+          },
+          "default": []
+        },
+        "attacks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Attack"
+          },
+          "default": []
+        },
+        "weaknesses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Matchup"
+          },
+          "default": []
+        },
+        "resistances": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Matchup"
+          },
+          "default": []
+        },
+        "retreatCost": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/PokeType"
+          },
+          "default": []
+        }
+      },
+      "default": {}
+    },
+    "notes": {
+      "description": "Free-form notes including unreadable fields.",
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "unreadable": {
+              "type": "array",
+              "items": { "type": "string" },
+              "default": []
+            }
+          },
+          "default": {}
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "default": {}
+    },
+    "_confidence": {
+      "type": "object",
+      "description": "Confidence scores per field (0..1).",
+      "additionalProperties": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+      },
+      "default": {}
+    }
+  },
+  "$defs": {
+    "PokeType": {
+      "type": "string",
+      "enum": [
+        "Colorless",
+        "Darkness",
+        "Dragon",
+        "Fairy",
+        "Fighting",
+        "Fire",
+        "Grass",
+        "Lightning",
+        "Metal",
+        "Psychic",
+        "Water"
+      ]
+    },
+    "Ability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "text"],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "Ability",
+            "Poké-Body",
+            "Poké-Power",
+            "VSTAR Power",
+            "Ancient Trait"
+          ]
+        }
+      }
+    },
+    "Attack": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "cost", "damage", "text"],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "cost": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/PokeType"
+          },
+          "default": []
+        },
+        "damage": {
+          "description": "Supports numeric, '20+', '60x', or '—'.",
+          "oneOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "string",
+              "pattern": "^[0-9]+([+×x])?$|^—$"
+            }
+          ]
+        },
+        "text": {
+          "type": "string"
+        }
+      }
+    },
+    "Matchup": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "value"],
+      "properties": {
+        "type": {
+          "$ref": "#/$defs/PokeType"
+        },
+        "value": {
+          "type": "string",
+          "pattern": "^(\\+10|\\+20|\\+30|\\+40|\\+50|\\+60|×2|x2|2×|2x)$"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "name": "Yveltal",
+  "stage": "Basic",
+  "evolvesFrom": "",
+  "hp": 110,
+  "types": [
+    "Darkness"
+  ],
+  "stamps": [],
+  "promo": {
+    "isPromo": false,
+    "series": "",
+    "promoNumber": ""
+  },
+  "number": "088/132",
+  "set": {
+    "name": "Mega Evolution",
+    "code": "MEG",
+    "total": 132,
+    "symbolCode": ""
+  },
+  "setboxLetters": "MEG",
+  "printYear": 2025,
+  "illustrator": "akagi",
+  "text": {
+    "abilities": [],
+    "attacks": [
+      {
+        "name": "Clutch",
+        "cost": [
+          "Colorless"
+        ],
+        "damage": "20",
+        "text": "During your opponent's next turn, the Defending Pok\u00e9mon can't retreat."
+      },
+      {
+        "name": "Dark Feather",
+        "cost": [
+          "Darkness",
+          "Darkness",
+          "Colorless"
+        ],
+        "damage": "110",
+        "text": "..."
+      }
+    ],
+    "weaknesses": [
+      {
+        "type": "Lightning",
+        "value": "\u00d72"
+      }
+    ],
+    "resistances": [
+      {
+        "type": "Fighting",
+        "value": "-30"
+      }
+    ],
+    "retreatCost": [
+      "Colorless"
+    ]
+  },
+  "notes": {
+    "unreadable": []
+  },
+  "_confidence": {
+    "name": 0.95,
+    "stage": 0.95,
+    "hp": 0.95,
+    "types": 0.95,
+    "number": 0.95,
+    "set": 0.95,
+    "setboxLetters": 0.95,
+    "printYear": 0.95,
+    "illustrator": 0.95,
+    "text": 0.95
+  }
+}

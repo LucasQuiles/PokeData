@@ -1,0 +1,59 @@
+{
+  "name": "",
+  "stage": "",
+  "evolvesFrom": "",
+  "hp": "",
+  "types": [],
+  "stamps": [],
+  "promo": {
+    "isPromo": false,
+    "series": "",
+    "promoNumber": ""
+  },
+  "number": null,
+  "set": {
+    "name": "",
+    "code": "",
+    "symbolCode": ""
+  },
+  "setboxLetters": "",
+  "illustrator": "",
+  "text": {
+    "abilities": [],
+    "attacks": [],
+    "weaknesses": [],
+    "resistances": [],
+    "retreatCost": []
+  },
+  "notes": {
+    "unreadable": [
+      "name",
+      "stage",
+      "hp",
+      "types",
+      "number",
+      "set.name",
+      "set.code",
+      "set.total",
+      "set.symbolCode",
+      "setboxLetters",
+      "printYear",
+      "illustrator"
+    ]
+  },
+  "_confidence": {
+    "name": 0,
+    "stage": 0,
+    "evolvesFrom": 0,
+    "hp": 0,
+    "types": 0,
+    "stamps": 0,
+    "promo": 0.3333333333333333,
+    "number": 0,
+    "set": 0.0,
+    "setboxLetters": 0,
+    "printYear": 0,
+    "illustrator": 0,
+    "text": 0.0
+  }
+}

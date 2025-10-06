@@ -1,0 +1,76 @@
+{
+  "name": "Snubbull",
+  "stage": "Basic",
+  "evolvesFrom": "",
+  "hp": 60,
+  "types": [
+    "Fairy"
+  ],
+  "stamps": [],
+  "promo": {
+    "isPromo": false,
+    "series": "",
+    "promoNumber": ""
+  },
+  "number": "032/XY",
+  "set": {
+    "name": "XY",
+    "code": "XY",
+    "total": 162,
+    "symbolCode": ""
+  },
+  "setboxLetters": "XY",
+  "printYear": 2016,
+  "illustrator": "5ban Graphics",
+  "text": {
+    "abilities": [],
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "cost": [
+          "Fairy",
+          "Colorless"
+        ],
+        "damage": "",
+        "text": "Search your deck for up to 2 Basic Pok\u00e9mon and put them onto your Bench. Then shuffle your deck."
+      },
+      {
+        "name": "Flare",
+        "cost": [
+          "Colorless",
+          "Colorless"
+        ],
+        "damage": "30",
+        "text": ""
+      }
+    ],
+    "weaknesses": [
+      {
+        "type": "Metal",
+        "value": "\u00d72"
+      }
+    ],
+    "resistances": [],
+    "retreatCost": [
+      "Colorless"
+    ]
+  },
+  "notes": {
+    "unreadable": []
+  },
+  "_confidence": {
+    "name": 0.95,
+    "stage": 0.95,
+    "evolvesFrom": 0.9,
+    "hp": 0.95,
+    "types": 0.95,
+    "stamps": 1.0,
+    "promo": 1.0,
+    "number": 0.95,
+    "set": 0.95,
+    "setboxLetters": 0.95,
+    "printYear": 0.95,
+    "illustrator": 0.95,
+    "text": 0.9
+  }
+}

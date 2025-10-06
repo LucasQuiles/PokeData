@@ -1,0 +1,71 @@
+{
+  "name": "Spearow",
+  "stage": "Basic",
+  "evolvesFrom": "",
+  "hp": 60,
+  "types": [
+    "Colorless"
+  ],
+  "stamps": [],
+  "promo": {
+    "isPromo": false,
+    "series": "",
+    "promoNumber": ""
+  },
+  "number": "102/132",
+  "set": {
+    "name": "Mega Evolution",
+    "code": "MEG",
+    "total": 132,
+    "symbolCode": ""
+  },
+  "setboxLetters": "D",
+  "printYear": 2025,
+  "illustrator": "Scav",
+  "text": {
+    "abilities": [],
+    "attacks": [
+      {
+        "name": "Pluck",
+        "cost": [
+          "Colorless"
+        ],
+        "damage": "10",
+        "text": "Before doing damage, discard all Pok\u00e9mon Tools from your opponent's Active Pok\u00e9mon."
+      }
+    ],
+    "weaknesses": [
+      {
+        "type": "Lightning",
+        "value": "\u00d72"
+      }
+    ],
+    "resistances": [
+      {
+        "type": "Fighting",
+        "value": "-30"
+      }
+    ],
+    "retreatCost": [
+      "Colorless"
+    ]
+  },
+  "notes": {
+    "unreadable": []
+  },
+  "_confidence": {
+    "name": 0.95,
+    "stage": 0.95,
+    "evolvesFrom": 0.0,
+    "hp": 0.95,
+    "types": 0.95,
+    "stamps": 0.0,
+    "promo": 0.95,
+    "number": 0.95,
+    "set": 0.95,
+    "setboxLetters": 0.95,
+    "printYear": 0.95,
+    "illustrator": 0.95,
+    "text": 0.95
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "name": "Zygarde",
+  "stage": "Basic",
+  "evolvesFrom": "",
+  "hp": 120,
+  "types": [
+    "Dragon"
+  ],
+  "stamps": [],
+  "promo": {
+    "isPromo": false,
+    "series": "",
+    "promoNumber": ""
+  },
+  "number": "071/156",
+  "set": {
+    "name": "XY - Fates Collide",
+    "code": "FAC",
+    "total": 156,
+    "symbolCode": ""
+  },
+  "setboxLetters": "XY",
+  "printYear": 2016,
+  "illustrator": "5ban Graphics",
+  "text": {
+    "abilities": [],
+    "attacks": [
+      {
+        "name": "Geo Gate",
+        "cost": [
+          "Grass"
+        ],
+        "damage": "",
+        "text": "Search your deck for up to 3 Basic Grass Pok\u00e9mon and put them onto your Bench. Then, shuffle your deck."
+      },
+      {
+        "name": "Bright Horns",
+        "cost": [],
+        "damage": "120",
+        "text": "During your next turn, this Pok\u00e9mon can't use Bright Horns."
+      }
+    ],
+    "weaknesses": [],
+    "resistances": [],
+    "retreatCost": []
+  },
+  "notes": {
+    "unreadable": []
+  },
+  "_confidence": {
+    "name": 0.95,
+    "stage": 0.95,
+    "evolvesFrom": 0.9,
+    "hp": 0.95,
+    "types": 0.95,
+    "stamps": 1.0,
+    "promo": 1.0,
+    "number": 0.95,
+    "set": 0.95,
+    "setboxLetters": 0.95,
+    "printYear": 0.95,
+    "illustrator": 0.95,
+    "text": 0.9
+  }
+}

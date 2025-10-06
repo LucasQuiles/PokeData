@@ -1,0 +1,85 @@
+{
+  "name": "Centiskorch",
+  "stage": "Stage 1",
+  "evolvesFrom": "Sizzlipede",
+  "hp": 140,
+  "types": [
+    "Fire"
+  ],
+  "stamps": [],
+  "promo": {
+    "isPromo": false,
+    "series": null,
+    "promoNumber": null
+  },
+  "number": "030/132",
+  "set": {
+    "name": null,
+    "code": "MEG",
+    "total": 132,
+    "symbolCode": null
+  },
+  "setboxLetters": "MEG",
+  "printYear": 2025,
+  "illustrator": "Shiburingaru",
+  "text": {
+    "abilities": [],
+    "attacks": [
+      {
+        "name": "Coiling Crush",
+        "cost": [
+          "Colorless",
+          "Colorless"
+        ],
+        "damage": "50",
+        "text": "Flip 2 coins. For each heads, discard an Energy from your opponent's Active Pok\u00e9mon."
+      },
+      {
+        "name": "Heat Crawler",
+        "cost": [
+          "Fire",
+          "Colorless",
+          "Colorless"
+        ],
+        "damage": "140",
+        "text": null
+      }
+    ],
+    "weaknesses": [
+      {
+        "type": "Water",
+        "value": "\u00d72"
+      }
+    ],
+    "resistances": [],
+    "retreatCost": [
+      "Colorless",
+      "Colorless",
+      "Colorless"
+    ]
+  },
+  "notes": {
+    "unreadable": []
+  },
+  "_confidence": {
+    "name": 0.95,
+    "stage": 0.95,
+    "evolvesFrom": 0.95,
+    "hp": 0.95,
+    "types": 0.95,
+    "stamps": 0.95,
+    "promo": 0.95,
+    "number": 0.95,
+    "set": 0.95,
+    "setboxLetters": 0.95,
+    "printYear": 0.95,
+    "illustrator": 0.95,
+    "text": {
+      "abilities": 0.95,
+      "attacks": 0.95,
+      "weaknesses": 0.95,
+      "resistances": 0.95,
+      "retreatCost": 0.95
+    }
+  }
+}

@@ -1,0 +1,622 @@
+[
+  {
+    "page_index": 1,
+    "image": "page_001.png",
+    "data": {
+      "name": "Stufful",
+      "hp": "70",
+      "evolves_from": "",
+      "ability_name": "",
+      "ability_text": "",
+      "attacks": "Light Punch :: Colorless/Colorless :: 10 | Flop :: Colorless/Colorless :: 20",
+      "set_code": "TM132",
+      "set_name": "",
+      "card_number": "111/132",
+      "artist": "Shibuzoh.",
+      "weakness": "Fighting \u00d72",
+      "resistance": "",
+      "retreat": "Colorless/Colorless",
+      "notes": "{\"stage\":\"Basic\",\"types\":[\"Colorless\"]}"
+    }
+  },
+  {
+    "page_index": 2,
+    "image": "page_002.png",
+    "data": {
+      "name": "Meteorite Pok\u00e9mon",
+      "hp": "50",
+      "evolves_from": "",
+      "ability_name": "Lunar Cycle",
+      "ability_text": "Once during your turn, if you have Solrock in play, you may discard a Basic Energy card from your hand in order to use this Ability. Draw 3 cards. You can't use more than 1 Lunar Cycle Ability each turn.",
+      "attacks": "Power Gem :: Colorless :: 50 :: ",
+      "set_code": "",
+      "set_name": "",
+      "card_number": "0337",
+      "artist": "",
+      "weakness": "",
+      "resistance": "",
+      "retreat": "",
+      "notes": "{\"stage\":\"Basic\",\"types\":[\"Psychic\"]}"
+    }
+  },
+  {
+    "page_index": 3,
+    "image": "page_003.png",
+    "data": {
+      "name": "Centiskorch",
+      "hp": "140",
+      "evolves_from": "Sizzlipede",
+      "ability_name": "",
+      "ability_text": "",
+      "attacks": "Coiling Crush :: Colorless/Colorless :: 50 :: Flip 2 coins. For each heads, discard an Energy from your opponent's Active Pok\u00e9mon. | Heat Crawler :: Fire/Fire/Fire :: 140 :: ",
+      "set_code": "MEG",
+      "set_name": "Mega",
+      "card_number": "030/132",
+      "artist": "Shiburingar",
+      "weakness": "Water \u00d72",
+      "resistance": "",
+      "retreat": "Colorless/Colorless/Colorless",
+      "notes": "{\"stage\":\"Stage 1\",\"types\":[\"Fire\"]}"
+    }
+  },
+  {
+    "page_index": 4,
+    "image": "page_004.png",
+    "data": {
+      "name": "Mystery Garden",
+      "hp": "",
+      "evolves_from": "",
+      "ability_name": "",
+      "ability_text": "Once during each player's turn, that player may discard an Energy card from their hand in order to draw cards until they have as many cards in their hand as they have  Pok\u00e9mon in play.",
+      "attacks": "",
+      "set_code": "MEG EN",
+      "set_name": "",
+      "card_number": "122/132",
+      "artist": "AYUMI ODASHIMA",
+      "weakness": "",
+      "resistance": "",
+      "retreat": "",
+      "notes": "{\"type\":\"Stadium\"}"
+    }
+  },
+  {
+    "page_index": 5,
+    "image": "page_005.png",
+    "data": {
+      "name": "Shedinja",
+      "hp": "60",
+      "evolves_from": "Nincada",
+      "ability_name": "Fragile Husk",
+      "ability_text": "If this Pok\u00e9mon is Knocked Out by damage from an attack from your opponent's Pok\u00e9mon ex, your opponent can't take any Prize cards for it.",
+      "attacks": "Damage Beat :: 20\u00d7 :: This attack does 20 damage for each damage counter on your opponent's Active Pok\u00e9mon.",
+      "set_code": "MEG",
+      "set_name": "",
+      "card_number": "061/132",
+      "artist": "IKEDA Saki",
+      "weakness": "\u00d72",
+      "resistance": "30",
+      "retreat": "",
+      "notes": "{\"stage\":\"Stage 1\",\"types\":[\"Psychic\"]}"
+    }
+  },
+  {
+    "page_index": 6,
+    "image": "page_006.png",
+    "data": {
+      "name": "Cinderace",
+      "hp": "160",
+      "evolves_from": "Raboot",
+      "ability_name": "Explosiveness",
+      "ability_text": "If this Pok\u00e9mon is in your hand when you are setting up to play, you may put it face down in the Active Spot.",
+      "attacks": "Turbo Flare :: Colorless :: 50 :: Search your deck for up to 3 Basic Energy cards and attach them to your Benched Pok\u00e9mon in any way you like. Then, shuffle your deck.",
+      "set_code": "D",
+      "set_name": "Mega",
+      "card_number": "028/132",
+      "artist": "REND",
+      "weakness": "Water \u00d72",
+      "resistance": "",
+      "retreat": "Colorless",
+      "notes": "{\"stage\":\"Stage 2\",\"types\":[\"Fire\"]}"
+    }
+  },
+  {
+    "page_index": 7,
+    "image": "page_007.png",
+    "data": {
+      "name": "Cinderace",
+      "hp": "160",
+      "evolves_from": "Raboot",
+      "ability_name": "Striker",
+      "ability_text": "If this Pok\u00e9mon is in your hand when you are setting up to play, you may put it face down in the Active Spot.",
+      "attacks": "Turbo Flare :: Colorless :: 50 :: Search your deck for up to 3 Basic Energy cards and attach them to your Benched Pok\u00e9mon in any way you like. Then, shuffle your deck.",
+      "set_code": "MEG EN",
+      "set_name": "",
+      "card_number": "028/132",
+      "artist": "REND",
+      "weakness": "\u00d72",
+      "resistance": "",
+      "retreat": "",
+      "notes": "{\"stage\":\"Stage 2\",\"types\":[\"Fire\"]}"
+    }
+  },
+  {
+    "page_index": 8,
+    "image": "page_008.png",
+    "data": {
+      "name": "Zekrom",
+      "hp": "130",
+      "evolves_from": "",
+      "ability_name": "",
+      "ability_text": "",
+      "attacks": "Electro Fall :: Lightning/Lightning :: 30+ :: If you have at least 4 Lightning Energy in play, this attack does 90 more damage.",
+      "set_code": "BW",
+      "set_name": "Black & White",
+      "card_number": "0243",
+      "artist": "",
+      "weakness": "Fighting \u00d72",
+      "resistance": "",
+      "retreat": "Colorless / Colorless",
+      "notes": ""
+    }
+  },
+  {
+    "page_index": 9,
+    "image": "page_009.png",
+    "data": {
+      "name": "Magnemite",
+      "hp": "40",
+      "evolves_from": "",
+      "ability_name": "",
+      "ability_text": "",
+      "attacks": "Beam :: Colorless :: 10 :: ",
+      "set_code": "",
+      "set_name": "",
+      "card_number": "008",
+      "artist": "",
+      "weakness": "Fighting \u00d72",
+      "resistance": "Metal -30",
+      "retreat": "Colorless",
+      "notes": "{\"stage\":\"Basic\",\"types\":[\"Electric\"]}"
+    }
+  },
+  {
+    "page_index": 10,
+    "image": "page_010.png",
+    "data": {
+      "name": "Lt. Surge's Bargain",
+      "hp": "",
+      "evolves_from": "",
+      "ability_name": "",
+      "ability_text": "",
+      "attacks": "",
+      "set_code": "MEG",
+      "set_name": "",
+      "card_number": "120/132",
+      "artist": "Hideki Ishikawa",
+      "weakness": "",
+      "resistance": "",
+      "retreat": "",
+      "notes": "{\"type\":\"Supporter\",\"text\":\"Ask your opponent if each player may take a Prize card. If yes, each player takes a Prize card. If no, you draw 4 cards.\"}"
+    }
+  },
+  {
+    "page_index": 11,
+    "image": "page_011.png",
+    "data": {
+      "name": "Spearow",
+      "hp": "60",
+      "evolves_from": "",
+      "ability_name": "",
+      "ability_text": "",
+      "attacks": "Pluck :: Colorless :: 10 :: Before doing damage, discard all Pok\u00e9mon Tools from your opponent's Active Pok\u00e9mon.",
+      "set_code": "D",
+      "set_name": "Mega Evolution",
+      "card_number": "102/132",
+      "artist": "Scav",
+      "weakness": "Lightning \u00d72",
+      "resistance": "Fighting -30",
+      "retreat": "Colorless",
+      "notes": "{\"stage\":\"Basic\",\"types\":[\"Colorless\"]}"
+    }
+  },
+  {
+    "page_index": 12,
+    "image": "page_012.png",
+    "data": {
+      "name": "Magneton",
+      "hp": "90",
+      "evolves_from": "Magnemite",
+      "ability_name": "",
+      "ability_text": "",
+      "attacks": "Thunder Shock :: Lightning :: 30 :: Flip a coin. If heads, your opponent's Active Pok\u00e9mon is now Paralyzed.",
+      "set_code": "MEG EN",
+      "set_name": "",
+      "card_number": "046/132",
+      "artist": "Saboteri",
+      "weakness": "Fighting \u00d72",
+      "resistance": "",
+      "retreat": "Colorless / Colorless",
+      "notes": "{\"stage\":\"Stage 1\",\"types\":[\"Lightning\"]}"
+    }
+  },
+  {
+    "page_index": 15,
+    "image": "page_015.png",
+    "data": {
+      "name": "Arm Thrust Pok\u00e9mon",
+      "hp": "210",
+      "evolves_from": "",
+      "ability_name": "Heave-Ho Catcher",
+      "ability_text": "Once during your turn, when you play this Pok\u00e9mon from your hand to evolve 1 of your Pok\u00e9mon, you may use this Ability. Switch in 1 of your opponent's Benched Pok\u00e9mon to the Active Spot.",
+      "attacks": "Wild Press :: 70 :: This Pok\u00e9mon also does 70 damage to itself",
+      "set_code": "",
+      "set_name": "",
+      "card_number": "0297",
+      "artist": "",
+      "weakness": "",
+      "resistance": "",
+      "retreat": "",
+      "notes": "{\"stage\":\"Basic\",\"types\":[\"Fighting\"]}"
+    }
+  },
+  {
+    "page_index": 16,
+    "image": "page_016.png",
+    "data": {
+      "name": "Big Rock Pok\u00e9mon",
+      "hp": "180",
+      "evolves_from": "",
+      "ability_name": "Boundless Power",
+      "ability_text": "During your next turn, this Pok\u00e9mon can't use attacks.",
+      "attacks": "Stony Kick :: Fighting/Fighting :: 20 :: This attack also does 20 damage to 1 of your opponent's Benched Pok\u00e9mon. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon) | Boundless Power :: Fighting/Fighting/Fighting :: 140 :: ",
+      "set_code": "",
+      "set_name": "",
+      "card_number": "087/198",
+      "artist": "",
+      "weakness": "Water \u00d72",
+      "resistance": "",
+      "retreat": "Colorless / Colorless",
+      "notes": ""
+    }
+  },
+  {
+    "page_index": 17,
+    "image": "page_017.png",
+    "data": {
+      "name": "Alakazam",
+      "hp": "140",
+      "evolves_from": "Kadabra",
+      "ability_name": "Psychic Draw",
+      "ability_text": "Once during your turn, when you play this Pok\u00e9mon from your hand to evolve 1 of your Pok\u00e9mon, you may use this Ability. Draw 3 cards.",
+      "attacks": "Powerful Hand ::  | Place 2 damage counters on your opponent's Active Pok\u00e9mon for each card in your hand.",
+      "set_code": "MEG",
+      "set_name": "",
+      "card_number": "056/132",
+      "artist": "Bun Toujo",
+      "weakness": "\u00d72",
+      "resistance": "30",
+      "retreat": "Colorless",
+      "notes": "{\"stage\":\"Stage 2\",\"types\":[\"Psychic\"]}"
+    }
+  },
+  {
+    "page_index": 18,
+    "image": "page_018.png",
+    "data": {
+      "name": "Clawitzer",
+      "hp": "130",
+      "evolves_from": "Clauncher",
+      "ability_name": "Fall Back to Reload",
+      "ability_text": "Once during your turn, when this Pok\u00e9mon moves from the Active Spot to your Bench, you may use this Ability. Attach up to 2 Basic Water Energy cards from your hand to this Pok\u00e9mon.",
+      "attacks": "Aqua Launcher :: Water/Water/Water :: 210 :: Discard all Energy from this Pok\u00e9mon.",
+      "set_code": "MEGA",
+      "set_name": "",
+      "card_number": "038/132",
+      "artist": "Anesaki Dynamic",
+      "weakness": "Lightning \u00d72",
+      "resistance": "",
+      "retreat": "Colorless/Colorless",
+      "notes": "{\"stage\":\"Stage 1\",\"types\":[\"Water\"]}"
+    }
+  },
+  {
+    "page_index": 19,
+    "image": "page_019.png",
+    "data": {
+      "name": "Numel",
+      "hp": "70",
+      "evolves_from": "",
+      "ability_name": "",
+      "ability_text": "",
+      "attacks": "Call for Family :: Colorless/Colorless :: Search your deck for up to 2 Basic Pok\u00e9mon and put them onto your Bench. Then shuffle your deck | Flare :: Colorless/Colorless :: 30",
+      "set_code": "",
+      "set_name": "",
+      "card_number": "0322",
+      "artist": "",
+      "weakness": "Water \u00d72",
+      "resistance": "",
+      "retreat": "Colorless",
+      "notes": "{\"stage\":\"Basic\",\"types\":[\"Fire\"]}"
+    }
+  },
+  {
+    "page_index": 20,
+    "image": "page_020.png",
+    "data": {
+      "name": "Acorn",
+      "hp": "20",
+      "evolves_from": "",
+      "ability_name": "",
+      "ability_text": "",
+      "attacks": "Seed Bomb :: Grass/Colorless :: 20 :: ",
+      "set_code": "",
+      "set_name": "",
+      "card_number": "273",
+      "artist": "",
+      "weakness": "",
+      "resistance": "",
+      "retreat": "",
+      "notes": "{\"stage\":\"Basic\",\"types\":[\"Grass\"]}"
+    }
+  },
+  {
+    "page_index": 21,
+    "image": "page_021.png",
+    "data": {
+      "name": "Meganium",
+      "hp": "160",
+      "evolves_from": "Bayleef",
+      "ability_name": "Wild Growth",
+      "ability_text": "Each Basic Grass Energy attached to all of your Pok\u00e9mon provides 2 Grass Energy. The effect of Wild Growth doesn't stack.",
+      "attacks": "Solar Beam :: Grass/Grass/Colorless :: 140",
+      "set_code": "MEG",
+      "set_name": "",
+      "card_number": "010/132",
+      "artist": "Yoriyuki Ikegami",
+      "weakness": "Fire \u00d72",
+      "resistance": "",
+      "retreat": "Colorless/Colorless",
+      "notes": "{\"stage\":\"Stage 2\",\"types\":[\"Grass\"]}"
+    }
+  },
+  {
+    "page_index": 22,
+    "image": "page_022.png",
+    "data": {
+      "name": "Howitzer",
+      "hp": "210",
+      "evolves_from": "",
+      "ability_name": "Fall Back to Reload",
+      "ability_text": "Once during your turn, when this Pok\u00e9mon moves from the Active Spot to your Bench, you may use this Ability. Attach up to 2 Basic Water Energy cards from your hand to this Pok\u00e9mon.",
+      "attacks": "Aqua Launcher :: Discard all Energy from this Pok\u00e9mon",
+      "set_code": "",
+      "set_name": "",
+      "card_number": "0693",
+      "artist": "",
+      "weakness": "",
+      "resistance": "",
+      "retreat": "",
+      "notes": "{}"
+    }
+  },
+  {
+    "page_index": 23,
+    "image": "page_023.png",
+    "data": {
+      "name": "Yveltal",
+      "hp": "110",
+      "evolves_from": "",
+      "ability_name": "",
+      "ability_text": "",
+      "attacks": "Clutch :: Colorless :: 20 :: During your opponent's next turn, the Defending Pok\u00e9mon can't retreat. | Dark Feather :: Colorless/Colorless :: 110 :: ",
+      "set_code": "MEGEN",
+      "set_name": "Mega Evolution",
+      "card_number": "088/132",
+      "artist": "akagi",
+      "weakness": "Lightning \u00d72",
+      "resistance": "Fighting -30",
+      "retreat": "Colorless",
+      "notes": "{\"stage\":\"Basic\",\"types\":[\"Dark\"]}"
+    }
+  },
+  {
+    "page_index": 24,
+    "image": "page_024.png",
+    "data": {
+      "name": "Gardevoir",
+      "hp": "30",
+      "evolves_from": "",
+      "ability_name": "",
+      "ability_text": "",
+      "attacks": "Absorb :: Grass/Grass/Colorless :: Heal 30 damage from this Pok\u00e9mon | Pumped-Up Whip :: Grass/Grass/Colorless/Colorless :: 120+ :: If this Pok\u00e9mon has at least 2 extra Energy attached, this attack does 140 more damage.",
+      "set_code": "",
+      "set_name": "",
+      "card_number": "",
+      "artist": "",
+      "weakness": "",
+      "resistance": "",
+      "retreat": "",
+      "notes": "{\"stage\":\"Basic\",\"types\":[\"Grass\"]}"
+    }
+  },
+  {
+    "page_index": 26,
+    "image": "page_026.png",
+    "data": {
+      "name": "Scorbunny",
+      "hp": "70",
+      "evolves_from": "",
+      "ability_name": "",
+      "ability_text": "",
+      "attacks": "Wild Kick :: Colorless :: 30 :: Flip a coin. If tails, this attack does nothing.",
+      "set_code": "SV01",
+      "set_name": "Scarlet & Violet",
+      "card_number": "026/132",
+      "artist": "Meg EN",
+      "weakness": "Water \u00d72",
+      "resistance": "",
+      "retreat": "Colorless",
+      "notes": "{\"stage\":\"Basic\",\"types\":[\"Fire\"]}"
+    }
+  },
+  {
+    "page_index": 27,
+    "image": "page_027.png",
+    "data": {
+      "name": "Steelix",
+      "hp": "200",
+      "evolves_from": "Onix",
+      "ability_name": "",
+      "ability_text": "",
+      "attacks": "Welcoming Tail :: Colorless/Colorless :: 40+ :: If you have exactly 6 Prize cards remaining, this attack does 200 more damage. | Skull Bash :: Colorless/Colorless/Colorless :: 140 :: ",
+      "set_code": "MEG",
+      "set_name": "Mega",
+      "card_number": "093/132",
+      "artist": "Anesaki Dynamic",
+      "weakness": "Fighting \u00d72",
+      "resistance": "Metal -30",
+      "retreat": "Colorless/Colorless/Colorless",
+      "notes": "{\"stage\":\"Stage 1\",\"types\":[\"Steel\"]}"
+    }
+  },
+  {
+    "page_index": 29,
+    "image": "page_029.png",
+    "data": {
+      "name": "Hariyama",
+      "hp": "150",
+      "evolves_from": "Makuhita",
+      "ability_name": "Heave-Ho Catcher",
+      "ability_text": "Once during your turn, when you play this Pok\u00e9mon from your hand to evolve 1 of your Pok\u00e9mon, you may use this Ability. Switch in 1 of your opponent's Benched Pok\u00e9mon to the Active Spot.",
+      "attacks": "Wild Press :: Fighting/Fighting/Fighting/Fighting :: 210 :: This Pok\u00e9mon also does 70 damage to itself.",
+      "set_code": "073",
+      "set_name": "",
+      "card_number": "073/132",
+      "artist": "GOSSAN",
+      "weakness": "Psychic \u00d72",
+      "resistance": "",
+      "retreat": "Colorless/Colorless/Colorless",
+      "notes": "{\"stage\":\"Stage 1\",\"types\":[\"Fighting\"]}"
+    }
+  },
+  {
+    "page_index": 30,
+    "image": "page_030.png",
+    "data": {
+      "name": "Clauncher",
+      "hp": "80",
+      "evolves_from": "",
+      "ability_name": "",
+      "ability_text": "",
+      "attacks": "Wave Splash :: Water :: 50",
+      "set_code": "MEG",
+      "set_name": "",
+      "card_number": "037/132",
+      "artist": "Tomokazu Komiya",
+      "weakness": "Lightning \u00d72",
+      "resistance": "",
+      "retreat": "Colorless / Colorless",
+      "notes": "{\"stage\":\"Basic\",\"types\":[\"Water\"]}"
+    }
+  },
+  {
+    "page_index": 31,
+    "image": "page_031.png",
+    "data": {
+      "name": "Yveltal",
+      "hp": "110",
+      "evolves_from": "",
+      "ability_name": "",
+      "ability_text": "",
+      "attacks": "Clutch :: Colorless :: 20 :: During your opponent's next turn, the Defending Pok\u00e9mon can't retreat | Dark Feather :: Colorless/Colorless/Dark :: 110 :: ",
+      "set_code": "MEG",
+      "set_name": "",
+      "card_number": "088/132",
+      "artist": "akagi",
+      "weakness": "Fighting \u00d72",
+      "resistance": "Metal -30",
+      "retreat": "Colorless",
+      "notes": "{\"stage\":\"Basic\",\"types\":[\"Dark\"]}"
+    }
+  },
+  {
+    "page_index": 32,
+    "image": "page_032.png",
+    "data": {
+      "name": "Raikou",
+      "hp": "120",
+      "evolves_from": "",
+      "ability_name": "",
+      "ability_text": "",
+      "attacks": "Electro Fall :: Lightning/Lightning :: 30+ :: If you have at least 4 Lightning Energy in play, this attack does 90 more damage.",
+      "set_code": "MEGEN",
+      "set_name": "",
+      "card_number": "048/132",
+      "artist": "Takumi Wada",
+      "weakness": "Fighting \u00d72",
+      "resistance": "",
+      "retreat": "Colorless",
+      "notes": "{\"stage\":\"Basic\",\"types\":[\"Lightning\"]}"
+    }
+  },
+  {
+    "page_index": 33,
+    "image": "page_033.png",
+    "data": {
+      "name": "Abra",
+      "hp": "50",
+      "evolves_from": "",
+      "ability_name": "",
+      "ability_text": "",
+      "attacks": "Teleportation Attack :: 10 :: Switch this Pok\u00e9mon with 1 of your Benched Pok\u00e9mon.",
+      "set_code": "MEG EN",
+      "set_name": "",
+      "card_number": "054/132",
+      "artist": "Orca",
+      "weakness": "Psychic \u00d72",
+      "resistance": "Fighting -30",
+      "retreat": "Colorless",
+      "notes": "{\"stage\":\"Basic\",\"types\":[\"Psychic\"]}"
+    }
+  },
+  {
+    "page_index": 35,
+    "image": "page_035.png",
+    "data": {
+      "name": "Bewear",
+      "hp": "130",
+      "evolves_from": "Stufful",
+      "ability_name": "",
+      "ability_text": "",
+      "attacks": "Knuckle Punch :: Colorless/Colorless :: 50 | Hyper Lariat :: Colorless/Colorless/Colorless :: 100+ :: Flip 2 coins. If both of them are heads, this attack does 100 more damage.",
+      "set_code": "MEG",
+      "set_name": "",
+      "card_number": "112/132",
+      "artist": "HYOGONOSUKE",
+      "weakness": "Fighting \u00d72",
+      "resistance": "",
+      "retreat": "Colorless/Colorless/Colorless",
+      "notes": "{\"stage\":\"Stage 1\",\"types\":[\"Colorless\"]}"
+    }
+  },
+  {
+    "page_index": 37,
+    "image": "page_037.png",
+    "data": {
+      "name": "Celebi",
+      "hp": "80",
+      "evolves_from": "",
+      "ability_name": "Traverse Time",
+      "ability_text": "Search your deck for up to 3 in any combination of Pok\u00e9mon and Stadium cards, reveal them, and put them into your hand. Then, shuffle your deck.",
+      "attacks": "Solar Cutter :: 30",
+      "set_code": "MEG",
+      "set_name": "",
+      "card_number": "012/132",
+      "artist": "Naoki Saito",
+      "weakness": "Fire \u00d72",
+      "resistance": "",
+      "retreat": "",
+      "notes": "{\"stage\":\"Basic\",\"types\":[\"Grass\"]}"
+    }
+  }
+]

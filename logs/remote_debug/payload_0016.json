@@ -1,0 +1,16 @@
+{
+  "name": "Centiskorch",
+  "hp": "140",
+  "evolves_from": "Sizzlipede",
+  "ability_name": "",
+  "ability_text": "",
+  "attacks": "Coiling Crush :: Colorless/Colorless :: 50 :: Flip 2 coins. For each heads, discard an Energy from your opponent's Active Pok\u00e9mon. | Heat Crawler :: Fire/Fire/Fire :: 140 :: ",
+  "set_code": "MEG",
+  "set_name": "Mega",
+  "card_number": "030/132",
+  "artist": "Shiburingar",
+  "weakness": "Water \u00d72",
+  "resistance": "",
+  "retreat": "Colorless/Colorless/Colorless",
+  "notes": "{\"stage\":\"Stage 1\",\"types\":[\"Fire\"]}"
+}

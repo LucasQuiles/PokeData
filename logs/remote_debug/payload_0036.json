@@ -1,0 +1,73 @@
+{
+  "name": "Numel",
+  "stage": "Basic",
+  "evolvesFrom": "",
+  "hp": 70,
+  "types": [
+    "Fire"
+  ],
+  "stamps": [],
+  "promo": {
+    "isPromo": false,
+    "series": "",
+    "promoNumber": ""
+  },
+  "number": "032/XY",
+  "set": {
+    "name": "XY",
+    "code": "XY",
+    "symbolCode": ""
+  },
+  "setboxLetters": "",
+  "printYear": 2014,
+  "illustrator": "5ban Graphics",
+  "text": {
+    "abilities": [],
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "cost": [
+          "Fire",
+          "Colorless"
+        ],
+        "damage": "",
+        "text": "Search your deck for up to 2 Basic Pok\u00e9mon and put them onto your Bench. Then shuffle your deck."
+      },
+      {
+        "name": "Flare",
+        "cost": [
+          "Fire"
+        ],
+        "damage": "30",
+        "text": ""
+      }
+    ],
+    "weaknesses": [
+      {
+        "type": "Water",
+        "value": "\u00d72"
+      }
+    ],
+    "resistances": [],
+    "retreatCost": [
+      "Colorless",
+      "Colorless"
+    ]
+  },
+  "notes": {
+    "unreadable": []
+  },
+  "_confidence": {
+    "name": 0.95,
+    "stage": 0.95,
+    "hp": 0.95,
+    "types": 0.95,
+    "number": 0.95,
+    "set": 0.95,
+    "printYear": 0.95,
+    "illustrator": 0.95,
+    "attacks": 0.95,
+    "weaknesses": 0.95,
+    "retreatCost": 0.95
+  }
+}

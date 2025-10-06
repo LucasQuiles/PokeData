@@ -1,0 +1,10 @@
+Flask>=3.0
+pytesseract
+Pillow
+pdf2image
+opencv-python
+numpy
+openai>=2.1.0
+jsonschema>=4.22
+easyocr
+requests

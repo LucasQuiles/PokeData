@@ -1,0 +1,1799 @@
+[
+  {
+    "page_index": 1,
+    "image": "page_001.png",
+    "data": {
+      "name": "Stufful",
+      "stage": "Basic",
+      "evolvesFrom": "",
+      "hp": 70,
+      "types": [
+        "Colorless"
+      ],
+      "stamps": [],
+      "promo": {
+        "isPromo": false,
+        "series": "",
+        "promoNumber": ""
+      },
+      "number": "111/132",
+      "set": {
+        "name": "TM",
+        "code": "TM",
+        "total": 132,
+        "symbolCode": ""
+      },
+      "setboxLetters": "MEG",
+      "printYear": 2025,
+      "illustrator": "Shibuzoh",
+      "text": {
+        "abilities": [],
+        "attacks": [
+          {
+            "name": "Light Punch",
+            "cost": [
+              "Colorless"
+            ],
+            "damage": "10",
+            "text": ""
+          },
+          {
+            "name": "Flop",
+            "cost": [
+              "Colorless",
+              "Colorless"
+            ],
+            "damage": "20",
+            "text": ""
+          }
+        ],
+        "weaknesses": [
+          {
+            "type": "Fighting",
+            "value": "\u00d72"
+          }
+        ],
+        "resistances": [],
+        "retreatCost": [
+          "Colorless",
+          "Colorless"
+        ]
+      },
+      "notes": {
+        "unreadable": [],
+        "stage": "Basic",
+        "types": [
+          "Colorless"
+        ],
+        "setboxLetters": "MEG",
+        "isPromo": false,
+        "printYear": 2025
+      },
+      "_confidence": {
+        "name": 0.95,
+        "stage": 0.95,
+        "hp": 0.95,
+        "types": 0.95,
+        "number": 0.95,
+        "set": 0.95,
+        "setboxLetters": 0.95,
+        "printYear": 0.95,
+        "illustrator": 0.95,
+        "attacks": 0.95,
+        "weaknesses": 0.95,
+        "retreatCost": 0.95
+      }
+    }
+  },
+  {
+    "page_index": 2,
+    "image": "page_002.png",
+    "data": {
+      "name": "Lunatone",
+      "stage": "Basic",
+      "evolvesFrom": "",
+      "hp": 70,
+      "types": [
+        "Psychic"
+      ],
+      "stamps": [],
+      "promo": {
+        "isPromo": false,
+        "series": "",
+        "promoNumber": ""
+      },
+      "number": "033/189",
+      "set": {
+        "name": "Meteorite Pok\u00e9mon",
+        "code": "MPK",
+        "total": 189,
+        "symbolCode": ""
+      },
+      "setboxLetters": "MEG",
+      "printYear": 2020,
+      "illustrator": "5ban Graphics",
+      "text": {
+        "abilities": [
+          {
+            "name": "Lunar Cycle",
+            "text": "Once during your turn, if you have Solrock in play, you may discard a Basic Psychic Energy card from your hand in order to use this Ability. Draw 3 cards. You can't use more than 1 Lunar Cycle Ability each turn.",
+            "kind": "Ability"
+          }
+        ],
+        "attacks": [
+          {
+            "name": "Power Gem",
+            "cost": [],
+            "damage": "50",
+            "text": "..."
+          }
+        ],
+        "weaknesses": [],
+        "resistances": [],
+        "retreatCost": []
+      },
+      "notes": {
+        "unreadable": [],
+        "stage": "Basic",
+        "types": [
+          "Psychic"
+        ],
+        "setboxLetters": "MEG",
+        "isPromo": false,
+        "printYear": 2020
+      },
+      "_confidence": {
+        "name": 0.95,
+        "stage": 0.95,
+        "evolvesFrom": 0.9,
+        "hp": 0.95,
+        "types": 0.95,
+        "stamps": 0.9,
+        "promo": 0.9,
+        "number": 0.95,
+        "set": 0.95,
+        "setboxLetters": 0.95,
+        "printYear": 0.95,
+        "illustrator": 0.95,
+        "text": 0.9
+      }
+    }
+  },
+  {
+    "page_index": 3,
+    "image": "page_003.png",
+    "data": {
+      "name": "Centiskorch",
+      "stage": "Stage 1",
+      "evolvesFrom": "Sizzlipede",
+      "hp": 140,
+      "types": [
+        "Fire"
+      ],
+      "stamps": [],
+      "promo": {
+        "isPromo": false,
+        "series": "",
+        "promoNumber": ""
+      },
+      "number": "030/132",
+      "set": {
+        "name": "",
+        "code": "MEG",
+        "total": 132,
+        "symbolCode": ""
+      },
+      "setboxLetters": "MEG",
+      "printYear": 2025,
+      "illustrator": "Shiburingar",
+      "text": {
+        "abilities": [],
+        "attacks": [
+          {
+            "name": "Coiling Crush",
+            "cost": [
+              "Colorless",
+              "Colorless"
+            ],
+            "damage": "50",
+            "text": "Flip 2 coins. For each heads, discard an Energy from your opponent's Active Pok\u00e9mon."
+          },
+          {
+            "name": "Heat Crawler",
+            "cost": [
+              "Fire",
+              "Fire",
+              "Colorless"
+            ],
+            "damage": "140",
+            "text": ""
+          }
+        ],
+        "weaknesses": [
+          {
+            "type": "Water",
+            "value": "\u00d72"
+          }
+        ],
+        "resistances": [],
+        "retreatCost": [
+          "Colorless",
+          "Colorless",
+          "Colorless"
+        ]
+      },
+      "notes": {
+        "unreadable": [],
+        "stage": "Stage 1",
+        "types": [
+          "Fire"
+        ],
+        "setboxLetters": "MEG",
+        "isPromo": false,
+        "printYear": 2025
+      },
+      "_confidence": {
+        "name": 0.95,
+        "stage": 0.95,
+        "evolvesFrom": 0.95,
+        "hp": 0.95,
+        "types": 0.95,
+        "number": 0.95,
+        "set": 0.95,
+        "setboxLetters": 0.95,
+        "printYear": 0.95,
+        "illustrator": 0.95,
+        "text": 0.9499999999999998
+      }
+    }
+  },
+  {
+    "page_index": 4,
+    "image": "page_004.png",
+    "data": {
+      "name": "Mystery Garden",
+      "stage": "",
+      "evolvesFrom": "",
+      "hp": "",
+      "types": [],
+      "stamps": [],
+      "promo": {
+        "isPromo": false,
+        "series": "",
+        "promoNumber": ""
+      },
+      "number": "122/132",
+      "set": {
+        "name": "",
+        "code": "MEG",
+        "total": 132,
+        "symbolCode": ""
+      },
+      "setboxLetters": "MEG",
+      "printYear": 2025,
+      "illustrator": "AYUMI ODASHIMA",
+      "text": {
+        "abilities": [],
+        "attacks": [],
+        "weaknesses": [],
+        "resistances": [],
+        "retreatCost": []
+      },
+      "notes": {
+        "unreadable": [],
+        "setboxLetters": "MEG",
+        "isPromo": false,
+        "printYear": 2025
+      },
+      "_confidence": {
+        "name": 0.95,
+        "stage": 0.0,
+        "evolvesFrom": 0.0,
+        "hp": 0.0,
+        "types": 0.0,
+        "number": 0.95,
+        "set": 0.8,
+        "setboxLetters": 0.95,
+        "printYear": 0.95,
+        "illustrator": 0.95
+      }
+    }
+  },
+  {
+    "page_index": 5,
+    "image": "page_005.png",
+    "data": {
+      "name": "Shedinja",
+      "stage": "Stage 1",
+      "evolvesFrom": "Nincada",
+      "hp": 60,
+      "types": [
+        "Grass"
+      ],
+      "stamps": [],
+      "promo": {
+        "isPromo": false,
+        "series": "",
+        "promoNumber": ""
+      },
+      "number": "061/132",
+      "set": {
+        "name": "Mega Evolution",
+        "code": "MEG",
+        "total": 132,
+        "symbolCode": ""
+      },
+      "setboxLetters": "MEG",
+      "printYear": 2025,
+      "illustrator": "IKEDA Saki",
+      "text": {
+        "abilities": [
+          {
+            "name": "Fragile Husk",
+            "text": "If this Pok\u00e9mon is Knocked Out by damage from an attack from your opponent's Pok\u00e9mon ex, your opponent can't take any Prize cards for it.",
+            "kind": "Ability"
+          }
+        ],
+        "attacks": [
+          {
+            "name": "Damage Beat",
+            "cost": [
+              "Grass"
+            ],
+            "damage": "20\u00d7",
+            "text": "This attack does 20 damage for each damage counter on your opponent's Active Pok\u00e9mon."
+          }
+        ],
+        "weaknesses": [
+          {
+            "type": "Psychic",
+            "value": "\u00d72"
+          }
+        ],
+        "resistances": [],
+        "retreatCost": [
+          "Colorless"
+        ]
+      },
+      "notes": {
+        "unreadable": [],
+        "stage": "Stage 1",
+        "types": [
+          "Grass"
+        ],
+        "setboxLetters": "MEG",
+        "isPromo": false,
+        "printYear": 2025
+      },
+      "_confidence": {
+        "name": 0.95,
+        "stage": 0.95,
+        "evolvesFrom": 0.95,
+        "hp": 0.95,
+        "types": 0.95,
+        "stamps": 0.95,
+        "promo": 0.95,
+        "number": 0.95,
+        "set": 0.95,
+        "setboxLetters": 0.95,
+        "printYear": 0.95,
+        "illustrator": 0.95,
+        "text": 0.95
+      }
+    }
+  },
+  {
+    "page_index": 6,
+    "image": "page_006.png",
+    "data": {
+      "name": "Cinderace",
+      "stage": "Stage 2",
+      "evolvesFrom": "Raboot",
+      "hp": 160,
+      "types": [
+        "Fire"
+      ],
+      "stamps": [],
+      "promo": {
+        "isPromo": false,
+        "series": "",
+        "promoNumber": ""
+      },
+      "number": "028/132",
+      "set": {
+        "name": "Sword & Shield",
+        "code": "SS",
+        "total": 132,
+        "symbolCode": "D"
+      },
+      "setboxLetters": "MEG",
+      "printYear": 2025,
+      "illustrator": "REND",
+      "text": {
+        "abilities": [
+          {
+            "name": "Explosiveness",
+            "text": "If this Pok\u00e9mon is in your hand when you are setting up to play, you may put it face down in the Active Spot.",
+            "kind": "Ability"
+          }
+        ],
+        "attacks": [
+          {
+            "name": "Turbo Flare",
+            "cost": [
+              "Colorless"
+            ],
+            "damage": "50",
+            "text": "Search your deck for up to 3 Basic Energy cards and attach them to your Benched Pok\u00e9mon in any way you like. Then, shuffle your deck."
+          }
+        ],
+        "weaknesses": [
+          {
+            "type": "Water",
+            "value": "\u00d72"
+          }
+        ],
+        "resistances": [],
+        "retreatCost": [
+          "Colorless"
+        ]
+      },
+      "notes": {
+        "unreadable": [],
+        "stage": "Stage 2",
+        "types": [
+          "Fire"
+        ],
+        "setboxLetters": "MEG",
+        "isPromo": false,
+        "printYear": 2025
+      },
+      "_confidence": {
+        "name": 0.95,
+        "stage": 0.95,
+        "evolvesFrom": 0.95,
+        "hp": 0.95,
+        "types": 0.95,
+        "number": 0.95,
+        "set": 0.95,
+        "setboxLetters": 0.95,
+        "printYear": 0.95,
+        "illustrator": 0.95,
+        "text": 0.95
+      }
+    }
+  },
+  {
+    "page_index": 7,
+    "image": "page_007.png",
+    "data": {
+      "name": "Cinderace",
+      "stage": "Stage 2",
+      "evolvesFrom": "Raboot",
+      "hp": 160,
+      "types": [
+        "Fire"
+      ],
+      "stamps": [],
+      "promo": {
+        "isPromo": false,
+        "series": "",
+        "promoNumber": ""
+      },
+      "number": "028/132",
+      "set": {
+        "name": "Unknown",
+        "code": "MEG",
+        "total": 132,
+        "symbolCode": ""
+      },
+      "setboxLetters": "MEG",
+      "printYear": 2025,
+      "illustrator": "REND",
+      "text": {
+        "abilities": [
+          {
+            "name": "Striker",
+            "text": "If this Pok\u00e9mon is in your hand when you are setting up to play, you may put it face down in the Active Spot.",
+            "kind": "Ability"
+          }
+        ],
+        "attacks": [
+          {
+            "name": "Turbo Flare",
+            "cost": [
+              "Fire"
+            ],
+            "damage": "50",
+            "text": "Search your deck for up to 3 Basic Energy cards and attach them to your Benched Pok\u00e9mon in any way you like. Then, shuffle your deck."
+          }
+        ],
+        "weaknesses": [
+          {
+            "type": "Water",
+            "value": "\u00d72"
+          }
+        ],
+        "resistances": [],
+        "retreatCost": [
+          "Colorless"
+        ]
+      },
+      "notes": {
+        "unreadable": [],
+        "stage": "Stage 2",
+        "types": [
+          "Fire"
+        ],
+        "setboxLetters": "MEG",
+        "isPromo": false,
+        "printYear": 2025
+      },
+      "_confidence": {
+        "name": 0.95,
+        "stage": 0.95,
+        "evolvesFrom": 0.95,
+        "hp": 0.95,
+        "types": 0.95,
+        "number": 0.95,
+        "set": 0.85,
+        "setboxLetters": 0.95,
+        "printYear": 0.95,
+        "illustrator": 0.95,
+        "text": 0.9
+      }
+    }
+  },
+  {
+    "page_index": 8,
+    "image": "page_008.png",
+    "data": {
+      "name": "Zekrom",
+      "stage": "Basic",
+      "evolvesFrom": "",
+      "hp": 130,
+      "types": [
+        "Lightning"
+      ],
+      "stamps": [],
+      "promo": {
+        "isPromo": false,
+        "series": "",
+        "promoNumber": ""
+      },
+      "number": "0243",
+      "set": {
+        "name": "Thunder",
+        "code": "THD",
+        "symbolCode": ""
+      },
+      "setboxLetters": "",
+      "illustrator": "",
+      "text": {
+        "abilities": [],
+        "attacks": [
+          {
+            "name": "Electro Fall",
+            "cost": [
+              "Lightning",
+              "Lightning"
+            ],
+            "damage": "30+",
+            "text": "If you have at least 4 Lightning Energy in play, this attack does 90 more damage."
+          }
+        ],
+        "weaknesses": [],
+        "resistances": [],
+        "retreatCost": []
+      },
+      "notes": {
+        "unreadable": [
+          "setboxLetters",
+          "printYear",
+          "illustrator"
+        ],
+        "stage": "Basic",
+        "types": [
+          "Lightning"
+        ],
+        "isPromo": false
+      },
+      "_confidence": {
+        "name": 0.95,
+        "stage": 0.95,
+        "evolvesFrom": 0.9,
+        "hp": 0.9,
+        "types": 0.95,
+        "stamps": 0.9,
+        "promo": 0.9,
+        "number": 0.95,
+        "set": 0.9,
+        "setboxLetters": 0.5,
+        "printYear": 0.5,
+        "illustrator": 0.5,
+        "text": 0.95
+      }
+    }
+  },
+  {
+    "page_index": 9,
+    "image": "page_009.png",
+    "data": {
+      "name": "Magnemite",
+      "stage": "Basic",
+      "evolvesFrom": "",
+      "hp": 40,
+      "types": [
+        "Lightning"
+      ],
+      "stamps": [],
+      "promo": {
+        "isPromo": false,
+        "series": "",
+        "promoNumber": ""
+      },
+      "number": "008/130",
+      "set": {
+        "name": "Base Set",
+        "code": "BS",
+        "total": 130,
+        "symbolCode": ""
+      },
+      "setboxLetters": "",
+      "printYear": 1999,
+      "illustrator": "Ken Sugimori",
+      "text": {
+        "abilities": [],
+        "attacks": [
+          {
+            "name": "Beam",
+            "cost": [
+              "Lightning"
+            ],
+            "damage": "10",
+            "text": ""
+          }
+        ],
+        "weaknesses": [],
+        "resistances": [],
+        "retreatCost": []
+      },
+      "notes": {
+        "unreadable": [
+          "setboxLetters"
+        ],
+        "stage": "Basic",
+        "types": [
+          "Lightning"
+        ],
+        "isPromo": false,
+        "printYear": 1999
+      },
+      "_confidence": {
+        "name": 0.95,
+        "stage": 0.95,
+        "evolvesFrom": 0.9,
+        "hp": 0.95,
+        "types": 0.95,
+        "stamps": 0.9,
+        "promo": 0.9,
+        "number": 0.95,
+        "set": 0.95,
+        "setboxLetters": 0.5,
+        "printYear": 0.95,
+        "illustrator": 0.95,
+        "text": 0.9
+      }
+    }
+  },
+  {
+    "page_index": 10,
+    "image": "page_010.png",
+    "data": {
+      "name": "Lt. Surge's Bargain",
+      "stage": "",
+      "evolvesFrom": "",
+      "hp": "",
+      "types": [],
+      "stamps": [],
+      "promo": {
+        "isPromo": false,
+        "series": "",
+        "promoNumber": ""
+      },
+      "number": "120/132",
+      "set": {
+        "name": "",
+        "code": "MEG",
+        "total": 132,
+        "symbolCode": ""
+      },
+      "setboxLetters": "MEG",
+      "printYear": 2025,
+      "illustrator": "Hideki Ishikawa",
+      "text": {
+        "abilities": [],
+        "attacks": [],
+        "weaknesses": [],
+        "resistances": [],
+        "retreatCost": []
+      },
+      "notes": {
+        "unreadable": [],
+        "setboxLetters": "MEG",
+        "isPromo": false,
+        "printYear": 2025
+      },
+      "_confidence": {
+        "name": 0.95,
+        "stage": 0.0,
+        "evolvesFrom": 0.0,
+        "hp": 0.0,
+        "types": 0.0,
+        "number": 0.9,
+        "set": 0.8,
+        "setboxLetters": 0.9,
+        "printYear": 0.9,
+        "illustrator": 0.9,
+        "text": 0.0
+      }
+    }
+  },
+  {
+    "page_index": 12,
+    "image": "page_012.png",
+    "data": {
+      "name": "Magneton",
+      "stage": "Stage 1",
+      "evolvesFrom": "Magnemite",
+      "hp": 90,
+      "types": [
+        "Lightning"
+      ],
+      "stamps": [],
+      "promo": {
+        "isPromo": false,
+        "series": "",
+        "promoNumber": ""
+      },
+      "number": "046/132",
+      "set": {
+        "name": "Unknown",
+        "code": "MEG",
+        "total": 132,
+        "symbolCode": ""
+      },
+      "setboxLetters": "MEG",
+      "printYear": 2025,
+      "illustrator": "Saboteri",
+      "text": {
+        "abilities": [],
+        "attacks": [
+          {
+            "name": "Thunder Shock",
+            "cost": [
+              "Lightning"
+            ],
+            "damage": "30",
+            "text": "Flip a coin. If heads, your opponent's Active Pok\u00e9mon is now Paralyzed."
+          }
+        ],
+        "weaknesses": [
+          {
+            "type": "Fighting",
+            "value": "\u00d72"
+          }
+        ],
+        "resistances": [],
+        "retreatCost": [
+          "Colorless",
+          "Colorless"
+        ]
+      },
+      "notes": {
+        "unreadable": [],
+        "stage": "Stage 1",
+        "types": [
+          "Lightning"
+        ],
+        "setboxLetters": "MEG",
+        "isPromo": false,
+        "printYear": 2025
+      },
+      "_confidence": {
+        "name": 0.95,
+        "stage": 0.95,
+        "evolvesFrom": 0.95,
+        "hp": 0.95,
+        "types": 0.95,
+        "number": 0.95,
+        "set": 0.85,
+        "setboxLetters": 0.95,
+        "printYear": 0.95,
+        "illustrator": 0.95,
+        "text": 0.9499999999999998
+      }
+    }
+  },
+  {
+    "page_index": 15,
+    "image": "page_015.png",
+    "data": {
+      "name": "Arm Thrust Pok\u00e9mon",
+      "stage": "Basic",
+      "evolvesFrom": "",
+      "hp": 210,
+      "types": [
+        "Fighting"
+      ],
+      "stamps": [],
+      "promo": {
+        "isPromo": false,
+        "series": "",
+        "promoNumber": ""
+      },
+      "number": "0297",
+      "set": {
+        "name": "",
+        "code": "",
+        "symbolCode": ""
+      },
+      "setboxLetters": "",
+      "illustrator": "",
+      "text": {
+        "abilities": [
+          {
+            "name": "Heave-Ho Catcher",
+            "text": "Once during your turn, when you play this Pok\u00e9mon from your hand to evolve 1 of your Pok\u00e9mon, you may use this Ability. Switch in 1 of your opponent's Benched Pok\u00e9mon to the Active Spot.",
+            "kind": "Ability"
+          }
+        ],
+        "attacks": [
+          {
+            "name": "Wild Press",
+            "cost": [
+              "Fighting",
+              "Fighting"
+            ],
+            "damage": "70",
+            "text": "This Pok\u00e9mon also does 70 damage to itself."
+          }
+        ],
+        "weaknesses": [],
+        "resistances": [],
+        "retreatCost": [
+          "Colorless",
+          "Colorless"
+        ]
+      },
+      "notes": {
+        "unreadable": [
+          "set.name",
+          "set.code",
+          "set.total",
+          "set.symbolCode",
+          "setboxLetters",
+          "printYear",
+          "illustrator"
+        ],
+        "stage": "Basic",
+        "types": [
+          "Fighting"
+        ],
+        "isPromo": false
+      },
+      "_confidence": {
+        "name": 0.9,
+        "stage": 0.95,
+        "evolvesFrom": 0.9,
+        "hp": 0.95,
+        "types": 0.9,
+        "stamps": 0.9,
+        "promo": 0.9,
+        "number": 0.95,
+        "set": 0.8,
+        "setboxLetters": 0.8,
+        "printYear": 0.8,
+        "illustrator": 0.8,
+        "text": 0.95
+      }
+    }
+  },
+  {
+    "page_index": 16,
+    "image": "page_016.png",
+    "data": {
+      "name": "Gigalith",
+      "stage": "Stage 1",
+      "evolvesFrom": "Boldore",
+      "hp": 140,
+      "types": [
+        "Fighting"
+      ],
+      "stamps": [],
+      "promo": {
+        "isPromo": false,
+        "series": "",
+        "promoNumber": ""
+      },
+      "number": "087/189",
+      "set": {
+        "name": "Big Rock",
+        "code": "BRK",
+        "total": 189,
+        "symbolCode": ""
+      },
+      "setboxLetters": "BRK",
+      "printYear": 2021,
+      "illustrator": "5ban Graphics",
+      "text": {
+        "abilities": [],
+        "attacks": [
+          {
+            "name": "Stony Kick",
+            "cost": [
+              "Fighting"
+            ],
+            "damage": "20",
+            "text": "This attack also does 20 damage to 1 of your opponent's Benched Pok\u00e9mon. (Don't apply Weakness and Resistance for Benched Pok\u00e9mon)"
+          },
+          {
+            "name": "Boundless Power",
+            "cost": [
+              "Colorless"
+            ],
+            "damage": "140",
+            "text": "During your next turn, this Pok\u00e9mon can't use attacks."
+          }
+        ],
+        "weaknesses": [],
+        "resistances": [],
+        "retreatCost": [
+          "Colorless",
+          "Colorless"
+        ]
+      },
+      "notes": {
+        "unreadable": [],
+        "stage": "Stage 1",
+        "types": [
+          "Fighting"
+        ],
+        "setboxLetters": "BRK",
+        "isPromo": false,
+        "printYear": 2021
+      },
+      "_confidence": {
+        "name": 0.95,
+        "stage": 0.95,
+        "evolvesFrom": 0.85,
+        "hp": 0.95,
+        "types": 0.95,
+        "number": 0.95,
+        "set": 0.9,
+        "setboxLetters": 0.9,
+        "printYear": 0.9,
+        "illustrator": 0.9,
+        "text": 0.9
+      }
+    }
+  },
+  {
+    "page_index": 18,
+    "image": "page_018.png",
+    "data": {
+      "name": "Clawitzer",
+      "stage": "Stage 1",
+      "evolvesFrom": "Clauncher",
+      "hp": 130,
+      "types": [
+        "Water"
+      ],
+      "stamps": [],
+      "promo": {
+        "isPromo": false,
+        "series": "",
+        "promoNumber": ""
+      },
+      "number": "038/132",
+      "set": {
+        "name": "Unknown",
+        "code": "Unknown",
+        "total": 132,
+        "symbolCode": ""
+      },
+      "setboxLetters": "MEG",
+      "printYear": 2025,
+      "illustrator": "Anesaki Dynamic",
+      "text": {
+        "abilities": [
+          {
+            "name": "Fall Back to Reload",
+            "text": "Once during your turn, when this Pok\u00e9mon moves from the Active Spot to your Bench, you may use this Ability. Attach up to 2 Basic Water Energy cards from your hand to this Pok\u00e9mon.",
+            "kind": "Ability"
+          }
+        ],
+        "attacks": [
+          {
+            "name": "Aqua Launcher",
+            "cost": [
+              "Water",
+              "Water",
+              "Water"
+            ],
+            "damage": "210",
+            "text": "Discard all Energy from this Pok\u00e9mon."
+          }
+        ],
+        "weaknesses": [
+          {
+            "type": "Lightning",
+            "value": "\u00d72"
+          }
+        ],
+        "resistances": [],
+        "retreatCost": [
+          "Colorless",
+          "Colorless"
+        ]
+      },
+      "notes": {
+        "unreadable": [],
+        "stage": "Stage 1",
+        "types": [
+          "Water"
+        ],
+        "setboxLetters": "MEG",
+        "isPromo": false,
+        "printYear": 2025
+      },
+      "_confidence": {
+        "name": 0.95,
+        "stage": 0.95,
+        "evolvesFrom": 0.95,
+        "hp": 0.95,
+        "types": 0.95,
+        "number": 0.95,
+        "set": 0.85,
+        "setboxLetters": 0.95,
+        "printYear": 0.95,
+        "illustrator": 0.95,
+        "text": 0.95
+      }
+    }
+  },
+  {
+    "page_index": 20,
+    "image": "page_020.png",
+    "data": {
+      "name": "Seedot",
+      "stage": "Basic",
+      "evolvesFrom": "",
+      "hp": 40,
+      "types": [
+        "Grass"
+      ],
+      "stamps": [],
+      "promo": {
+        "isPromo": false,
+        "series": "",
+        "promoNumber": ""
+      },
+      "number": "073/XY",
+      "set": {
+        "name": "XY",
+        "code": "XY",
+        "total": 162,
+        "symbolCode": ""
+      },
+      "setboxLetters": "",
+      "printYear": 2014,
+      "illustrator": "Kagemaru Himeno",
+      "text": {
+        "abilities": [],
+        "attacks": [
+          {
+            "name": "Nap",
+            "cost": [
+              "Colorless"
+            ],
+            "damage": "0",
+            "text": "Heal 20 damage from this Pok\u00e9mon."
+          },
+          {
+            "name": "Seed Bomb",
+            "cost": [
+              "Grass",
+              "Colorless"
+            ],
+            "damage": "20",
+            "text": ""
+          }
+        ],
+        "weaknesses": [
+          {
+            "type": "Fire",
+            "value": "\u00d72"
+          }
+        ],
+        "resistances": [],
+        "retreatCost": [
+          "Colorless"
+        ]
+      },
+      "notes": {
+        "unreadable": [],
+        "stage": "Basic",
+        "types": [
+          "Grass"
+        ],
+        "isPromo": false,
+        "printYear": 2014
+      },
+      "_confidence": {
+        "name": 0.95,
+        "stage": 0.95,
+        "evolvesFrom": 0.9,
+        "hp": 0.95,
+        "types": 0.95,
+        "stamps": 1.0,
+        "promo": 1.0,
+        "number": 0.95,
+        "set": 0.95,
+        "setboxLetters": 0.8,
+        "printYear": 0.9,
+        "illustrator": 0.9,
+        "text": 0.97
+      }
+    }
+  },
+  {
+    "page_index": 21,
+    "image": "page_021.png",
+    "data": {
+      "name": "Meganium",
+      "stage": "Stage 2",
+      "evolvesFrom": "Bayleef",
+      "hp": 160,
+      "types": [
+        "Grass"
+      ],
+      "stamps": [],
+      "promo": {
+        "isPromo": false,
+        "series": "",
+        "promoNumber": ""
+      },
+      "number": "010/132",
+      "set": {
+        "name": "Mega Evolution",
+        "code": "MEG",
+        "total": 132,
+        "symbolCode": ""
+      },
+      "setboxLetters": "MEG",
+      "printYear": 2025,
+      "illustrator": "Yoriyuki Ikegami",
+      "text": {
+        "abilities": [
+          {
+            "name": "Wild Growth",
+            "text": "Each Basic Grass Energy attached to all of your Pok\u00e9mon provides Colorless Colorless Energy. The effect of Wild Growth doesn't stack.",
+            "kind": "Ability"
+          }
+        ],
+        "attacks": [
+          {
+            "name": "Solar Beam",
+            "cost": [
+              "Grass",
+              "Colorless",
+              "Colorless"
+            ],
+            "damage": "140",
+            "text": "..."
+          }
+        ],
+        "weaknesses": [
+          {
+            "type": "Fire",
+            "value": "\u00d72"
+          }
+        ],
+        "resistances": [],
+        "retreatCost": [
+          "Colorless",
+          "Colorless"
+        ]
+      },
+      "notes": {
+        "unreadable": [],
+        "stage": "Stage 2",
+        "types": [
+          "Grass"
+        ],
+        "setboxLetters": "MEG",
+        "isPromo": false,
+        "printYear": 2025
+      },
+      "_confidence": {
+        "name": 0.95,
+        "stage": 0.95,
+        "evolvesFrom": 0.95,
+        "hp": 0.95,
+        "types": 0.95,
+        "stamps": 0.95,
+        "promo": 0.95,
+        "number": 0.95,
+        "set": 0.95,
+        "setboxLetters": 0.95,
+        "printYear": 0.95,
+        "illustrator": 0.95,
+        "text": 0.95
+      }
+    }
+  },
+  {
+    "page_index": 22,
+    "image": "page_022.png",
+    "data": {
+      "name": "Howitzer",
+      "stage": "Basic",
+      "evolvesFrom": "",
+      "hp": 210,
+      "types": [
+        "Water"
+      ],
+      "stamps": [],
+      "promo": {
+        "isPromo": false,
+        "series": "",
+        "promoNumber": ""
+      },
+      "number": "069/189",
+      "set": {
+        "name": "Fall Back to Reload",
+        "code": "FBR",
+        "total": 189,
+        "symbolCode": ""
+      },
+      "setboxLetters": "",
+      "printYear": 2020,
+      "illustrator": "Unknown",
+      "text": {
+        "abilities": [
+          {
+            "name": "Fall Back to Reload",
+            "text": "Once during your turn, when this Pok\u00e9mon moves from the Active Spot to your Bench, you may use this Ability. Attach up to 2 Basic Water Energy cards from your hand to this Pok\u00e9mon.",
+            "kind": "Ability"
+          }
+        ],
+        "attacks": [
+          {
+            "name": "Aqua Launcher",
+            "cost": [
+              "Water"
+            ],
+            "damage": "210",
+            "text": "Discard all Energy from this Pok\u00e9mon."
+          }
+        ],
+        "weaknesses": [],
+        "resistances": [],
+        "retreatCost": []
+      },
+      "notes": {
+        "unreadable": [],
+        "stage": "Basic",
+        "types": [
+          "Water"
+        ],
+        "isPromo": false,
+        "printYear": 2020
+      },
+      "_confidence": {
+        "name": 0.95,
+        "stage": 0.95,
+        "evolvesFrom": 0.0,
+        "hp": 0.95,
+        "types": 0.95,
+        "stamps": 0.0,
+        "promo": 0.95,
+        "number": 0.95,
+        "set": 0.95,
+        "setboxLetters": 0.0,
+        "printYear": 0.95,
+        "illustrator": 0.0,
+        "text": 0.95
+      }
+    }
+  },
+  {
+    "page_index": 24,
+    "image": "page_024.png",
+    "data": {
+      "name": "Gardevoir",
+      "stage": "Stage 2",
+      "evolvesFrom": "Kirlia",
+      "hp": 30,
+      "types": [
+        "Psychic",
+        "Fairy"
+      ],
+      "stamps": [],
+      "promo": {
+        "isPromo": false,
+        "series": "",
+        "promoNumber": ""
+      },
+      "number": "046/189",
+      "set": {
+        "name": "Darkness Ablaze",
+        "code": "DAA",
+        "total": 189,
+        "symbolCode": ""
+      },
+      "setboxLetters": "MEG",
+      "printYear": 2020,
+      "illustrator": "5ban Graphics",
+      "text": {
+        "abilities": [],
+        "attacks": [
+          {
+            "name": "Absorb",
+            "cost": [
+              "Grass",
+              "Water"
+            ],
+            "damage": "30",
+            "text": "Heal 30 damage from this Pok\u00e9mon."
+          },
+          {
+            "name": "Pumped-Up Whip",
+            "cost": [
+              "Colorless",
+              "Colorless"
+            ],
+            "damage": "120+",
+            "text": "If this Pok\u00e9mon has at least 2 extra Energy attached, this attack does 140 more damage."
+          }
+        ],
+        "weaknesses": [],
+        "resistances": [],
+        "retreatCost": [
+          "Colorless",
+          "Colorless"
+        ]
+      },
+      "notes": {
+        "unreadable": [],
+        "stage": "Stage 2",
+        "types": [
+          "Psychic",
+          "Fairy"
+        ],
+        "setboxLetters": "MEG",
+        "isPromo": false,
+        "printYear": 2020
+      },
+      "_confidence": {
+        "name": 0.95,
+        "stage": 0.95,
+        "evolvesFrom": 0.9,
+        "hp": 0.95,
+        "types": 0.95,
+        "number": 0.95,
+        "set": 0.95,
+        "setboxLetters": 0.95,
+        "printYear": 0.95,
+        "illustrator": 0.95,
+        "text": 0.9
+      }
+    }
+  },
+  {
+    "page_index": 26,
+    "image": "page_026.png",
+    "data": {
+      "name": "Scorbunny",
+      "stage": "Basic",
+      "evolvesFrom": "",
+      "hp": 70,
+      "types": [
+        "Fire"
+      ],
+      "stamps": [],
+      "promo": {
+        "isPromo": false,
+        "series": "",
+        "promoNumber": ""
+      },
+      "number": "026/132",
+      "set": {
+        "name": "Unknown",
+        "code": "MEG",
+        "total": 132,
+        "symbolCode": ""
+      },
+      "setboxLetters": "I",
+      "printYear": 2025,
+      "illustrator": "svl",
+      "text": {
+        "abilities": [],
+        "attacks": [
+          {
+            "name": "Wild Kick",
+            "cost": [
+              "Colorless"
+            ],
+            "damage": "30",
+            "text": "Flip a coin. If tails, this attack does nothing."
+          }
+        ],
+        "weaknesses": [
+          {
+            "type": "Fighting",
+            "value": "\u00d72"
+          }
+        ],
+        "resistances": [],
+        "retreatCost": [
+          "Colorless"
+        ]
+      },
+      "notes": {
+        "unreadable": [],
+        "stage": "Basic",
+        "types": [
+          "Fire"
+        ],
+        "setboxLetters": "I",
+        "isPromo": false,
+        "printYear": 2025
+      },
+      "_confidence": {
+        "name": 0.95,
+        "stage": 0.95,
+        "evolvesFrom": 0.0,
+        "hp": 0.95,
+        "types": 0.95,
+        "stamps": 0.0,
+        "promo": 0.31666666666666665,
+        "number": 0.95,
+        "set": 0.475,
+        "setboxLetters": 0.95,
+        "printYear": 0.95,
+        "illustrator": 0.95,
+        "text": 0.95
+      }
+    }
+  },
+  {
+    "page_index": 29,
+    "image": "page_029.png",
+    "data": {
+      "name": "Hariyama",
+      "stage": "Stage 1",
+      "evolvesFrom": "Makuhita",
+      "hp": 150,
+      "types": [
+        "Fighting"
+      ],
+      "stamps": [],
+      "promo": {
+        "isPromo": false,
+        "series": "",
+        "promoNumber": ""
+      },
+      "number": "073/132",
+      "set": {
+        "name": "Mega Evolution",
+        "code": "MEG",
+        "total": 132,
+        "symbolCode": ""
+      },
+      "setboxLetters": "O",
+      "printYear": 2025,
+      "illustrator": "GOSSAN",
+      "text": {
+        "abilities": [
+          {
+            "name": "Heave-Ho Catcher",
+            "text": "Once during your turn, when you play this Pok\u00e9mon from your hand to evolve 1 of your Pok\u00e9mon, you may use this Ability. Switch in 1 of your opponent's Benched Pok\u00e9mon to the Active Spot.",
+            "kind": "Ability"
+          }
+        ],
+        "attacks": [
+          {
+            "name": "Wild Press",
+            "cost": [
+              "Fighting",
+              "Fighting",
+              "Fighting",
+              "Colorless"
+            ],
+            "damage": "210",
+            "text": "This Pok\u00e9mon also does 70 damage to itself."
+          }
+        ],
+        "weaknesses": [
+          {
+            "type": "Psychic",
+            "value": "\u00d72"
+          }
+        ],
+        "resistances": [],
+        "retreatCost": [
+          "Colorless",
+          "Colorless",
+          "Colorless"
+        ]
+      },
+      "notes": {
+        "unreadable": [],
+        "stage": "Stage 1",
+        "types": [
+          "Fighting"
+        ],
+        "setboxLetters": "O",
+        "isPromo": false,
+        "printYear": 2025
+      },
+      "_confidence": {
+        "name": 0.95,
+        "stage": 0.95,
+        "evolvesFrom": 0.95,
+        "hp": 0.95,
+        "types": 0.95,
+        "stamps": 0.95,
+        "promo": 0.95,
+        "number": 0.95,
+        "set": 0.95,
+        "setboxLetters": 0.95,
+        "printYear": 0.95,
+        "illustrator": 0.95,
+        "text": 0.95
+      }
+    }
+  },
+  {
+    "page_index": 30,
+    "image": "page_030.png",
+    "data": {
+      "name": "Clauncher",
+      "stage": "Basic",
+      "evolvesFrom": "",
+      "hp": 80,
+      "types": [
+        "Water"
+      ],
+      "stamps": [],
+      "promo": {
+        "isPromo": false,
+        "series": "",
+        "promoNumber": ""
+      },
+      "number": "037/132",
+      "set": {
+        "name": "Unknown",
+        "code": "EN",
+        "total": 132,
+        "symbolCode": ""
+      },
+      "setboxLetters": "MEG",
+      "printYear": 2025,
+      "illustrator": "Tomokazu Komiya",
+      "text": {
+        "abilities": [],
+        "attacks": [
+          {
+            "name": "Wave Splash",
+            "cost": [],
+            "damage": "50",
+            "text": "..."
+          }
+        ],
+        "weaknesses": [
+          {
+            "type": "Lightning",
+            "value": "\u00d72"
+          }
+        ],
+        "resistances": [],
+        "retreatCost": [
+          "Colorless",
+          "Colorless"
+        ]
+      },
+      "notes": {
+        "unreadable": [],
+        "stage": "Basic",
+        "types": [
+          "Water"
+        ],
+        "setboxLetters": "MEG",
+        "isPromo": false,
+        "printYear": 2025
+      },
+      "_confidence": {
+        "name": 0.95,
+        "stage": 0.95,
+        "hp": 0.95,
+        "types": 0.95,
+        "number": 0.95,
+        "set": 0.85,
+        "setboxLetters": 0.95,
+        "printYear": 0.95,
+        "illustrator": 0.95,
+        "attacks": 0.9,
+        "weaknesses": 0.9,
+        "retreatCost": 0.9
+      }
+    }
+  },
+  {
+    "page_index": 32,
+    "image": "page_032.png",
+    "data": {
+      "name": "Raikou",
+      "stage": "Basic",
+      "evolvesFrom": "",
+      "hp": 120,
+      "types": [
+        "Lightning"
+      ],
+      "stamps": [],
+      "promo": {
+        "isPromo": false,
+        "series": "",
+        "promoNumber": ""
+      },
+      "number": "048/132",
+      "set": {
+        "name": "",
+        "code": "",
+        "symbolCode": ""
+      },
+      "setboxLetters": "MEG",
+      "printYear": 2025,
+      "illustrator": "Takumi Wada",
+      "text": {
+        "abilities": [],
+        "attacks": [
+          {
+            "name": "Electro Fall",
+            "cost": [
+              "Lightning",
+              "Lightning"
+            ],
+            "damage": "30+",
+            "text": "If you have at least 4 Lightning Energy in play, this attack does 90 more damage."
+          }
+        ],
+        "weaknesses": [
+          {
+            "type": "Fighting",
+            "value": "\u00d72"
+          }
+        ],
+        "resistances": [],
+        "retreatCost": [
+          "Colorless"
+        ]
+      },
+      "notes": {
+        "unreadable": [],
+        "stage": "Basic",
+        "types": [
+          "Lightning"
+        ],
+        "setboxLetters": "MEG",
+        "isPromo": false,
+        "printYear": 2025
+      },
+      "_confidence": {
+        "name": 0.95,
+        "stage": 0.95,
+        "evolvesFrom": 0.95,
+        "hp": 0.95,
+        "types": 0.95,
+        "stamps": 0.95,
+        "promo": 0.95,
+        "number": 0.95,
+        "set": 0.95,
+        "setboxLetters": 0.95,
+        "printYear": 0.95,
+        "illustrator": 0.95,
+        "text": 0.95
+      }
+    }
+  },
+  {
+    "page_index": 35,
+    "image": "page_035.png",
+    "data": {
+      "name": "Bewear",
+      "stage": "Stage 1",
+      "evolvesFrom": "Stufful",
+      "hp": 130,
+      "types": [
+        "Colorless"
+      ],
+      "stamps": [],
+      "promo": {
+        "isPromo": false,
+        "series": "",
+        "promoNumber": ""
+      },
+      "number": "112/132",
+      "set": {
+        "name": "Unknown",
+        "code": "MEG",
+        "total": 132,
+        "symbolCode": ""
+      },
+      "setboxLetters": "MEG",
+      "printYear": 2025,
+      "illustrator": "HYOGONOSUKE",
+      "text": {
+        "abilities": [],
+        "attacks": [
+          {
+            "name": "Knuckle Punch",
+            "cost": [
+              "Colorless",
+              "Colorless"
+            ],
+            "damage": "50",
+            "text": ""
+          },
+          {
+            "name": "Hyper Lariat",
+            "cost": [
+              "Colorless",
+              "Colorless",
+              "Colorless"
+            ],
+            "damage": "100+",
+            "text": "Flip 2 coins. If both of them are heads, this attack does 100 more damage."
+          }
+        ],
+        "weaknesses": [
+          {
+            "type": "Fighting",
+            "value": "\u00d72"
+          }
+        ],
+        "resistances": [],
+        "retreatCost": [
+          "Colorless",
+          "Colorless",
+          "Colorless"
+        ]
+      },
+      "notes": {
+        "unreadable": [],
+        "stage": "Stage 1",
+        "types": [
+          "Colorless"
+        ],
+        "setboxLetters": "MEG",
+        "isPromo": false,
+        "printYear": 2025
+      },
+      "_confidence": {
+        "name": 0.95,
+        "stage": 0.95,
+        "evolvesFrom": 0.95,
+        "hp": 0.95,
+        "types": 0.95,
+        "number": 0.95,
+        "set": 0.85,
+        "setboxLetters": 0.95,
+        "printYear": 0.95,
+        "illustrator": 0.95,
+        "text": 0.9499999999999998
+      }
+    }
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "name": "Stufful",
+  "hp": "70",
+  "evolves_from": "",
+  "ability_name": "",
+  "ability_text": "",
+  "attacks": "Light Punch :: Colorless :: 10 | Flop :: Colorless/Colorless :: 20",
+  "set_code": "TM132",
+  "set_name": "",
+  "card_number": "111/132",
+  "artist": "Shibuzoh.",
+  "weakness": "Fighting \u00d72",
+  "resistance": "",
+  "retreat": "Colorless/Colorless",
+  "notes": "{\"stage\":\"Basic\",\"types\":[\"Colorless\"]}"
+}

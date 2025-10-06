@@ -1,0 +1,16 @@
+{
+  "name": "Meteorite Pok\u00e9mon",
+  "hp": "50",
+  "evolves_from": "",
+  "ability_name": "Lunar Cycle",
+  "ability_text": "Once during your turn, if you have Solrock in play, you may discard a Basic Energy card from your hand in order to use this Ability. Draw 3 cards. You can't use more than 1 Lunar Cycle Ability each turn.",
+  "attacks": "Power Gem :: Colorless :: 50 :: ",
+  "set_code": "",
+  "set_name": "",
+  "card_number": "0337",
+  "artist": "",
+  "weakness": "",
+  "resistance": "",
+  "retreat": "",
+  "notes": "{}"
+}

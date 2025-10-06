@@ -1,0 +1,365 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+PORT=5000
+AUTO_BROWSER=1
+MISSING_DEPS=0
+
+usage() {
+  cat <<'USAGE'
+PokeData launcher
+
+Usage: pokedata [--port PORT] [--no-browser]
+
+  --port PORT     Run the web app on the given port (default: 5000)
+  --no-browser    Skip opening the browser automatically
+  -h, --help      Show this help message
+USAGE
+}
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --port)
+      [[ $# -ge 2 ]] || { echo "Missing value for --port" >&2; exit 1; }
+      PORT="$2"
+      shift 2
+      ;;
+    --no-browser)
+      AUTO_BROWSER=0
+      shift
+      ;;
+    --help|-h)
+      usage
+      exit 0
+      ;;
+    *)
+      echo "Unknown option: $1" >&2
+      usage >&2
+      exit 1
+      ;;
+  esac
+done
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$SCRIPT_DIR"
+VENV_DIR="$PROJECT_ROOT/.venv"
+REQS_FILE="$PROJECT_ROOT/requirements.txt"
+REQS_HASH_FILE="$VENV_DIR/.requirements-hash"
+
+cd "$PROJECT_ROOT"
+
+die() {
+  echo "Error: $*" >&2
+  exit 1
+}
+
+check_python() {
+  if ! command -v python3 >/dev/null 2>&1; then
+    die "python3 not found. Install Python 3.9+ and retry."
+  fi
+  local py_version
+  py_version=$(python3 - <<'PY'
+import sys
+print("{}.{}".format(sys.version_info.major, sys.version_info.minor))
+PY
+  )
+  local major=${py_version%%.*}
+  local minor=${py_version##*.}
+  if (( major < 3 || (major == 3 && minor < 9) )); then
+    die "python3 >= 3.9 required (found $py_version)."
+  fi
+}
+
+ensure_poppler() {
+  if command -v pdftoppm >/dev/null 2>&1; then
+    return
+  fi
+
+  local candidates=(
+    "/opt/homebrew/opt/poppler/bin"
+    "/usr/local/opt/poppler/bin"
+    "/usr/local/bin"
+    "/opt/homebrew/bin"
+  )
+
+  for path_dir in "${candidates[@]}"; do
+    if [[ -x "$path_dir/pdftoppm" ]]; then
+      if [[ ":$PATH:" != *":$path_dir:"* ]]; then
+        export PATH="$path_dir:$PATH"
+        echo "Added Poppler binaries to PATH: $path_dir"
+        hash -r 2>/dev/null || true
+      fi
+      return
+    fi
+  done
+
+  if command -v brew >/dev/null 2>&1; then
+    if brew list --formula poppler >/dev/null 2>&1; then
+      echo "Poppler formula already installed via Homebrew" >&2
+    else
+      echo "Attempting to install Poppler via Homebrew..."
+      if brew install poppler >/dev/null 2>&1; then
+        echo "Poppler installed via Homebrew"
+        ensure_poppler
+        return
+      else
+        echo "⚠️  Homebrew installation of Poppler failed. Review brew output or install manually." >&2
+      fi
+    fi
+  fi
+
+  echo "⚠️  Poppler (pdftoppm) not found. Install with 'brew install poppler' or add it to PATH." >&2
+  MISSING_DEPS=1
+}
+
+ensure_tesseract() {
+  if command -v tesseract >/dev/null 2>&1; then
+    return
+  fi
+  if command -v brew >/dev/null 2>&1; then
+    if brew list --formula tesseract >/dev/null 2>&1; then
+      echo "Tesseract formula already installed via Homebrew" >&2
+    else
+      echo "Attempting to install Tesseract via Homebrew..."
+      if brew install tesseract >/dev/null 2>&1; then
+        echo "Tesseract installed via Homebrew"
+        return
+      else
+        echo "⚠️  Homebrew installation of Tesseract failed. Review brew output or install manually." >&2
+      fi
+    fi
+  fi
+
+  echo "⚠️  Tesseract not found. Install with 'brew install tesseract' or your package manager." >&2
+  MISSING_DEPS=1
+}
+
+ensure_virtualenv() {
+  if [[ ! -d "$VENV_DIR" ]]; then
+    echo "Creating virtual environment in $VENV_DIR"
+    python3 -m venv "$VENV_DIR" || die "Failed to create virtualenv"
+  fi
+
+  # shellcheck disable=SC1091
+  source "$VENV_DIR/bin/activate"
+
+  PIP_CMD="$VENV_DIR/bin/pip"
+  PYTHON_CMD="$VENV_DIR/bin/python"
+
+  "$PYTHON_CMD" -m pip --disable-pip-version-check install --upgrade pip >/dev/null
+
+  local current_hash=""
+  if [[ -f "$REQS_HASH_FILE" ]]; then
+    current_hash=$(<"$REQS_HASH_FILE")
+  fi
+
+  local new_hash
+  new_hash=$(python3 - <<'PY'
+from pathlib import Path
+import hashlib
+req = Path("requirements.txt")
+if not req.exists():
+    print("")
+else:
+    print(hashlib.sha1(req.read_bytes()).hexdigest())
+PY
+  )
+
+  if [[ -z "$new_hash" ]]; then
+    die "requirements.txt not found at $REQS_FILE"
+  fi
+
+  if [[ "$new_hash" != "$current_hash" ]]; then
+    echo "Installing Python dependencies (requirements changed)"
+    if ! "$PIP_CMD" install -r "$REQS_FILE"; then
+      echo "⚠️  Failed to install requirements. Check your network connection or install manually." >&2
+      MISSING_DEPS=1
+    else
+      echo "$new_hash" >"$REQS_HASH_FILE"
+    fi
+  else
+    echo "Python dependencies up to date"
+  fi
+
+  if ! "$PIP_CMD" check >/dev/null 2>&1; then
+    echo "Detected pip dependency issues. Attempting repair..."
+    if ! "$PIP_CMD" install --force-reinstall -r "$REQS_FILE"; then
+      echo "⚠️  Unable to repair Python packages automatically. Run '$PIP_CMD install -r requirements.txt' manually." >&2
+      MISSING_DEPS=1
+    fi
+  fi
+
+  export PIP_CMD PYTHON_CMD
+}
+
+verify_python_packages() {
+  if [[ -z "${PYTHON_CMD:-}" ]]; then
+    die "PYTHON_CMD not set"
+  fi
+  if ! "$PYTHON_CMD" - <<'PY' >/dev/null 2>&1
+import importlib
+modules = [
+    "flask",
+    "pytesseract",
+    "PIL",
+    "pdf2image",
+    "openai",
+    "jsonschema",
+]
+missing = []
+for name in modules:
+    try:
+        importlib.import_module(name)
+    except Exception:  # pragma: no cover
+        missing.append(name)
+if missing:
+    raise SystemExit("Missing Python packages: " + ", ".join(missing))
+PY
+  then
+    echo "⚠️  Missing Python packages in the virtualenv. Run '$PIP_CMD install -r requirements.txt'." >&2
+    MISSING_DEPS=1
+  fi
+}
+
+check_system_deps() {
+  if [[ "${POKEDATA_REMOTE_OCR:-1}" == "0" ]]; then
+    ensure_tesseract
+  fi
+  ensure_poppler
+}
+
+cleanup_port() {
+  local port="$1"
+  local pids=""
+
+  if command -v lsof >/dev/null 2>&1; then
+    pids=$(lsof -ti tcp:"$port" 2>/dev/null || true)
+  elif command -v fuser >/dev/null 2>&1; then
+    if fuser -k "$port"/tcp >/dev/null 2>&1; then
+      echo "Cleared port $port via fuser"
+      sleep 1
+      return
+    fi
+  fi
+
+  if [[ -n "$pids" ]]; then
+    echo "Port $port in use; terminating PID(s): $pids"
+    for pid in $pids; do
+      if [[ "$pid" == "$$" ]]; then
+        continue
+      fi
+      kill "$pid" >/dev/null 2>&1 || true
+      sleep 0.2
+      if kill -0 "$pid" >/dev/null 2>&1; then
+        kill -9 "$pid" >/dev/null 2>&1 || true
+      fi
+    done
+    sleep 1
+    if command -v lsof >/dev/null 2>&1 && lsof -ti tcp:"$port" >/dev/null 2>&1; then
+      echo "⚠️  Port $port still appears busy. Close conflicting apps and retry." >&2
+    fi
+  fi
+}
+
+wait_for_port() {
+  local host="$1"
+  local port="$2"
+  local attempts=30
+  echo "Waiting for server at $host:$port ..."
+  export POKEDATA_WAIT_HOST="$host"
+  export POKEDATA_WAIT_PORT="$port"
+  for ((i=0; i<attempts; i++)); do
+    if "$PYTHON_CMD" - <<'PY' >/dev/null 2>&1; then
+import os, socket, sys
+host = os.environ["POKEDATA_WAIT_HOST"]
+port = int(os.environ["POKEDATA_WAIT_PORT"])
+try:
+    with socket.create_connection((host, port), timeout=1):
+        pass
+except OSError:
+    sys.exit(1)
+else:
+    sys.exit(0)
+PY
+      echo "Server is up"
+      unset POKEDATA_WAIT_HOST POKEDATA_WAIT_PORT
+      return 0
+    fi
+    sleep 1
+  done
+  unset POKEDATA_WAIT_HOST POKEDATA_WAIT_PORT
+  echo "Gave up waiting for server." >&2
+  return 1
+}
+
+open_browser() {
+  local url="http://127.0.0.1:${PORT}/"
+  if (( AUTO_BROWSER == 0 )); then
+    echo "Skip auto-opening browser. Visit $url"
+    return
+  fi
+  echo "Opening $url in default browser"
+  export POKEDATA_URL="$url"
+  if "$PYTHON_CMD" - <<'PY' >/dev/null 2>&1; then
+import os, webbrowser
+url = os.environ["POKEDATA_URL"]
+webbrowser.open(url)
+PY
+    unset POKEDATA_URL
+    return
+  fi
+  unset POKEDATA_URL
+  if command -v open >/dev/null 2>&1; then
+    open "$url"
+  elif command -v xdg-open >/dev/null 2>&1; then
+    xdg-open "$url"
+  else
+    echo "Please open $url manually" >&2
+  fi
+}
+
+launch_server() {
+  local host="127.0.0.1"
+
+  export FLASK_APP=app
+  export FLASK_ENV=production
+
+  cleanup_port "$PORT"
+
+  echo "Starting Flask server on $host:$PORT"
+  "$PYTHON_CMD" -m flask --app app run --host "$host" --port "$PORT" --no-reload --no-debugger &
+  local flask_pid=$!
+
+  cleanup() {
+    echo
+    echo "Stopping server..."
+    if [[ -n "${flask_pid:-}" ]]; then
+      kill "$flask_pid" >/dev/null 2>&1 || true
+      wait "$flask_pid" 2>/dev/null || true
+    fi
+    echo "Logs saved to $PROJECT_ROOT/logs/pokedata.log"
+  }
+  trap cleanup EXIT INT TERM
+
+  if wait_for_port "$host" "$PORT"; then
+    echo "Logs: $PROJECT_ROOT/logs/pokedata.log"
+    open_browser
+  fi
+
+  wait "$flask_pid"
+}
+
+main() {
+  check_python
+  check_system_deps
+  ensure_virtualenv
+  verify_python_packages
+  if (( MISSING_DEPS != 0 )); then
+    echo "Resolve the issues above then rerun ./pokedata" >&2
+    exit 1
+  fi
+  launch_server
+}
+
+main "$@"

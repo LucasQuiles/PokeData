@@ -1,0 +1,70 @@
+{
+  "name": "Celebi",
+  "stage": "Basic",
+  "evolvesFrom": "",
+  "hp": 80,
+  "types": [
+    "Grass"
+  ],
+  "stamps": [],
+  "promo": {
+    "isPromo": true,
+    "series": "EN",
+    "promoNumber": "012"
+  },
+  "number": "012/132",
+  "set": {
+    "name": "Mega",
+    "code": "MEG",
+    "total": 132,
+    "symbolCode": ""
+  },
+  "setboxLetters": "MEG",
+  "printYear": 2025,
+  "illustrator": "Naoki Saito",
+  "text": {
+    "abilities": [],
+    "attacks": [
+      {
+        "name": "Traverse Time",
+        "cost": [],
+        "damage": "",
+        "text": "Search your deck for up to 3 in any combination of Pok\u00e9mon and Stadium cards, reveal them, and put them into your hand. Then, shuffle your deck."
+      },
+      {
+        "name": "Solar Cutter",
+        "cost": [
+          "Grass"
+        ],
+        "damage": "30",
+        "text": ""
+      }
+    ],
+    "weaknesses": [
+      {
+        "type": "Fire",
+        "value": "\u00d72"
+      }
+    ],
+    "resistances": [],
+    "retreatCost": []
+  },
+  "notes": {
+    "unreadable": []
+  },
+  "_confidence": {
+    "name": 0.95,
+    "stage": 0.95,
+    "evolvesFrom": 0.9,
+    "hp": 0.95,
+    "types": 0.95,
+    "stamps": 0.9,
+    "promo": 0.95,
+    "number": 0.95,
+    "set": 0.95,
+    "setboxLetters": 0.95,
+    "printYear": 0.95,
+    "illustrator": 0.95,
+    "text": 0.9
+  }
+}

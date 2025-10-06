@@ -1,0 +1,75 @@
+{
+  "name": "Stufful",
+  "stage": "Basic",
+  "evolvesFrom": null,
+  "hp": 70,
+  "types": [
+    "Colorless"
+  ],
+  "stamps": [],
+  "promo": {
+    "isPromo": false,
+    "series": null,
+    "promoNumber": null
+  },
+  "number": "111/132",
+  "set": {
+    "name": "TM",
+    "code": "TM",
+    "total": 132,
+    "symbolCode": null
+  },
+  "setboxLetters": "MEG",
+  "printYear": 2025,
+  "illustrator": "Shibuzoh",
+  "text": {
+    "abilities": [],
+    "attacks": [
+      {
+        "name": "Light Punch",
+        "cost": [
+          "Colorless"
+        ],
+        "damage": "10",
+        "text": null
+      },
+      {
+        "name": "Flop",
+        "cost": [
+          "Colorless",
+          "Colorless"
+        ],
+        "damage": "20",
+        "text": null
+      }
+    ],
+    "weaknesses": [
+      {
+        "type": "Fighting",
+        "value": "\u00d72"
+      }
+    ],
+    "resistances": [],
+    "retreatCost": [
+      "Colorless",
+      "Colorless"
+    ]
+  },
+  "notes": {
+    "unreadable": []
+  },
+  "_confidence": {
+    "name": 0.98,
+    "stage": 0.95,
+    "hp": 0.95,
+    "types": 0.95,
+    "number": 0.95,
+    "set": 0.95,
+    "setboxLetters": 0.95,
+    "printYear": 0.95,
+    "illustrator": 0.95,
+    "attacks": 0.95,
+    "weaknesses": 0.95,
+    "retreatCost": 0.95
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "name": "",
+  "stage": "",
+  "evolvesFrom": "",
+  "hp": "",
+  "types": [],
+  "stamps": [],
+  "promo": {
+    "isPromo": false,
+    "series": "",
+    "promoNumber": ""
+  },
+  "number": null,
+  "set": {
+    "name": "",
+    "code": "",
+    "symbolCode": ""
+  },
+  "setboxLetters": "",
+  "illustrator": "",
+  "text": {
+    "abilities": [],
+    "attacks": [],
+    "weaknesses": [],
+    "resistances": [],
+    "retreatCost": []
+  },
+  "notes": {
+    "unreadable": [
+      "name",
+      "stage",
+      "evolvesFrom",
+      "hp",
+      "number",
+      "set.name",
+      "set.code",
+      "set.total",
+      "set.symbolCode",
+      "setboxLetters",
+      "printYear",
+      "illustrator"
+    ]
+  },
+  "_confidence": {
+    "name": 0,
+    "stage": 0,
+    "evolvesFrom": 0,
+    "hp": 0,
+    "types": 0,
+    "stamps": 0,
+    "promo.isPromo": 1,
+    "promo.series": 0,
+    "promo.promoNumber": 0,
+    "number": 0,
+    "set.name": 0,
+    "set.code": 0,
+    "set.total": 0,
+    "set.symbolCode": 0,
+    "setboxLetters": 0,
+    "printYear": 0,
+    "illustrator": 0,
+    "text.abilities": 0,
+    "text.attacks": 0,
+    "text.weaknesses": 0,
+    "text.resistances": 0,
+    "text.retreatCost": 0
+  }
+}

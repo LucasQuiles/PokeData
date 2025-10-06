@@ -1,0 +1,422 @@
+2025-10-05 21:03:50,245 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474433, dpi=300, limit=0
+2025-10-05 21:03:56,693 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_o8fhe8dq/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-05 21:03:56,701 | INFO | pokedata.pipeline | Processing 74 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_o8fhe8dq/FirstScan.pdf (dpi=300, limit=0)
+2025-10-05 21:04:16,545 | INFO | pokedata.pipeline | Wrote CSV /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_o8fhe8dq/FirstScan_cards.csv with 74 row(s)
+2025-10-05 21:04:16,550 | INFO | pokedata.web | Web processing complete: FirstScan.pdf -> FirstScan_cards.csv (74 rows)
+2025-10-05 21:26:24,365 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474433, dpi=300, limit=0
+2025-10-05 21:26:28,715 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_bete3vd9/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-05 21:26:28,723 | INFO | pokedata.pipeline | Processing 74 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_bete3vd9/FirstScan.pdf (dpi=300, limit=0)
+2025-10-05 21:26:43,839 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474433, dpi=300, limit=0
+2025-10-05 21:26:48,723 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_x87z3m2g/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-05 21:26:48,734 | INFO | pokedata.pipeline | Processing 74 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_x87z3m2g/FirstScan.pdf (dpi=300, limit=0)
+2025-10-05 21:26:48,850 | INFO | pokedata.pipeline | Wrote CSV /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_bete3vd9/FirstScan_cards.csv with 74 row(s)
+2025-10-05 21:26:48,981 | INFO | pokedata.web | Web processing complete: FirstScan.pdf -> FirstScan_cards.csv (74 rows)
+2025-10-05 21:27:08,613 | INFO | pokedata.pipeline | Wrote CSV /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_x87z3m2g/FirstScan_cards.csv with 74 row(s)
+2025-10-05 21:27:08,722 | INFO | pokedata.web | Web processing complete: FirstScan.pdf -> FirstScan_cards.csv (74 rows)
+2025-10-05 21:43:49,086 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474433, dpi=300, limit=0
+2025-10-05 21:43:53,860 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_vj7rj38e/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-05 21:43:53,872 | INFO | pokedata.pipeline | Processing 74 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_vj7rj38e/FirstScan.pdf (dpi=300, limit=0)
+2025-10-05 21:44:05,811 | INFO | pokedata.review | Saved 14 annotation(s) for 20251006-012648_firstscan-pdf/page_002.png
+2025-10-05 21:44:14,468 | INFO | pokedata.pipeline | Wrote CSV /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_vj7rj38e/FirstScan_cards.csv with 74 row(s)
+2025-10-05 21:44:14,599 | INFO | pokedata.review | Stored run 20251006-014414_firstscan-pdf with 74 pages
+2025-10-05 21:44:14,607 | INFO | pokedata.web | Web processing complete: FirstScan.pdf -> FirstScan_cards.csv (74 rows)
+2025-10-05 21:50:08,977 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474433, dpi=300, limit=0
+2025-10-05 21:50:13,298 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata__ownqhp3/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-05 21:50:13,307 | INFO | pokedata.pipeline | Processing 74 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata__ownqhp3/FirstScan.pdf (dpi=300, limit=0)
+2025-10-05 21:50:32,971 | INFO | pokedata.pipeline | Wrote CSV /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata__ownqhp3/FirstScan_cards.csv with 74 row(s)
+2025-10-05 21:50:33,030 | INFO | pokedata.review | Stored run 20251006-015032_firstscan-pdf with 74 pages
+2025-10-05 21:50:33,036 | INFO | pokedata.web | Web processing complete: FirstScan.pdf -> FirstScan_cards.csv (74 rows)
+2025-10-05 22:45:32,301 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474433, dpi=300, limit=0
+2025-10-05 22:45:36,867 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_412561cj/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-05 22:45:36,880 | INFO | pokedata.pipeline | Processing 74 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_412561cj/FirstScan.pdf (dpi=300, limit=0)
+2025-10-05 22:45:37,269 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_001.png: Responses.create() got an unexpected keyword argument 'response_format'
+2025-10-05 22:45:38,512 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_002.png: Responses.create() got an unexpected keyword argument 'response_format'
+2025-10-05 22:45:40,383 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_003.png: Responses.create() got an unexpected keyword argument 'response_format'
+2025-10-05 22:45:41,511 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_004.png: Responses.create() got an unexpected keyword argument 'response_format'
+2025-10-05 22:45:43,376 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_005.png: Responses.create() got an unexpected keyword argument 'response_format'
+2025-10-05 22:45:44,523 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_006.png: Responses.create() got an unexpected keyword argument 'response_format'
+2025-10-05 22:47:16,514 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474433, dpi=300, limit=0
+2025-10-05 22:47:20,894 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_kr5pts_1/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-05 22:47:20,900 | INFO | pokedata.pipeline | Processing 74 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_kr5pts_1/FirstScan.pdf (dpi=300, limit=0)
+2025-10-05 22:47:23,826 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_001.png: Error code: 400 - {'error': {'message': "Unknown parameter: 'input[1].content[1].image_base64'.", 'type': 'invalid_request_error', 'param': 'input[1].content[1].image_base64', 'code': 'unknown_parameter'}}
+2025-10-05 22:47:26,383 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_002.png: Error code: 400 - {'error': {'message': "Unknown parameter: 'input[1].content[1].image_base64'.", 'type': 'invalid_request_error', 'param': 'input[1].content[1].image_base64', 'code': 'unknown_parameter'}}
+2025-10-05 22:48:31,269 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474433, dpi=300, limit=0
+2025-10-05 22:48:35,649 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_j6mqog7f/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-05 22:48:35,656 | INFO | pokedata.pipeline | Processing 74 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_j6mqog7f/FirstScan.pdf (dpi=300, limit=0)
+2025-10-05 22:48:36,864 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_001.png: Error code: 400 - {'error': {'message': "Unknown parameter: 'input[1].content[1].image'.", 'type': 'invalid_request_error', 'param': 'input[1].content[1].image', 'code': 'unknown_parameter'}}
+2025-10-05 22:48:39,305 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_002.png: Error code: 400 - {'error': {'message': "Unknown parameter: 'input[1].content[1].image'.", 'type': 'invalid_request_error', 'param': 'input[1].content[1].image', 'code': 'unknown_parameter'}}
+2025-10-05 22:48:42,020 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_003.png: Error code: 400 - {'error': {'message': "Unknown parameter: 'input[1].content[1].image'.", 'type': 'invalid_request_error', 'param': 'input[1].content[1].image', 'code': 'unknown_parameter'}}
+2025-10-05 22:50:27,026 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474433, dpi=300, limit=0
+2025-10-05 22:50:31,402 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_2myzjcpm/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-05 22:50:31,413 | INFO | pokedata.pipeline | Processing 74 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_2myzjcpm/FirstScan.pdf (dpi=300, limit=0)
+2025-10-05 22:50:39,774 | WARNING | pokedata.remote_ocr | Remote OCR returned invalid JSON: Expecting value: line 1 column 1 (char 0)
+2025-10-05 22:50:39,774 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_001.png
+2025-10-05 22:50:47,723 | WARNING | pokedata.remote_ocr | Remote OCR returned invalid JSON: Expecting value: line 1 column 1 (char 0)
+2025-10-05 22:50:47,724 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_002.png
+2025-10-05 23:06:09,128 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474433, dpi=300, limit=0
+2025-10-05 23:06:13,559 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_58okfmy1/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-05 23:06:13,568 | INFO | pokedata.pipeline | Processing 74 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_58okfmy1/FirstScan.pdf (dpi=300, limit=0)
+2025-10-05 23:06:13,774 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_001.png: Responses.create() got an unexpected keyword argument 'response_format'
+2025-10-05 23:06:14,940 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_002.png: Responses.create() got an unexpected keyword argument 'response_format'
+2025-10-05 23:06:16,866 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_003.png: Responses.create() got an unexpected keyword argument 'response_format'
+2025-10-05 23:06:18,068 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_004.png: Responses.create() got an unexpected keyword argument 'response_format'
+2025-10-05 23:06:20,418 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_005.png: Responses.create() got an unexpected keyword argument 'response_format'
+2025-10-05 23:06:21,722 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_006.png: Responses.create() got an unexpected keyword argument 'response_format'
+2025-10-05 23:07:52,109 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474433, dpi=300, limit=0
+2025-10-05 23:07:56,480 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_5wzbjl3m/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-05 23:07:56,485 | INFO | pokedata.pipeline | Processing 74 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_5wzbjl3m/FirstScan.pdf (dpi=300, limit=0)
+2025-10-05 23:08:02,495 | WARNING | pokedata.remote_ocr | Remote OCR returned invalid JSON: Expecting value: line 1 column 1 (char 0)
+2025-10-05 23:08:02,495 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_001.png: Expecting value: line 1 column 1 (char 0)
+2025-10-05 23:08:11,157 | WARNING | pokedata.remote_ocr | Remote OCR returned invalid JSON: Expecting value: line 1 column 1 (char 0)
+2025-10-05 23:08:11,158 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_002.png: Expecting value: line 1 column 1 (char 0)
+2025-10-05 23:08:17,663 | WARNING | pokedata.remote_ocr | Remote OCR returned invalid JSON: Expecting value: line 1 column 1 (char 0)
+2025-10-05 23:08:17,665 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_003.png: Expecting value: line 1 column 1 (char 0)
+2025-10-05 23:08:23,831 | WARNING | pokedata.remote_ocr | Remote OCR returned invalid JSON: Expecting value: line 1 column 1 (char 0)
+2025-10-05 23:08:23,832 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_004.png: Expecting value: line 1 column 1 (char 0)
+2025-10-05 23:10:13,418 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474433, dpi=300, limit=0
+2025-10-05 23:10:17,817 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_flmx6s74/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-05 23:10:17,824 | INFO | pokedata.pipeline | Processing 74 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_flmx6s74/FirstScan.pdf (dpi=300, limit=0)
+2025-10-05 23:10:25,220 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_001.png: Remote OCR JSON failed validation: []: Additional properties are not allowed ('ability_name', 'ability_text', 'artist', 'attacks', 'card_number', 'evolves_from', 'notes', 'resistance', 'retreat', 'set_code', 'set_name', 'weakness' were unexpected); []: 'stage' is a required property; []: 'types' is a required property; []: 'set' is a required property; []: 'number' is a required property; []: 'text' is a required property; ['hp']: '' is not of type 'integer'; ['name']: '' should be non-empty
+2025-10-05 23:10:32,792 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_002.png: Remote OCR JSON failed validation: []: Additional properties are not allowed ('ability_name', 'ability_text', 'artist', 'attacks', 'card_number', 'evolves_from', 'notes', 'resistance', 'retreat', 'set_code', 'set_name', 'weakness' were unexpected); []: 'stage' is a required property; []: 'types' is a required property; []: 'set' is a required property; []: 'number' is a required property; []: 'text' is a required property; ['hp']: '70' is not of type 'integer'
+2025-10-05 23:10:38,435 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_003.png: Remote OCR JSON failed validation: []: Additional properties are not allowed ('ability_name', 'ability_text', 'artist', 'attacks', 'card_number', 'evolves_from', 'notes', 'resistance', 'retreat', 'set_code', 'set_name', 'weakness' were unexpected); []: 'stage' is a required property; []: 'types' is a required property; []: 'set' is a required property; []: 'number' is a required property; []: 'text' is a required property; ['hp']: '' is not of type 'integer'; ['name']: '' should be non-empty
+2025-10-05 23:14:19,408 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474433, dpi=300, limit=0
+2025-10-05 23:14:21,653 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474433, dpi=300, limit=0
+2025-10-05 23:14:23,979 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_t89veh_x/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-05 23:14:23,985 | INFO | pokedata.pipeline | Front-only mode: filtered 74 → 37 images
+2025-10-05 23:14:23,986 | INFO | pokedata.pipeline | Processing 37 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_t89veh_x/FirstScan.pdf (dpi=300, limit=0)
+2025-10-05 23:14:26,162 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_p2wx_ibm/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-05 23:14:26,170 | INFO | pokedata.pipeline | Front-only mode: filtered 74 → 37 images
+2025-10-05 23:14:26,171 | INFO | pokedata.pipeline | Processing 37 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_p2wx_ibm/FirstScan.pdf (dpi=300, limit=0)
+2025-10-05 23:14:31,879 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_002.png
+2025-10-05 23:14:32,196 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_002.png
+2025-10-05 23:14:39,884 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_004.png
+2025-10-05 23:14:41,410 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_004.png
+2025-10-05 23:14:47,725 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_006.png
+2025-10-05 23:14:47,958 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_006.png
+2025-10-05 23:14:54,098 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_008.png
+2025-10-05 23:14:55,150 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_008.png
+2025-10-05 23:15:00,285 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_010.png
+2025-10-05 23:15:01,158 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_010.png
+2025-10-05 23:15:07,211 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_012.png
+2025-10-05 23:15:07,381 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_012.png
+2025-10-05 23:15:15,321 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_014.png
+2025-10-05 23:15:15,888 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_014.png
+2025-10-05 23:15:21,359 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_016.png
+2025-10-05 23:15:21,903 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_016.png
+2025-10-05 23:15:26,298 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_018.png
+2025-10-05 23:15:26,539 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_018.png
+2025-10-05 23:15:33,033 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_020.png
+2025-10-05 23:15:33,313 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_020.png
+2025-10-05 23:15:38,766 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_022.png
+2025-10-05 23:15:38,987 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_022.png
+2025-10-05 23:15:44,809 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_024.png
+2025-10-05 23:15:46,019 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_024.png
+2025-10-05 23:15:49,475 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0000.json
+2025-10-05 23:15:49,477 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_026.png: Remote OCR JSON failed validation: ['name']: '' should be non-empty
+2025-10-05 23:15:50,233 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0001.json
+2025-10-05 23:15:50,233 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_026.png: Remote OCR JSON failed validation: ['name']: '' should be non-empty
+2025-10-05 23:15:54,854 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0002.json
+2025-10-05 23:15:54,854 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_028.png: Remote OCR JSON failed validation: ['name']: '' should be non-empty
+2025-10-05 23:15:56,416 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0003.json
+2025-10-05 23:15:56,417 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_028.png: Remote OCR JSON failed validation: ['name']: '' should be non-empty
+2025-10-05 23:16:01,465 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_030.png
+2025-10-05 23:16:03,142 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_030.png
+2025-10-05 23:16:06,607 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_032.png
+2025-10-05 23:16:08,411 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_032.png
+2025-10-05 23:16:12,468 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_034.png
+2025-10-05 23:16:14,680 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_034.png
+2025-10-05 23:16:18,913 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_036.png
+2025-10-05 23:16:21,122 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_036.png
+2025-10-05 23:16:24,067 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_038.png
+2025-10-05 23:16:27,653 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_038.png
+2025-10-05 23:16:28,635 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_040.png
+2025-10-05 23:16:31,868 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_040.png
+2025-10-05 23:16:35,195 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_042.png
+2025-10-05 23:16:38,430 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_042.png
+2025-10-05 23:16:40,411 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_044.png
+2025-10-05 23:16:43,690 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_044.png
+2025-10-05 23:16:46,458 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_046.png
+2025-10-05 23:16:49,704 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_046.png
+2025-10-05 23:16:51,695 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_048.png
+2025-10-05 23:16:56,408 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_048.png
+2025-10-05 23:16:57,523 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0004.json
+2025-10-05 23:16:57,523 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_050.png: Remote OCR JSON failed validation: ['name']: '' should be non-empty
+2025-10-05 23:16:59,954 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0005.json
+2025-10-05 23:16:59,954 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_050.png: Remote OCR JSON failed validation: ['name']: '' should be non-empty
+2025-10-05 23:17:04,822 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_052.png
+2025-10-05 23:17:06,231 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_052.png
+2025-10-05 23:17:11,647 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_054.png
+2025-10-05 23:17:15,281 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_054.png
+2025-10-05 23:17:16,124 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0006.json
+2025-10-05 23:17:16,125 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_056.png: Remote OCR JSON failed validation: ['name']: '' should be non-empty
+2025-10-05 23:17:19,397 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0007.json
+2025-10-05 23:17:19,397 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_056.png: Remote OCR JSON failed validation: ['name']: '' should be non-empty
+2025-10-05 23:17:23,310 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_058.png
+2025-10-05 23:17:27,010 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_058.png
+2025-10-05 23:17:28,683 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_060.png
+2025-10-05 23:17:31,852 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_060.png
+2025-10-05 23:17:34,399 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_062.png
+2025-10-05 23:17:37,739 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_062.png
+2025-10-05 23:17:39,707 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_064.png
+2025-10-05 23:17:42,652 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_064.png
+2025-10-05 23:17:45,241 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_066.png
+2025-10-05 23:17:47,311 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_066.png
+2025-10-05 23:17:49,548 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0008.json
+2025-10-05 23:17:49,548 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_068.png: Remote OCR JSON failed validation: ['name']: '' should be non-empty
+2025-10-05 23:17:51,495 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0009.json
+2025-10-05 23:17:51,496 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_068.png: Remote OCR JSON failed validation: ['name']: '' should be non-empty
+2025-10-05 23:17:56,091 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_070.png
+2025-10-05 23:17:59,262 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_070.png
+2025-10-05 23:18:00,797 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0010.json
+2025-10-05 23:18:00,797 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_072.png: Remote OCR JSON failed validation: ['name']: '' should be non-empty
+2025-10-05 23:18:04,081 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0011.json
+2025-10-05 23:18:04,081 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_072.png: Remote OCR JSON failed validation: ['name']: '' should be non-empty
+2025-10-05 23:18:08,380 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_074.png
+2025-10-05 23:18:08,386 | INFO | pokedata.pipeline | Wrote CSV /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_t89veh_x/FirstScan_cards.csv with 37 row(s)
+2025-10-05 23:18:08,498 | INFO | pokedata.review | Stored run 20251006-031808_firstscan-pdf with 37 pages
+2025-10-05 23:18:08,547 | INFO | pokedata.web | Web processing complete: FirstScan.pdf -> FirstScan_cards.csv (37 rows)
+2025-10-05 23:18:11,042 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_074.png
+2025-10-05 23:18:11,046 | INFO | pokedata.pipeline | Wrote CSV /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_p2wx_ibm/FirstScan_cards.csv with 37 row(s)
+2025-10-05 23:18:11,143 | INFO | pokedata.review | Stored run 20251006-031811_firstscan-pdf with 37 pages
+2025-10-05 23:18:11,178 | INFO | pokedata.web | Web processing complete: FirstScan.pdf -> FirstScan_cards.csv (37 rows)
+2025-10-05 23:33:53,916 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474433, dpi=300, limit=0
+2025-10-05 23:33:58,226 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata__3tp6zdq/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-05 23:33:58,233 | INFO | pokedata.pipeline | Front-only mode: filtered 74 → 37 images
+2025-10-05 23:33:58,233 | INFO | pokedata.pipeline | Processing 37 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata__3tp6zdq/FirstScan.pdf (dpi=300, limit=0)
+2025-10-05 23:34:03,817 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_002.png
+2025-10-05 23:34:09,024 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_004.png
+2025-10-05 23:34:15,679 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_006.png
+2025-10-05 23:34:20,726 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_008.png
+2025-10-05 23:34:26,163 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_010.png
+2025-10-05 23:34:31,533 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_012.png
+2025-10-05 23:34:39,520 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_014.png
+2025-10-05 23:34:45,066 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_016.png
+2025-10-05 23:34:49,887 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_018.png
+2025-10-05 23:34:55,591 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_020.png
+2025-10-05 23:35:01,590 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_022.png
+2025-10-05 23:35:07,810 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_024.png
+2025-10-05 23:35:11,797 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0012.json
+2025-10-05 23:35:11,798 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_026.png: Remote OCR JSON failed validation: ['name']: '' should be non-empty
+2025-10-05 23:35:17,704 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0013.json
+2025-10-05 23:35:17,706 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_028.png: Remote OCR JSON failed validation: ['name']: '' should be non-empty
+2025-10-05 23:35:23,387 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_030.png
+2025-10-05 23:35:29,064 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_032.png
+2025-10-05 23:35:34,427 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_034.png
+2025-10-05 23:35:39,660 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_036.png
+2025-10-05 23:35:44,360 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_038.png
+2025-10-05 23:35:48,762 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_040.png
+2025-10-05 23:45:35,599 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474433, dpi=300, limit=0
+2025-10-05 23:45:40,028 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_nw960jaj/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-05 23:45:40,035 | INFO | pokedata.pipeline | Front-only mode: filtered 74 → 37 images
+2025-10-05 23:45:40,035 | INFO | pokedata.pipeline | Processing 37 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_nw960jaj/FirstScan.pdf (dpi=300, limit=0)
+2025-10-05 23:45:47,572 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0014.json
+2025-10-05 23:45:47,572 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_002.png: Remote OCR JSON failed validation: ['notes']: '{"stage":"Basic","types":["Colorless"]}' is not of type 'object'
+2025-10-05 23:46:11,233 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0015.json
+2025-10-05 23:46:11,235 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_004.png: Remote OCR JSON failed validation: ['notes']: '{}' is not of type 'object'
+2025-10-05 23:46:20,400 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0016.json
+2025-10-05 23:46:20,401 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_006.png: Remote OCR JSON failed validation: ['notes']: '{"stage":"Stage 1","types":["Fire"]}' is not of type 'object'
+2025-10-05 23:46:31,177 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0017.json
+2025-10-05 23:46:31,178 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_008.png: Remote OCR JSON failed validation: ['notes']: '{"type":"Stadium"}' is not of type 'object'
+2025-10-05 23:49:15,158 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474433, dpi=300, limit=0
+2025-10-05 23:49:19,581 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_wfe8_e11/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-05 23:49:19,589 | INFO | pokedata.pipeline | Front-only mode: filtered 74 → 37 images
+2025-10-05 23:49:19,589 | INFO | pokedata.pipeline | Processing 37 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_wfe8_e11/FirstScan.pdf (dpi=300, limit=0)
+2025-10-05 23:49:28,321 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_002.png
+2025-10-05 23:49:36,316 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_004.png
+2025-10-05 23:49:43,338 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_006.png
+2025-10-05 23:49:47,939 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_008.png
+2025-10-05 23:49:55,294 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_010.png
+2025-10-05 23:50:06,060 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_012.png
+2025-10-05 23:50:18,006 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_014.png
+2025-10-05 23:50:23,407 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_016.png
+2025-10-05 23:50:29,483 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_018.png
+2025-10-05 23:50:36,396 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_020.png
+2025-10-05 23:50:41,867 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_022.png
+2025-10-05 23:50:46,582 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_024.png
+2025-10-05 23:50:51,678 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0018.json
+2025-10-05 23:50:51,681 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_026.png: Remote OCR JSON failed validation: ['name']: '' should be non-empty
+2025-10-05 23:50:58,079 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0019.json
+2025-10-05 23:50:58,079 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_028.png: Remote OCR JSON failed validation: ['name']: '' should be non-empty
+2025-10-05 23:59:57,847 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474433, dpi=300, limit=0
+2025-10-06 00:00:02,318 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_gxm85nto/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-06 00:00:02,323 | INFO | pokedata.pipeline | Front-only mode: filtered 74 → 37 images
+2025-10-06 00:00:02,323 | INFO | pokedata.pipeline | Processing 37 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_gxm85nto/FirstScan.pdf (dpi=300, limit=0)
+2025-10-06 00:00:17,847 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0020.json
+2025-10-06 00:00:17,848 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_002.png: Remote OCR JSON failed validation: ['evolvesFrom']: None is not of type 'string'; ['promo', 'promoNumber']: None is not of type 'string'; ['promo', 'series']: None is not of type 'string'; ['set', 'symbolCode']: None is not of type 'string'; ['text', 'attacks', 0, 'text']: None is not of type 'string'; ['text', 'attacks', 1, 'text']: None is not of type 'string'
+2025-10-06 00:00:37,894 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0021.json
+2025-10-06 00:00:37,898 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_004.png: Remote OCR JSON failed validation: ['evolvesFrom']: None is not of type 'string'; ['illustrator']: None is not of type 'string'; ['printYear']: None is not of type 'integer'; ['promo', 'promoNumber']: None is not of type 'string'; ['promo', 'series']: None is not of type 'string'; ['set', 'symbolCode']: None is not of type 'string'; ['set', 'total']: None is not of type 'integer'; ['setboxLetters']: None is not of type 'string'
+2025-10-06 00:01:02,156 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0022.json
+2025-10-06 00:01:02,157 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_006.png: Remote OCR JSON failed validation: ['_confidence', 'text']: {'abilities': 0.95, 'attacks': 0.95, 'weaknesses': 0.95, 'resistances': 0.95, 'retreatCost': 0.95} is not of type 'number'; ['promo', 'promoNumber']: None is not of type 'string'; ['promo', 'series']: None is not of type 'string'; ['set', 'name']: None is not of type 'string'; ['set', 'symbolCode']: None is not of type 'string'; ['text', 'attacks', 1, 'text']: None is not of type 'string'
+2025-10-06 00:03:30,020 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474433, dpi=300, limit=0
+2025-10-06 00:03:34,514 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_454p0zm4/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-06 00:03:34,522 | INFO | pokedata.pipeline | Front-only mode: filtered 74 → 37 images
+2025-10-06 00:03:34,523 | INFO | pokedata.pipeline | Processing 37 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_454p0zm4/FirstScan.pdf (dpi=300, limit=0)
+2025-10-06 00:03:53,711 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_002.png
+2025-10-06 00:04:09,631 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_004.png
+2025-10-06 00:04:27,354 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_006.png
+2025-10-06 00:04:40,002 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474433, dpi=300, limit=0
+2025-10-06 00:04:42,214 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_008.png
+2025-10-06 00:04:44,591 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_ztr35c17/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-06 00:04:44,615 | INFO | pokedata.pipeline | Front-only mode: filtered 74 → 37 images
+2025-10-06 00:04:44,616 | INFO | pokedata.pipeline | Processing 37 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_ztr35c17/FirstScan.pdf (dpi=300, limit=0)
+2025-10-06 00:04:48,862 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474433, dpi=300, limit=0
+2025-10-06 00:04:53,957 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata__2cr7dim/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-06 00:04:53,966 | INFO | pokedata.pipeline | Front-only mode: filtered 74 → 37 images
+2025-10-06 00:04:53,966 | INFO | pokedata.pipeline | Processing 37 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata__2cr7dim/FirstScan.pdf (dpi=300, limit=0)
+2025-10-06 00:05:00,791 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_010.png
+2025-10-06 00:05:03,108 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_002.png
+2025-10-06 00:05:11,273 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_002.png
+2025-10-06 00:05:15,204 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_004.png
+2025-10-06 00:05:18,276 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_012.png
+2025-10-06 00:05:26,116 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_004.png
+2025-10-06 00:05:32,638 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_014.png
+2025-10-06 00:05:36,475 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_006.png
+2025-10-06 00:05:45,908 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_006.png
+2025-10-06 00:05:48,306 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_016.png
+2025-10-06 00:05:52,923 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_008.png
+2025-10-06 00:06:00,397 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_018.png
+2025-10-06 00:06:04,193 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_008.png
+2025-10-06 00:06:12,198 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_020.png
+2025-10-06 00:06:12,203 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_010.png
+2025-10-06 00:06:22,649 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_010.png
+2025-10-06 00:06:27,241 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_012.png
+2025-10-06 00:06:36,164 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0023.json
+2025-10-06 00:06:36,166 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_022.png: Remote OCR JSON failed validation: ['text', 'resistances', 0, 'value']: '-30' does not match '^(\\+10|\\+20|\\+30|\\+40|\\+50|\\+60|×2|x2|2×|2x)$'
+2025-10-06 00:06:41,010 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_012.png
+2025-10-06 00:06:50,376 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_014.png
+2025-10-06 00:06:54,464 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_024.png
+2025-10-06 00:07:01,212 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_014.png
+2025-10-06 00:07:04,003 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_016.png
+2025-10-06 00:07:08,747 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0024.json
+2025-10-06 00:07:08,747 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_026.png: Remote OCR JSON failed validation: ['number']: None is not of type 'string'
+2025-10-06 00:07:15,231 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_016.png
+2025-10-06 00:07:21,667 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_018.png
+2025-10-06 00:07:29,033 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0025.json
+2025-10-06 00:07:29,033 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_028.png: Remote OCR JSON failed validation: ['number']: None is not of type 'string'
+2025-10-06 00:07:39,070 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_018.png
+2025-10-06 00:07:42,493 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_020.png
+2025-10-06 00:07:46,646 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_030.png
+2025-10-06 00:07:59,382 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_020.png
+2025-10-06 00:08:01,014 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_032.png
+2025-10-06 00:08:08,942 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0026.json
+2025-10-06 00:08:08,943 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_022.png: Remote OCR JSON failed validation: ['text', 'resistances', 0, 'value']: '-30' does not match '^(\\+10|\\+20|\\+30|\\+40|\\+50|\\+60|×2|x2|2×|2x)$'
+2025-10-06 00:08:17,667 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0027.json
+2025-10-06 00:08:17,667 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_034.png: Remote OCR JSON failed validation: ['text', 'resistances', 0, 'value']: '-30' does not match '^(\\+10|\\+20|\\+30|\\+40|\\+50|\\+60|×2|x2|2×|2x)$'
+2025-10-06 00:08:19,657 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0028.json
+2025-10-06 00:08:19,657 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_022.png: Remote OCR JSON failed validation: ['text', 'resistances', 0, 'value']: '-30' does not match '^(\\+10|\\+20|\\+30|\\+40|\\+50|\\+60|×2|x2|2×|2x)$'
+2025-10-06 00:08:34,021 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_024.png
+2025-10-06 00:08:37,155 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_036.png
+2025-10-06 00:08:38,418 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_024.png
+2025-10-06 00:08:46,216 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0029.json
+2025-10-06 00:08:46,216 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_026.png: Remote OCR JSON failed validation: ['number']: None is not of type 'string'
+2025-10-06 00:08:49,297 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0030.json
+2025-10-06 00:08:49,297 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_038.png: Remote OCR JSON failed validation: ['text', 'attacks', 0, 'damage']: '' is not valid under any of the given schemas
+2025-10-06 00:08:51,912 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0031.json
+2025-10-06 00:08:51,913 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_026.png: Remote OCR JSON failed validation: ['number']: None is not of type 'string'
+2025-10-06 00:09:03,529 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0032.json
+2025-10-06 00:09:03,529 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_028.png: Remote OCR JSON failed validation: ['number']: None is not of type 'string'
+2025-10-06 00:09:09,462 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_040.png
+2025-10-06 00:09:18,080 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_030.png
+2025-10-06 00:09:19,238 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0033.json
+2025-10-06 00:09:19,239 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_028.png: Remote OCR JSON failed validation: ['number']: None is not of type 'string'
+2025-10-06 00:09:30,706 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_042.png
+2025-10-06 00:09:30,876 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_032.png
+2025-10-06 00:09:34,114 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_030.png
+2025-10-06 00:09:44,075 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_044.png
+2025-10-06 00:09:46,247 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_034.png
+2025-10-06 00:09:46,332 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_032.png
+2025-10-06 00:09:58,302 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0034.json
+2025-10-06 00:09:58,303 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_046.png: Remote OCR JSON failed validation: ['text', 'resistances', 0, 'value']: '-30' does not match '^(\\+10|\\+20|\\+30|\\+40|\\+50|\\+60|×2|x2|2×|2x)$'
+2025-10-06 00:10:02,496 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_036.png
+2025-10-06 00:10:05,197 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0035.json
+2025-10-06 00:10:05,197 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_034.png: Remote OCR JSON failed validation: ['text', 'attacks', 0, 'damage']: '' is not valid under any of the given schemas
+2025-10-06 00:10:13,117 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_048.png
+2025-10-06 00:10:16,751 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0036.json
+2025-10-06 00:10:16,751 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_038.png: Remote OCR JSON failed validation: ['text', 'attacks', 0, 'damage']: '' is not valid under any of the given schemas
+2025-10-06 00:10:26,770 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0037.json
+2025-10-06 00:10:26,771 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_050.png: Remote OCR JSON failed validation: ['number']: None is not of type 'string'
+2025-10-06 00:10:27,246 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_036.png
+2025-10-06 00:10:33,198 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_040.png
+2025-10-06 00:10:39,370 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0038.json
+2025-10-06 00:10:39,371 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_038.png: Remote OCR JSON failed validation: ['text', 'attacks', 0, 'damage']: '' is not valid under any of the given schemas
+2025-10-06 00:10:48,068 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_042.png
+2025-10-06 00:10:48,074 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_052.png
+2025-10-06 00:10:52,915 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_040.png
+2025-10-06 00:11:05,440 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_044.png
+2025-10-06 00:11:06,847 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0039.json
+2025-10-06 00:11:06,847 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_054.png: Remote OCR JSON failed validation: ['text', 'resistances', 0, 'value']: '-30' does not match '^(\\+10|\\+20|\\+30|\\+40|\\+50|\\+60|×2|x2|2×|2x)$'
+2025-10-06 00:11:09,616 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_042.png
+2025-10-06 00:11:20,229 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0040.json
+2025-10-06 00:11:20,230 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_046.png: Remote OCR JSON failed validation: ['text', 'resistances', 0, 'value']: '-30' does not match '^(\\+10|\\+20|\\+30|\\+40|\\+50|\\+60|×2|x2|2×|2x)$'
+2025-10-06 00:11:23,201 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0041.json
+2025-10-06 00:11:23,202 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_056.png: Remote OCR JSON failed validation: ['number']: None is not of type 'string'
+2025-10-06 00:11:27,772 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_044.png
+2025-10-06 00:11:38,784 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_048.png
+2025-10-06 00:11:43,622 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_058.png
+2025-10-06 00:11:55,136 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0042.json
+2025-10-06 00:11:55,137 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_046.png: Remote OCR JSON failed validation: ['text', 'resistances', 0, 'value']: '-30' does not match '^(\\+10|\\+20|\\+30|\\+40|\\+50|\\+60|×2|x2|2×|2x)$'
+2025-10-06 00:11:55,192 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_060.png
+2025-10-06 00:11:55,584 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0043.json
+2025-10-06 00:11:55,587 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_050.png: Remote OCR JSON failed validation: ['number']: None is not of type 'string'
+2025-10-06 00:12:08,764 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0044.json
+2025-10-06 00:12:08,765 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_062.png: Remote OCR JSON failed validation: ['text', 'resistances', 0, 'value']: '-30' does not match '^(\\+10|\\+20|\\+30|\\+40|\\+50|\\+60|×2|x2|2×|2x)$'
+2025-10-06 00:12:11,886 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_052.png
+2025-10-06 00:12:13,530 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_048.png
+2025-10-06 00:12:26,569 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0045.json
+2025-10-06 00:12:26,570 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_050.png: Remote OCR JSON failed validation: ['number']: None is not of type 'string'
+2025-10-06 00:12:27,802 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0046.json
+2025-10-06 00:12:27,802 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_054.png: Remote OCR JSON failed validation: ['text', 'resistances', 0, 'value']: '-30' does not match '^(\\+10|\\+20|\\+30|\\+40|\\+50|\\+60|×2|x2|2×|2x)$'
+2025-10-06 00:12:37,669 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_064.png
+2025-10-06 00:12:44,307 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0047.json
+2025-10-06 00:12:44,308 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_056.png: Remote OCR JSON failed validation: ['number']: None is not of type 'string'
+2025-10-06 00:12:45,138 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_052.png
+2025-10-06 00:13:02,317 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0048.json
+2025-10-06 00:13:02,317 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_066.png: Remote OCR JSON failed validation: ['text', 'resistances', 0, 'value']: '-30' does not match '^(\\+10|\\+20|\\+30|\\+40|\\+50|\\+60|×2|x2|2×|2x)$'
+2025-10-06 00:13:04,942 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0049.json
+2025-10-06 00:13:04,943 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_054.png: Remote OCR JSON failed validation: ['text', 'resistances', 0, 'value']: '-30' does not match '^(\\+10|\\+20|\\+30|\\+40|\\+50|\\+60|×2|x2|2×|2x)$'
+2025-10-06 00:13:05,674 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_058.png
+2025-10-06 00:13:20,992 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0050.json
+2025-10-06 00:13:20,993 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_068.png: Remote OCR JSON failed validation: ['number']: None is not of type 'string'
+2025-10-06 00:13:21,171 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_060.png
+2025-10-06 00:13:24,352 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0051.json
+2025-10-06 00:13:24,352 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_056.png: Remote OCR JSON failed validation: ['number']: None is not of type 'string'
+2025-10-06 00:13:37,847 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0052.json
+2025-10-06 00:13:37,847 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_062.png: Remote OCR JSON failed validation: ['text', 'resistances', 0, 'value']: '-30' does not match '^(\\+10|\\+20|\\+30|\\+40|\\+50|\\+60|×2|x2|2×|2x)$'
+2025-10-06 00:13:40,303 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_070.png
+2025-10-06 00:13:40,805 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_058.png
+2025-10-06 00:13:53,107 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0053.json
+2025-10-06 00:13:53,107 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_072.png: Remote OCR JSON failed validation: ['text', 'attacks', 0, 'damage']: '' is not valid under any of the given schemas
+2025-10-06 00:13:58,131 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_060.png
+2025-10-06 00:14:00,261 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_064.png
+2025-10-06 00:14:15,702 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0054.json
+2025-10-06 00:14:15,703 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_066.png: Remote OCR JSON failed validation: ['text', 'resistances', 0, 'value']: '-30' does not match '^(\\+10|\\+20|\\+30|\\+40|\\+50|\\+60|×2|x2|2×|2x)$'
+2025-10-06 00:14:17,561 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0055.json
+2025-10-06 00:14:17,562 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_074.png: Remote OCR JSON failed validation: ['text', 'attacks', 0, 'damage']: '' is not valid under any of the given schemas
+2025-10-06 00:14:18,884 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0056.json
+2025-10-06 00:14:18,884 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_062.png: Remote OCR JSON failed validation: ['text', 'resistances', 0, 'value']: '-30' does not match '^(\\+10|\\+20|\\+30|\\+40|\\+50|\\+60|×2|x2|2×|2x)$'
+2025-10-06 00:14:19,689 | INFO | pokedata.pipeline | Wrote CSV /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_454p0zm4/FirstScan_cards.csv with 37 row(s)
+2025-10-06 00:14:19,836 | INFO | pokedata.review | Stored run 20251006-041419_firstscan-pdf with 37 pages
+2025-10-06 00:14:19,879 | INFO | pokedata.web | Web processing complete: FirstScan.pdf -> FirstScan_cards.csv (37 rows)
+2025-10-06 00:14:41,032 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_064.png
+2025-10-06 00:14:41,265 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0057.json
+2025-10-06 00:14:41,265 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_068.png: Remote OCR JSON failed validation: ['number']: None is not of type 'string'
+2025-10-06 00:15:02,997 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_070.png
+2025-10-06 00:15:03,094 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0058.json
+2025-10-06 00:15:03,094 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_066.png: Remote OCR JSON failed validation: ['text', 'resistances', 0, 'value']: '-30' does not match '^(\\+10|\\+20|\\+30|\\+40|\\+50|\\+60|×2|x2|2×|2x)$'
+2025-10-06 00:15:20,414 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0059.json
+2025-10-06 00:15:20,415 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_072.png: Remote OCR JSON failed validation: ['text', 'attacks', 0, 'damage']: '' is not valid under any of the given schemas
+2025-10-06 00:15:22,115 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0060.json
+2025-10-06 00:15:22,115 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_068.png: Remote OCR JSON failed validation: ['number']: None is not of type 'string'
+2025-10-06 00:15:39,702 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_070.png
+2025-10-06 00:15:53,121 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0061.json
+2025-10-06 00:15:53,121 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_074.png: Remote OCR JSON failed validation: ['text', 'attacks', 0, 'damage']: '' is not valid under any of the given schemas
+2025-10-06 00:15:54,345 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0062.json
+2025-10-06 00:15:54,345 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_072.png: Remote OCR JSON failed validation: ['text', 'attacks', 0, 'damage']: '' is not valid under any of the given schemas; ['types', 0]: 'Ground' is not one of ['Colorless', 'Darkness', 'Dragon', 'Fairy', 'Fighting', 'Fire', 'Grass', 'Lightning', 'Metal', 'Psychic', 'Water']
+2025-10-06 00:15:55,139 | INFO | pokedata.pipeline | Wrote CSV /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_ztr35c17/FirstScan_cards.csv with 37 row(s)
+2025-10-06 00:15:55,261 | INFO | pokedata.review | Stored run 20251006-041555_firstscan-pdf with 37 pages
+2025-10-06 00:15:55,317 | INFO | pokedata.web | Web processing complete: FirstScan.pdf -> FirstScan_cards.csv (37 rows)
+2025-10-06 00:16:20,628 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0063.json
+2025-10-06 00:16:20,628 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_074.png: Remote OCR JSON failed validation: ['text', 'attacks', 0, 'damage']: '' is not valid under any of the given schemas
+2025-10-06 00:16:22,748 | INFO | pokedata.pipeline | Wrote CSV /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata__2cr7dim/FirstScan_cards.csv with 37 row(s)
+2025-10-06 00:16:22,855 | INFO | pokedata.review | Stored run 20251006-041622_firstscan-pdf with 37 pages
+2025-10-06 00:16:22,903 | INFO | pokedata.web | Web processing complete: FirstScan.pdf -> FirstScan_cards.csv (37 rows)

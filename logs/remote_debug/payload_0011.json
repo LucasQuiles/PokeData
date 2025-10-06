@@ -1,0 +1,16 @@
+{
+  "name": "",
+  "hp": "120",
+  "evolves_from": "",
+  "ability_name": "Geo Gate",
+  "ability_text": "Search your deck for up to 3 Basic [F] Pok\u00e9mon and put them onto your Bench. Then, shuffle your deck.",
+  "attacks": "Bright Horns :: 120",
+  "set_code": "",
+  "set_name": "",
+  "card_number": "0716",
+  "artist": "",
+  "weakness": "",
+  "resistance": "",
+  "retreat": "",
+  "notes": "{\"stage\":\"Basic\",\"types\":[\"Fighting\"]}"
+}

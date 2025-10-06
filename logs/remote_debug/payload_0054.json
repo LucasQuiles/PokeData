@@ -1,0 +1,71 @@
+{
+  "name": "Abra",
+  "stage": "Basic",
+  "evolvesFrom": "",
+  "hp": 50,
+  "types": [
+    "Psychic"
+  ],
+  "stamps": [],
+  "promo": {
+    "isPromo": false,
+    "series": "",
+    "promoNumber": ""
+  },
+  "number": "054/132",
+  "set": {
+    "name": "Mega Evolution",
+    "code": "MEG",
+    "total": 132,
+    "symbolCode": ""
+  },
+  "setboxLetters": "D",
+  "printYear": 2025,
+  "illustrator": "Orca",
+  "text": {
+    "abilities": [],
+    "attacks": [
+      {
+        "name": "Teleportation Attack",
+        "cost": [
+          "Psychic"
+        ],
+        "damage": "10",
+        "text": "Switch this Pok\u00e9mon with 1 of your Benched Pok\u00e9mon."
+      }
+    ],
+    "weaknesses": [
+      {
+        "type": "Psychic",
+        "value": "\u00d72"
+      }
+    ],
+    "resistances": [
+      {
+        "type": "Fighting",
+        "value": "-30"
+      }
+    ],
+    "retreatCost": [
+      "Colorless"
+    ]
+  },
+  "notes": {
+    "unreadable": []
+  },
+  "_confidence": {
+    "name": 0.99,
+    "stage": 0.99,
+    "evolvesFrom": 0.99,
+    "hp": 0.99,
+    "types": 0.99,
+    "stamps": 0.99,
+    "promo": 0.99,
+    "number": 0.99,
+    "set": 0.99,
+    "setboxLetters": 0.99,
+    "printYear": 0.99,
+    "illustrator": 0.99,
+    "text": 0.99
+  }
+}

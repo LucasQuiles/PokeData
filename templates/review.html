@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PokeData Review</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='review.css') }}" />
+  </head>
+  <body>
+    <main class="review-shell">
+      <aside class="review-runs">
+        <header class="runs-header">
+          <div>
+            <h1>Annotation Runs</h1>
+            <p class="runs-subtitle">Pick a processed batch to validate OCR and capture ground-truth regions.</p>
+          </div>
+          <button id="refresh-runs" type="button">Refresh</button>
+        </header>
+        <ul id="run-list" class="run-list"></ul>
+      </aside>
+
+      <section class="review-center">
+        <header class="center-header">
+          <div>
+            <h2>Annotation Workspace</h2>
+            <p id="run-info" class="run-info">Select a run to get started.</p>
+          </div>
+          <div class="page-controls">
+            <label class="toggle">
+              <input id="toggle-backs" type="checkbox" />
+              <span class="toggle-label">Show card backs</span>
+            </label>
+            <label for="page-select">Page</label>
+            <select id="page-select"></select>
+          </div>
+        </header>
+        <div class="canvas-wrapper">
+          <button id="prev-page" type="button" class="nav-arrow">&#x276E;</button>
+          <canvas id="card-canvas"></canvas>
+          <button id="next-page" type="button" class="nav-arrow">&#x276F;</button>
+        </div>
+        <footer class="center-hints">
+          <p>Drag on the image to draw a bounding box. Use the panel on the right to tag the field and capture clarifying notes.</p>
+        </footer>
+      </section>
+
+      <aside class="review-controls">
+        <section class="control-card">
+          <h3>Capture Details</h3>
+          <label for="label-select">Field</label>
+          <select id="label-select">
+            <option value="name">name</option>
+            <option value="hp">hp</option>
+            <option value="evolves_from">evolves_from</option>
+            <option value="ability_name">ability_name</option>
+            <option value="ability_text">ability_text</option>
+            <option value="attacks">attacks</option>
+            <option value="set_code">set_code</option>
+            <option value="set_name">set_name</option>
+            <option value="card_number">card_number</option>
+            <option value="artist">artist</option>
+            <option value="weakness">weakness</option>
+            <option value="resistance">resistance</option>
+            <option value="retreat">retreat</option>
+            <option value="notes">notes</option>
+          </select>
+          <label for="note-input">Notes (optional)</label>
+          <input id="note-input" type="text" placeholder="eg. partially cropped" />
+          <div class="button-row">
+            <button id="undo-annotation" type="button">Undo</button>
+            <button id="save-annotations" type="button">Save</button>
+            <button id="clear-page" type="button" class="danger">Clear Page</button>
+          </div>
+        </section>
+
+        <section class="control-card">
+          <div class="annotations-header">
+            <h3>Captured Boxes</h3>
+            <span id="annotation-count" class="annotation-count">0</span>
+          </div>
+          <table class="annotations-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Field</th>
+                <th>Note</th>
+                <th>Bounds</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="annotation-table"></tbody>
+          </table>
+        </section>
+      </aside>
+    </main>
+
+    <script src="{{ url_for('static', filename='review.js') }}" defer></script>
+
+    <div id="feedback-modal" class="feedback-modal" hidden>
+      <div class="feedback-backdrop"></div>
+      <div class="feedback-dialog">
+        <header>
+          <h3 id="feedback-title">Low Confidence Field</h3>
+          <p id="feedback-subtitle"></p>
+        </header>
+        <div class="feedback-body">
+          <div class="feedback-canvas-wrapper">
+            <canvas id="feedback-canvas"></canvas>
+          </div>
+          <div class="feedback-form">
+            <label for="feedback-value">Correct Value</label>
+            <input id="feedback-value" type="text" />
+            <div class="feedback-actions">
+              <button id="feedback-draw" type="button">Draw Box</button>
+              <button id="feedback-save" type="button" class="primary">Save</button>
+              <button id="feedback-skip" type="button" class="secondary">Skip</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
