@@ -420,3 +420,144 @@
 2025-10-06 00:16:22,748 | INFO | pokedata.pipeline | Wrote CSV /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata__2cr7dim/FirstScan_cards.csv with 37 row(s)
 2025-10-06 00:16:22,855 | INFO | pokedata.review | Stored run 20251006-041622_firstscan-pdf with 37 pages
 2025-10-06 00:16:22,903 | INFO | pokedata.web | Web processing complete: FirstScan.pdf -> FirstScan_cards.csv (37 rows)
+2025-10-06 00:48:44,769 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474435, dpi=300, limit=10
+2025-10-06 00:48:50,936 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_wwdg0ufu/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-06 00:48:50,952 | INFO | pokedata.pipeline | Front-only mode: filtered 74 → 37 images
+2025-10-06 00:48:50,952 | INFO | pokedata.pipeline | Processing 10 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_wwdg0ufu/FirstScan.pdf (dpi=300, limit=10)
+2025-10-06 00:49:06,434 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_002.png
+2025-10-06 00:49:16,984 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_004.png
+2025-10-06 00:49:33,448 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_006.png
+2025-10-06 00:49:46,683 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_008.png
+2025-10-06 00:50:05,311 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_010.png
+2025-10-06 00:50:18,702 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_012.png
+2025-10-06 00:50:37,117 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_014.png
+2025-10-06 00:50:48,895 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_016.png
+2025-10-06 00:50:58,473 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_018.png
+2025-10-06 00:51:09,634 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_020.png
+2025-10-06 00:51:12,368 | INFO | pokedata.pipeline | Wrote CSV /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_wwdg0ufu/FirstScan_cards.csv with 10 row(s)
+2025-10-06 00:51:12,406 | INFO | pokedata.review | Stored run 20251006-045112_firstscan-pdf with 10 pages
+2025-10-06 00:51:12,454 | INFO | pokedata.web | Web processing complete: FirstScan.pdf -> FirstScan_cards.csv (10 rows)
+2025-10-06 01:05:48,558 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474435, dpi=300, limit=10
+2025-10-06 01:05:52,965 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_tqq_exad/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-06 01:05:52,988 | INFO | pokedata.pipeline | Front-only mode: filtered 74 → 37 images
+2025-10-06 01:05:52,988 | INFO | pokedata.pipeline | Processing 10 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_tqq_exad/FirstScan.pdf (dpi=300, limit=10)
+2025-10-06 01:06:07,991 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_002.png
+2025-10-06 01:06:23,969 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_004.png
+2025-10-06 01:06:42,956 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_006.png
+2025-10-06 01:06:58,721 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_008.png
+2025-10-06 01:07:17,460 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_010.png
+2025-10-06 01:07:37,233 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_012.png
+2025-10-06 01:08:00,555 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_014.png
+2025-10-06 01:08:19,186 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_016.png
+2025-10-06 01:08:30,267 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_018.png
+2025-10-06 01:08:46,450 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_020.png
+2025-10-06 01:08:49,218 | INFO | pokedata.pipeline | Wrote CSV /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_tqq_exad/FirstScan_cards.csv with 10 row(s)
+2025-10-06 01:08:49,258 | INFO | pokedata.review | Stored run 20251006-050849_firstscan-pdf with 10 pages
+2025-10-06 01:08:49,314 | INFO | pokedata.web | Web processing complete: FirstScan.pdf -> FirstScan_cards.csv (10 rows)
+2025-10-06 01:12:29,571 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474435, dpi=300, limit=10
+2025-10-06 01:12:34,498 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_i3afli4m/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-06 01:12:34,514 | INFO | pokedata.pipeline | Front-only mode: filtered 74 → 37 images
+2025-10-06 01:12:34,514 | INFO | pokedata.pipeline | Processing 10 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_i3afli4m/FirstScan.pdf (dpi=300, limit=10)
+2025-10-06 01:12:50,363 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_002.png
+2025-10-06 01:13:02,260 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_004.png
+2025-10-06 01:13:19,161 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_006.png
+2025-10-06 01:13:31,531 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_008.png
+2025-10-06 01:13:48,765 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_010.png
+2025-10-06 01:14:06,213 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_012.png
+2025-10-06 01:14:23,269 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_014.png
+2025-10-06 01:14:37,382 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_016.png
+2025-10-06 01:14:47,005 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_018.png
+2025-10-06 01:15:02,814 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_020.png
+2025-10-06 01:15:05,466 | INFO | pokedata.pipeline | Wrote CSV /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_i3afli4m/FirstScan_cards.csv with 10 row(s)
+2025-10-06 01:15:05,505 | INFO | pokedata.review | Stored run 20251006-051505_firstscan-pdf with 10 pages
+2025-10-06 01:15:05,568 | INFO | pokedata.web | Web processing complete: FirstScan.pdf -> FirstScan_cards.csv (10 rows)
+2025-10-06 01:27:11,535 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474435, dpi=300, limit=20
+2025-10-06 01:27:16,304 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_gyd605kg/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-06 01:27:16,312 | INFO | pokedata.pipeline | Front-only mode: filtered 74 → 37 images
+2025-10-06 01:27:16,312 | INFO | pokedata.pipeline | Processing 20 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_gyd605kg/FirstScan.pdf (dpi=300, limit=20)
+2025-10-06 01:27:32,309 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_002.png
+2025-10-06 01:27:32,315 | ERROR | pokedata.pipeline | Failed to process /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_gyd605kg/FirstScan/FirstScan_page_002.png (index=1)
+Traceback (most recent call last):
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 538, in process_images
+    row, structured = process_page(img, idx)
+                      ~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 468, in process_page
+    title_text = extract_title_text(crops)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 50, in extract_title_text
+    text = pytesseract.image_to_string(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        title_img,
+        ^^^^^^^^^^
+        config="--psm 7 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'-.",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ).strip()
+    ^
+  File "/Users/lucas/SNEKOPS/PokeData/.venv/lib/python3.13/site-packages/pytesseract/pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "/Users/lucas/SNEKOPS/PokeData/.venv/lib/python3.13/site-packages/pytesseract/pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/.venv/lib/python3.13/site-packages/pytesseract/pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/.venv/lib/python3.13/site-packages/pytesseract/pytesseract.py", line 267, in run_tesseract
+    cmd_args += shlex.split(config, posix=not_windows)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 313, in split
+    return list(lex)
+  File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 300, in __next__
+    token = self.get_token()
+  File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 109, in get_token
+    raw = self.read_token()
+  File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 191, in read_token
+    raise ValueError("No closing quotation")
+ValueError: No closing quotation
+2025-10-06 01:27:50,358 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_004.png
+2025-10-06 01:27:50,364 | ERROR | pokedata.pipeline | Failed to process /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_gyd605kg/FirstScan/FirstScan_page_004.png (index=2)
+Traceback (most recent call last):
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 538, in process_images
+    row, structured = process_page(img, idx)
+                      ~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 468, in process_page
+    title_text = extract_title_text(crops)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 50, in extract_title_text
+    text = pytesseract.image_to_string(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        title_img,
+        ^^^^^^^^^^
+        config="--psm 7 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'-.",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ).strip()
+    ^
+  File "/Users/lucas/SNEKOPS/PokeData/.venv/lib/python3.13/site-packages/pytesseract/pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "/Users/lucas/SNEKOPS/PokeData/.venv/lib/python3.13/site-packages/pytesseract/pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/.venv/lib/python3.13/site-packages/pytesseract/pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/.venv/lib/python3.13/site-packages/pytesseract/pytesseract.py", line 267, in run_tesseract
+    cmd_args += shlex.split(config, posix=not_windows)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 313, in split
+    return list(lex)
+  File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 300, in __next__
+    token = self.get_token()
+  File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 109, in get_token
+    raw = self.read_token()
+  File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 191, in read_token
+    raise ValueError("No closing quotation")
+ValueError: No closing quotation

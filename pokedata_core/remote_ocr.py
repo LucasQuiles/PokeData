@@ -51,11 +51,13 @@ def _encode_image(pil_img) -> str:
     return base64.b64encode(buffer.getvalue()).decode("utf-8")
 
 
-def _build_prompt(full_b64: str, header_b64: str, footer_b64: str) -> List[Dict[str, str]]:
+def _build_prompt(
+    full_b64: str, header_b64: str, middle_b64: str, footer_b64: str
+) -> List[Dict[str, str]]:
     instructions = (
         "You are a strict Pokémon card transcriber. Respond with JSON matching the provided schema. "
-        "Never guess; if text is unreadable set the value to null and append the field name to notes.unreadable. "
-        "Convert icons to words using the 11 energy types (Colorless, Darkness, Dragon, Fairy, Fighting, Fire, Grass, Lightning, Metal, Psychic, Water). "
+        "Never guess. If any text is unreadable or missing, set that JSON field to null and append the field name to notes.unreadable. "
+        "Convert energy icons and symbols to the canonical words: Colorless, Darkness, Dragon, Fairy, Fighting, Fire, Grass, Lightning, Metal, Psychic, Water. "
         "Stages are one of: Basic, Stage 1, Stage 2, Restored, Mega Evolution, BREAK, LEGEND. "
         "Return confidence scores (0..1) in the _confidence object for each field."
     )
@@ -93,7 +95,9 @@ def _build_prompt(full_b64: str, header_b64: str, footer_b64: str) -> List[Dict[
         {"type": "input_image", "image_url": f"data:image/png;base64,{full_b64}"},
         {"type": "input_text", "text": "Header crop (name, stage/evolves from, HP, type banner):"},
         {"type": "input_image", "image_url": f"data:image/png;base64,{header_b64}"},
-        {"type": "input_text", "text": "Footer crop (setbox letters, card number, illustrator, year):"},
+        {"type": "input_text", "text": "Main text area (abilities, attacks, rules):"},
+        {"type": "input_image", "image_url": f"data:image/png;base64,{middle_b64}"},
+        {"type": "input_text", "text": "Footer crop (setbox letters, card number, rarity, illustrator, year):"},
         {"type": "input_image", "image_url": f"data:image/png;base64,{footer_b64}"},
     ]
 
@@ -103,13 +107,15 @@ def extract_card_fields(pil_image) -> Dict[str, str]:
 
     width, height = pil_image.size
     header_crop = pil_image.crop((0, 0, width, int(height * 0.25)))
+    middle_crop = pil_image.crop((0, int(height * 0.25), width, int(height * 0.75)))
     footer_crop = pil_image.crop((0, int(height * 0.75), width, height))
 
     full_b64 = _encode_image(pil_image)
     header_b64 = _encode_image(header_crop)
+    middle_b64 = _encode_image(middle_crop)
     footer_b64 = _encode_image(footer_crop)
 
-    prompt = _build_prompt(full_b64, header_b64, footer_b64)
+    prompt = _build_prompt(full_b64, header_b64, middle_b64, footer_b64)
     model = os.getenv("POKEDATA_OPENAI_MODEL", "gpt-4o-mini")
 
     client = _get_client()

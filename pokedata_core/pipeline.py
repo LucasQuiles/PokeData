@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import csv
 import hashlib
+import json
 import os
 import re
 import shutil
@@ -22,6 +23,13 @@ from .annotation_model import load_layout_model
 from .grading import estimate_grade
 from .logging_utils import get_logger
 from .remote_ocr import extract_card_fields
+from .region_cropper import (
+    crop_regions,
+    detect_layout,
+    extract_bottom_text,
+    extract_hp,
+    extract_title_text,
+)
 
 try:
     from pdf2image import convert_from_path  # requires Poppler installed on system
@@ -394,6 +402,9 @@ def process_page(image_path: Path, index: int) -> Tuple[CardRow, Optional[Dict[s
     pil = _cv2_deskew_if_available(pil)
     pil = _pil_enhance(pil)
 
+    layout_id = detect_layout(pil)
+    crops = crop_regions(pil, layout_id)
+
     page_sha1 = _sha1_of_image(pil)
     fields: Dict[str, str] = {}
     structured_payload: Optional[Dict[str, str]] = None
@@ -452,6 +463,44 @@ def process_page(image_path: Path, index: int) -> Tuple[CardRow, Optional[Dict[s
                     if value and not fields.get(key):
                         fields[key] = value
                 warnings = _compute_missing_warnings(fields)
+
+    # Layout-based fallbacks
+    title_text = extract_title_text(crops)
+    if not fields.get("name") and title_text:
+        fields["name"] = title_text
+
+    if layout_id == "trainer":
+        fields["hp"] = ""
+        fields.setdefault("attacks", "")
+        fields.setdefault("ability_name", "")
+        fields.setdefault("ability_text", "")
+    else:
+        hp_text = extract_hp(crops)
+        if not fields.get("hp") and hp_text:
+            fields["hp"] = hp_text
+
+    card_number, artist, setbox = extract_bottom_text(crops)
+    if card_number and not fields.get("card_number"):
+        fields["card_number"] = card_number
+    if artist and not fields.get("artist"):
+        fields["artist"] = artist
+    if setbox and not fields.get("set_code"):
+        fields["set_code"] = setbox
+
+    notes = fields.get("notes")
+    if isinstance(notes, str) and notes:
+        try:
+            notes_obj = json.loads(notes)
+        except json.JSONDecodeError:
+            notes_obj = {"raw": notes}
+    elif isinstance(notes, dict):
+        notes_obj = notes
+    else:
+        notes_obj = {}
+    notes_obj.setdefault("layout", layout_id)
+    fields["notes"] = json.dumps(notes_obj, ensure_ascii=False)
+
+    warnings = _compute_missing_warnings(fields)
 
     row = CardRow(
         source_image=str(image_path),

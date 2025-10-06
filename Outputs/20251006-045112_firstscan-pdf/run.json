@@ -1,0 +1,50 @@
+{
+  "run_id": "20251006-045112_firstscan-pdf",
+  "source_name": "FirstScan.pdf",
+  "created_at": "2025-10-06T04:51:12",
+  "csv": "cards.csv",
+  "pages": [
+    {
+      "index": 1,
+      "file": "page_001.png"
+    },
+    {
+      "index": 2,
+      "file": "page_002.png"
+    },
+    {
+      "index": 3,
+      "file": "page_003.png"
+    },
+    {
+      "index": 4,
+      "file": "page_004.png"
+    },
+    {
+      "index": 5,
+      "file": "page_005.png"
+    },
+    {
+      "index": 6,
+      "file": "page_006.png"
+    },
+    {
+      "index": 7,
+      "file": "page_007.png"
+    },
+    {
+      "index": 8,
+      "file": "page_008.png"
+    },
+    {
+      "index": 9,
+      "file": "page_009.png"
+    },
+    {
+      "index": 10,
+      "file": "page_010.png"
+    }
+  ],
+  "rows": 10,
+  "has_structured": true
+}
