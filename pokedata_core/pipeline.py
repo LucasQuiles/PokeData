@@ -14,7 +14,7 @@ import re
 import shutil
 from dataclasses import dataclass, field, asdict
 from pathlib import Path
-from typing import Dict, List, Optional, Pattern, Tuple
+from typing import Dict, List, Optional, Pattern, Set, Tuple
 
 import pytesseract
 from PIL import Image, ImageFilter, ImageOps
@@ -57,6 +57,28 @@ SET_CODE_MAP: Dict[str, str] = {}
 logger = get_logger("pipeline")
 LAYOUT_MODEL = load_layout_model()
 REMOTE_OCR_ENABLED = os.getenv("POKEDATA_REMOTE_OCR", "1") != "0"
+try:
+    REMOTE_LOW_CONFIDENCE_THRESHOLD = float(
+        os.getenv("POKEDATA_REMOTE_CONFIDENCE_THRESHOLD", "0.45")
+    )
+except (TypeError, ValueError):
+    REMOTE_LOW_CONFIDENCE_THRESHOLD = 0.45
+
+REMOTE_POINTER_FIELD_MAP = {
+    "name": "name",
+    "hp": "hp",
+    "number": "card_number",
+    "illustrator": "artist",
+    "set.code": "set_code",
+    "set.symbolCode": "set_code",
+    "set.name": "set_name",
+    "setboxLetters": "set_code",
+    "text.attacks": "attacks",
+    "text.abilities": "ability_text",
+    "text.weaknesses": "weakness",
+    "text.resistances": "resistance",
+    "text.retreatCost": "retreat",
+}
 
 # Regexes & heuristics
 RE_HP = re.compile(r"\bHP\s*(\d{1,3})\b", re.IGNORECASE)
@@ -69,6 +91,24 @@ RE_RESIST = re.compile(r"\bresistance\b", re.IGNORECASE)
 RE_RETREAT = re.compile(r"\bretreat\b", re.IGNORECASE)
 RE_ABILITY_LINE = re.compile(r"\bAbility\b\s*([A-Za-z0-9'\- ]+)", re.IGNORECASE)
 RE_ATTACK_LINE = re.compile(r"([A-Za-z][A-Za-z0-9'\- ]+?)\s+(\d{10,}|[1-9]\d{0,2}\+?)\b")
+
+
+def _remote_pointer_to_field(pointer: str) -> Optional[str]:
+    if pointer is None:
+        return None
+    cleaned = str(pointer).strip()
+    if not cleaned:
+        return None
+    cleaned = cleaned.lstrip("/")
+    cleaned = cleaned.replace("/", ".")
+    cleaned = cleaned.replace("~1", "/").replace("~0", "~")
+    cleaned = re.sub(r"\[\d+\]", "", cleaned)
+    lowered = cleaned.lower()
+    for prefix, field in REMOTE_POINTER_FIELD_MAP.items():
+        prefix_lower = prefix.lower()
+        if lowered == prefix_lower or lowered.startswith(prefix_lower + "."):
+            return field
+    return REMOTE_POINTER_FIELD_MAP.get(lowered)
 
 
 @dataclass
@@ -411,14 +451,90 @@ def process_page(image_path: Path, index: int) -> Tuple[CardRow, Optional[Dict[s
     warnings: List[str] = []
     ocr_len = 0
     remote_used = False
+    layout_fields_cached: Optional[Dict[str, str]] = None
+    fallback_suggestions: Dict[str, str] = {}
+    remote_unreadable_flags: Set[str] = set()
+    remote_low_conf_flags: Set[str] = set()
 
     if REMOTE_OCR_ENABLED:
         try:
             fields = extract_card_fields(pil)
             structured_payload = fields.pop("_structured_raw", None)
             remote_used = True
-            warnings = _compute_missing_warnings(fields)
             logger.info("Remote OCR succeeded for %s", image_path.name)
+
+            remote_data = structured_payload if isinstance(structured_payload, dict) else {}
+            required_fields = ["name", "hp", "card_number", "artist", "set_code", "set_name"]
+            missing_keys: Set[str] = {key for key in required_fields if not fields.get(key)}
+            fields_from_unreadable: Set[str] = set()
+            low_conf_suggestion_fields: Set[str] = set()
+
+            if remote_data:
+                notes_obj = remote_data.get("notes")
+                if isinstance(notes_obj, dict):
+                    unreadable = notes_obj.get("unreadable", [])
+                    if isinstance(unreadable, list):
+                        for pointer in unreadable:
+                            pointer_str = str(pointer).strip()
+                            if not pointer_str:
+                                continue
+                            warnings.append(f"remote_unreadable:{pointer_str}")
+                            remote_unreadable_flags.add(pointer_str)
+                            mapped_field = _remote_pointer_to_field(pointer_str)
+                            if mapped_field:
+                                fields_from_unreadable.add(mapped_field)
+
+                conf_obj = remote_data.get("_confidence")
+                if isinstance(conf_obj, dict):
+                    for key, value in conf_obj.items():
+                        try:
+                            numeric = float(value)
+                        except (TypeError, ValueError):
+                            continue
+                        if numeric < REMOTE_LOW_CONFIDENCE_THRESHOLD:
+                            key_str = str(key)
+                            warnings.append(f"remote_low_conf:{key_str}")
+                            remote_low_conf_flags.add(key_str)
+                            mapped_field = _remote_pointer_to_field(key_str)
+                            if mapped_field:
+                                if not fields.get(mapped_field):
+                                    fields_from_unreadable.add(mapped_field)
+                                else:
+                                    low_conf_suggestion_fields.add(mapped_field)
+
+            fields_to_refill = missing_keys | fields_from_unreadable
+            if fields_to_refill or low_conf_suggestion_fields:
+                text = _ocr(pil, lang="eng")
+                ocr_len = len(text)
+                fallback_fields, fallback_warnings = parse_text_to_fields(text)
+                for warn in fallback_warnings:
+                    warnings.append(f"fallback:{warn}")
+
+                if layout_fields_cached is None:
+                    layout_fields_cached = _extract_with_layout(pil)
+                layout_fields = layout_fields_cached or {}
+
+                for key in sorted(fields_to_refill):
+                    candidate = fallback_fields.get(key)
+                    if candidate and not fields.get(key):
+                        fields[key] = candidate
+                    elif candidate and candidate != fields.get(key):
+                        fallback_suggestions.setdefault(key, candidate)
+
+                    candidate_layout = layout_fields.get(key)
+                    if candidate_layout and not fields.get(key):
+                        fields[key] = candidate_layout
+                    elif candidate_layout and candidate_layout != fields.get(key):
+                        fallback_suggestions.setdefault(key, candidate_layout)
+
+                for key in sorted(low_conf_suggestion_fields):
+                    candidate = fallback_fields.get(key)
+                    if candidate and candidate != fields.get(key):
+                        fallback_suggestions.setdefault(key, candidate)
+
+                    candidate_layout = layout_fields.get(key)
+                    if candidate_layout and candidate_layout != fields.get(key):
+                        fallback_suggestions.setdefault(key, candidate_layout)
         except Exception as exc:
             remote_used = False
             warnings.append(f"remote_error:{exc}")
@@ -428,16 +544,17 @@ def process_page(image_path: Path, index: int) -> Tuple[CardRow, Optional[Dict[s
         text = _ocr(pil, lang="eng")
         ocr_len = len(text)
         fields, warnings = parse_text_to_fields(text)
-        layout_fields = _extract_with_layout(pil)
+        layout_fields_cached = _extract_with_layout(pil)
+        layout_fields = layout_fields_cached or {}
         if layout_fields:
             for key, value in layout_fields.items():
                 if not value:
                     continue
-                if key in fields:
-                    if not fields[key]:
-                        fields[key] = value
-                else:
+                existing = fields.get(key, "")
+                if not existing:
                     fields[key] = value
+                elif existing != value:
+                    fallback_suggestions.setdefault(key, value)
             if layout_fields.get("hp") and "hp_missing" in warnings:
                 warnings.remove("hp_missing")
             if layout_fields.get("name") and "name_guess_failed" in warnings:
@@ -446,28 +563,12 @@ def process_page(image_path: Path, index: int) -> Tuple[CardRow, Optional[Dict[s
                 warnings.remove("artist_missing")
             if layout_fields.get("card_number") and "card_number_missing" in warnings:
                 warnings.remove("card_number_missing")
-    else:
-        # Remote response may still be missing critical fields; fill via heuristics when needed.
-        missing_keys = [key for key in ("name", "hp", "card_number") if not fields.get(key)]
-        if missing_keys:
-            text = _ocr(pil, lang="eng")
-            ocr_len = len(text)
-            fallback_fields, fallback_warnings = parse_text_to_fields(text)
-            for key in missing_keys:
-                if fallback_fields.get(key):
-                    fields[key] = fallback_fields[key]
-            warnings = _compute_missing_warnings(fields)
-            layout_fields = _extract_with_layout(pil)
-            if layout_fields:
-                for key, value in layout_fields.items():
-                    if value and not fields.get(key):
-                        fields[key] = value
-                warnings = _compute_missing_warnings(fields)
-
     # Layout-based fallbacks
     title_text = extract_title_text(crops)
     if not fields.get("name") and title_text:
         fields["name"] = title_text
+    elif title_text and title_text != fields.get("name"):
+        fallback_suggestions.setdefault("name", title_text)
 
     if layout_id == "trainer":
         fields["hp"] = ""
@@ -478,14 +579,22 @@ def process_page(image_path: Path, index: int) -> Tuple[CardRow, Optional[Dict[s
         hp_text = extract_hp(crops)
         if not fields.get("hp") and hp_text:
             fields["hp"] = hp_text
+        elif hp_text and hp_text != fields.get("hp"):
+            fallback_suggestions.setdefault("hp", hp_text)
 
     card_number, artist, setbox = extract_bottom_text(crops)
     if card_number and not fields.get("card_number"):
         fields["card_number"] = card_number
+    elif card_number and card_number != fields.get("card_number"):
+        fallback_suggestions.setdefault("card_number", card_number)
     if artist and not fields.get("artist"):
         fields["artist"] = artist
+    elif artist and artist != fields.get("artist"):
+        fallback_suggestions.setdefault("artist", artist)
     if setbox and not fields.get("set_code"):
         fields["set_code"] = setbox
+    elif setbox and setbox != fields.get("set_code"):
+        fallback_suggestions.setdefault("set_code", setbox)
 
     notes = fields.get("notes")
     if isinstance(notes, str) and notes:
@@ -498,9 +607,30 @@ def process_page(image_path: Path, index: int) -> Tuple[CardRow, Optional[Dict[s
     else:
         notes_obj = {}
     notes_obj.setdefault("layout", layout_id)
+    if remote_unreadable_flags or remote_low_conf_flags:
+        remote_section = notes_obj.get("remoteWarnings")
+        if not isinstance(remote_section, dict):
+            remote_section = {}
+        if remote_unreadable_flags:
+            existing = remote_section.get("unreadable")
+            existing_set = set(existing) if isinstance(existing, list) else set()
+            remote_section["unreadable"] = sorted(existing_set | remote_unreadable_flags)
+        if remote_low_conf_flags:
+            existing = remote_section.get("lowConfidence")
+            existing_set = set(existing) if isinstance(existing, list) else set()
+            remote_section["lowConfidence"] = sorted(existing_set | remote_low_conf_flags)
+        notes_obj["remoteWarnings"] = remote_section
+    if fallback_suggestions:
+        fallback_section = notes_obj.get("fallbackSuggestions")
+        if not isinstance(fallback_section, dict):
+            fallback_section = {}
+        for key, value in fallback_suggestions.items():
+            fallback_section.setdefault(key, str(value))
+        notes_obj["fallbackSuggestions"] = fallback_section
     fields["notes"] = json.dumps(notes_obj, ensure_ascii=False)
 
-    warnings = _compute_missing_warnings(fields)
+    missing_warnings = _compute_missing_warnings(fields)
+    warnings = sorted(set(warnings + missing_warnings))
 
     row = CardRow(
         source_image=str(image_path),

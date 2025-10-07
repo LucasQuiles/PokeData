@@ -252,7 +252,7 @@
           "default": []
         },
         "damage": {
-          "description": "Supports numeric, '20+', '60x', or '—'.",
+          "description": "Supports numeric, '20+', '60x', '—', '-', or empty when not printed.",
           "oneOf": [
             {
               "type": "integer",
@@ -260,7 +260,7 @@
             },
             {
               "type": "string",
-              "pattern": "^[0-9]+([+×x])?$|^—$"
+              "pattern": "^$|^[0-9]+([+×x])?$|^[-—–]$"
             }
           ]
         },
@@ -279,7 +279,7 @@
         },
         "value": {
           "type": "string",
-          "pattern": "^(\\+10|\\+20|\\+30|\\+40|\\+50|\\+60|×2|x2|2×|2x)$"
+          "pattern": "^(\\+10|\\+20|\\+30|\\+40|\\+50|\\+60|−10|−20|−30|−40|−50|-10|-20|-30|-40|-50|×2|x2|2×|2x)$"
         }
       }
     }

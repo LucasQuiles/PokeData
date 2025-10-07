@@ -561,3 +561,269 @@ Traceback (most recent call last):
   File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 191, in read_token
     raise ValueError("No closing quotation")
 ValueError: No closing quotation
+2025-10-06 20:37:19,305 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474435, dpi=300, limit=10
+2025-10-06 20:37:24,422 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_eoman6r4/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-06 20:37:24,432 | INFO | pokedata.pipeline | Front-only mode: filtered 74 → 37 images
+2025-10-06 20:37:24,432 | INFO | pokedata.pipeline | Processing 10 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_eoman6r4/FirstScan.pdf (dpi=300, limit=10)
+2025-10-06 20:37:40,667 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_002.png
+2025-10-06 20:37:40,673 | ERROR | pokedata.pipeline | Failed to process /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_eoman6r4/FirstScan/FirstScan_page_002.png (index=1)
+Traceback (most recent call last):
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 668, in process_images
+    row, structured = process_page(img, idx)
+                      ~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 567, in process_page
+    title_text = extract_title_text(crops)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 50, in extract_title_text
+    text = pytesseract.image_to_string(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        title_img,
+        ^^^^^^^^^^
+        config="--psm 7 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'-.",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ).strip()
+    ^
+  File "/Users/lucas/SNEKOPS/PokeData/.venv/lib/python3.13/site-packages/pytesseract/pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "/Users/lucas/SNEKOPS/PokeData/.venv/lib/python3.13/site-packages/pytesseract/pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/.venv/lib/python3.13/site-packages/pytesseract/pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/.venv/lib/python3.13/site-packages/pytesseract/pytesseract.py", line 267, in run_tesseract
+    cmd_args += shlex.split(config, posix=not_windows)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 313, in split
+    return list(lex)
+  File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 300, in __next__
+    token = self.get_token()
+  File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 109, in get_token
+    raw = self.read_token()
+  File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 191, in read_token
+    raise ValueError("No closing quotation")
+ValueError: No closing quotation
+2025-10-06 20:37:56,072 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_004.png
+2025-10-06 20:37:57,821 | ERROR | pokedata.pipeline | Failed to process /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_eoman6r4/FirstScan/FirstScan_page_004.png (index=2)
+Traceback (most recent call last):
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 668, in process_images
+    row, structured = process_page(img, idx)
+                      ~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 567, in process_page
+    title_text = extract_title_text(crops)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 50, in extract_title_text
+    text = pytesseract.image_to_string(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        title_img,
+        ^^^^^^^^^^
+        config="--psm 7 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'-.",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ).strip()
+    ^
+  File "/Users/lucas/SNEKOPS/PokeData/.venv/lib/python3.13/site-packages/pytesseract/pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "/Users/lucas/SNEKOPS/PokeData/.venv/lib/python3.13/site-packages/pytesseract/pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/.venv/lib/python3.13/site-packages/pytesseract/pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/.venv/lib/python3.13/site-packages/pytesseract/pytesseract.py", line 267, in run_tesseract
+    cmd_args += shlex.split(config, posix=not_windows)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 313, in split
+    return list(lex)
+  File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 300, in __next__
+    token = self.get_token()
+  File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 109, in get_token
+    raw = self.read_token()
+  File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 191, in read_token
+    raise ValueError("No closing quotation")
+ValueError: No closing quotation
+2025-10-06 20:38:09,961 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_006.png
+2025-10-06 20:38:11,977 | ERROR | pokedata.pipeline | Failed to process /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_eoman6r4/FirstScan/FirstScan_page_006.png (index=3)
+Traceback (most recent call last):
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 668, in process_images
+    row, structured = process_page(img, idx)
+                      ~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 567, in process_page
+    title_text = extract_title_text(crops)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 50, in extract_title_text
+    text = pytesseract.image_to_string(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        title_img,
+        ^^^^^^^^^^
+        config="--psm 7 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'-.",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ).strip()
+    ^
+  File "/Users/lucas/SNEKOPS/PokeData/.venv/lib/python3.13/site-packages/pytesseract/pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "/Users/lucas/SNEKOPS/PokeData/.venv/lib/python3.13/site-packages/pytesseract/pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/.venv/lib/python3.13/site-packages/pytesseract/pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/.venv/lib/python3.13/site-packages/pytesseract/pytesseract.py", line 267, in run_tesseract
+    cmd_args += shlex.split(config, posix=not_windows)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 313, in split
+    return list(lex)
+  File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 300, in __next__
+    token = self.get_token()
+  File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 109, in get_token
+    raw = self.read_token()
+  File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 191, in read_token
+    raise ValueError("No closing quotation")
+ValueError: No closing quotation
+2025-10-06 20:38:24,228 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_008.png
+2025-10-06 20:38:26,322 | ERROR | pokedata.pipeline | Failed to process /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_eoman6r4/FirstScan/FirstScan_page_008.png (index=4)
+Traceback (most recent call last):
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 668, in process_images
+    row, structured = process_page(img, idx)
+                      ~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 567, in process_page
+    title_text = extract_title_text(crops)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 50, in extract_title_text
+    text = pytesseract.image_to_string(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        title_img,
+        ^^^^^^^^^^
+        config="--psm 7 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'-.",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ).strip()
+    ^
+  File "/Users/lucas/SNEKOPS/PokeData/.venv/lib/python3.13/site-packages/pytesseract/pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "/Users/lucas/SNEKOPS/PokeData/.venv/lib/python3.13/site-packages/pytesseract/pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/.venv/lib/python3.13/site-packages/pytesseract/pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/.venv/lib/python3.13/site-packages/pytesseract/pytesseract.py", line 267, in run_tesseract
+    cmd_args += shlex.split(config, posix=not_windows)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 313, in split
+    return list(lex)
+  File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 300, in __next__
+    token = self.get_token()
+  File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 109, in get_token
+    raw = self.read_token()
+  File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 191, in read_token
+    raise ValueError("No closing quotation")
+ValueError: No closing quotation
+2025-10-06 20:44:11,103 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474435, dpi=300, limit=10
+2025-10-06 20:44:16,251 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_vuyd8aml/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-06 20:44:16,265 | INFO | pokedata.pipeline | Front-only mode: filtered 74 → 37 images
+2025-10-06 20:44:16,265 | INFO | pokedata.pipeline | Processing 10 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_vuyd8aml/FirstScan.pdf (dpi=300, limit=10)
+2025-10-06 20:44:31,580 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_002.png
+2025-10-06 20:44:31,591 | ERROR | pokedata.pipeline | Failed to process /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_vuyd8aml/FirstScan/FirstScan_page_002.png (index=1)
+Traceback (most recent call last):
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 668, in process_images
+    row, structured = process_page(img, idx)
+                      ~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 567, in process_page
+    title_text = extract_title_text(crops)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 50, in extract_title_text
+    text = pytesseract.image_to_string(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        title_img,
+        ^^^^^^^^^^
+        config="--psm 7 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\'-.",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ).strip()
+    ^
+  File "/Users/lucas/SNEKOPS/PokeData/.venv/lib/python3.13/site-packages/pytesseract/pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "/Users/lucas/SNEKOPS/PokeData/.venv/lib/python3.13/site-packages/pytesseract/pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/.venv/lib/python3.13/site-packages/pytesseract/pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/.venv/lib/python3.13/site-packages/pytesseract/pytesseract.py", line 267, in run_tesseract
+    cmd_args += shlex.split(config, posix=not_windows)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 313, in split
+    return list(lex)
+  File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 300, in __next__
+    token = self.get_token()
+  File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 109, in get_token
+    raw = self.read_token()
+  File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 191, in read_token
+    raise ValueError("No closing quotation")
+ValueError: No closing quotation
+2025-10-06 20:44:45,220 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_004.png
+2025-10-06 20:44:46,941 | ERROR | pokedata.pipeline | Failed to process /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_vuyd8aml/FirstScan/FirstScan_page_004.png (index=2)
+Traceback (most recent call last):
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 668, in process_images
+    row, structured = process_page(img, idx)
+                      ~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 567, in process_page
+    title_text = extract_title_text(crops)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 50, in extract_title_text
+    text = pytesseract.image_to_string(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        title_img,
+        ^^^^^^^^^^
+        config="--psm 7 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\'-.",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ).strip()
+    ^
+  File "/Users/lucas/SNEKOPS/PokeData/.venv/lib/python3.13/site-packages/pytesseract/pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "/Users/lucas/SNEKOPS/PokeData/.venv/lib/python3.13/site-packages/pytesseract/pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/.venv/lib/python3.13/site-packages/pytesseract/pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/.venv/lib/python3.13/site-packages/pytesseract/pytesseract.py", line 267, in run_tesseract
+    cmd_args += shlex.split(config, posix=not_windows)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 313, in split
+    return list(lex)
+  File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 300, in __next__
+    token = self.get_token()
+  File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 109, in get_token
+    raw = self.read_token()
+  File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 191, in read_token
+    raise ValueError("No closing quotation")
+ValueError: No closing quotation

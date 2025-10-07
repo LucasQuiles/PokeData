@@ -49,7 +49,7 @@ def extract_title_text(crops: CroppedRegions) -> str:
         return ""
     text = pytesseract.image_to_string(
         title_img,
-        config="--psm 7 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'-.",
+        config="--psm 7 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\'-.",
     ).strip()
     if crops.layout_id == "trainer":
         text = _strip_trainer_banner(text)
