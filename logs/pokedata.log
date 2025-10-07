@@ -1146,3 +1146,15 @@ NameError: name 'np' is not defined
 2025-10-06 22:51:32,567 | INFO | pokedata.pipeline | Wrote CSV /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_mbqc93mu/FirstScan_cards.csv with 1 row(s)
 2025-10-06 22:51:32,569 | INFO | pokedata.review | Stored run 20251007-025132_firstscan-pdf with 1 pages
 2025-10-06 22:51:32,574 | INFO | pokedata.web | Web processing complete: FirstScan.pdf -> FirstScan_cards.csv (1 rows)
+2025-10-07 00:11:09,249 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474434, dpi=300, limit=2
+2025-10-07 00:11:11,474 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474434, dpi=300, limit=2
+2025-10-07 00:11:14,300 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_k90odc6e/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-07 00:11:14,307 | INFO | pokedata.pipeline | Front-only mode: filtered 74 → 37 images
+2025-10-07 00:11:14,307 | INFO | pokedata.pipeline | Processing 2 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_k90odc6e/FirstScan.pdf (dpi=300, limit=2)
+2025-10-07 00:11:16,413 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_j0ujimbr/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-07 00:11:16,423 | INFO | pokedata.pipeline | Front-only mode: filtered 74 → 37 images
+2025-10-07 00:11:16,423 | INFO | pokedata.pipeline | Processing 2 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_j0ujimbr/FirstScan.pdf (dpi=300, limit=2)
+2025-10-07 00:11:23,213 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0065.json
+2025-10-07 00:11:23,213 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_002.png: Remote OCR JSON failed validation: ['number']: None is not of type 'string'
+2025-10-07 00:11:27,147 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0066.json
+2025-10-07 00:11:27,147 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_002.png: Remote OCR JSON failed validation: ['number']: None is not of type 'string'

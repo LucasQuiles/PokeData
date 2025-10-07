@@ -286,8 +286,6 @@ def _remote_pointer_to_field(pointer: str) -> Optional[str]:
             return field
     return REMOTE_POINTER_FIELD_MAP.get(lowered)
 
-<<<<<<< ours
-=======
 
 def _infer_layout_from_structured(data: Optional[Dict[str, Any]]) -> Optional[str]:
     if not isinstance(data, dict):
@@ -317,7 +315,6 @@ def _infer_layout_from_structured(data: Optional[Dict[str, Any]]) -> Optional[st
 
     return None
 
->>>>>>> theirs
 
 @dataclass
 class CardRow:
