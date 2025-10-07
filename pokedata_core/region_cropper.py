@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import logging
 import re
 import shlex
 import string
@@ -13,6 +14,18 @@ import pytesseract
 from pytesseract import Output
 
 from .layouts import POKEMON_LAYOUT, TRAINER_LAYOUT, Layout
+
+__all__ = [
+    "CroppedRegions",
+    "detect_layout",
+    "crop_regions",
+    "extract_title_text",
+    "extract_hp",
+    "extract_bottom_text",
+]
+
+
+logger = logging.getLogger(__name__)
 
 __all__ = [
     "CroppedRegions",
@@ -181,6 +194,11 @@ def _score_trainer_tokens(tokens: Sequence[Dict[str, object]]) -> float:
 
 def _trainer_color_ratio(image: Image.Image) -> float:
     if image is None:
+        return 0.0
+    try:
+        import numpy as np  # type: ignore
+    except ModuleNotFoundError:  # pragma: no cover - optional dependency guard
+        logger.debug("Skipping trainer color ratio; numpy not available")
         return 0.0
     hsv = image.convert("HSV")
     hsv_np = np.asarray(hsv)
