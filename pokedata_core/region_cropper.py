@@ -2,22 +2,11 @@
 
 from __future__ import annotations
 
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-import io
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
 import shlex
 import string
 from dataclasses import dataclass
 from typing import Dict, Sequence, Tuple
 
-import numpy as np
 from PIL import Image, ImageOps
 import pytesseract
 
@@ -73,35 +62,9 @@ def extract_title_text(crops: CroppedRegions) -> str:
         return ""
     text = pytesseract.image_to_string(
         title_img,
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-        config="--psm 7 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\'-.",
-=======
-        config="--psm 7 -c tessedit_char_whitelist=\"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'-.\"",
->>>>>>> theirs
-=======
         config=_build_tesseract_config(
             ["--psm", "7", "-c", f"tessedit_char_whitelist={TITLE_WHITELIST}"]
         ),
->>>>>>> theirs
-=======
-        config=_build_tesseract_config(
-            ["--psm", "7", "-c", f"tessedit_char_whitelist={TITLE_WHITELIST}"]
-        ),
->>>>>>> theirs
-=======
-        config=_build_tesseract_config(
-            ["--psm", "7", "-c", f"tessedit_char_whitelist={TITLE_WHITELIST}"]
-        ),
->>>>>>> theirs
-=======
-        config=_build_tesseract_config(
-            ["--psm", "7", "-c", f"tessedit_char_whitelist={TITLE_WHITELIST}"]
-        ),
->>>>>>> theirs
     ).strip()
     if crops.layout_id == "trainer":
         text = _strip_trainer_banner(text)
@@ -203,4 +166,3 @@ def _build_tesseract_config(args: Sequence[str]) -> str:
         else:
             escaped.append(shlex.quote(arg))
     return " ".join(escaped)
-

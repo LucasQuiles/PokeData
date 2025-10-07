@@ -827,3 +827,20 @@ Traceback (most recent call last):
   File "/opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py", line 191, in read_token
     raise ValueError("No closing quotation")
 ValueError: No closing quotation
+2025-10-06 21:32:20,529 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474435, dpi=300, limit=10
+2025-10-06 21:32:24,932 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_j_ar3r3x/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-06 21:32:24,941 | INFO | pokedata.pipeline | Front-only mode: filtered 74 → 37 images
+2025-10-06 21:32:24,941 | INFO | pokedata.pipeline | Processing 10 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_j_ar3r3x/FirstScan.pdf (dpi=300, limit=10)
+2025-10-06 21:32:40,036 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_002.png
+2025-10-06 21:32:53,918 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_004.png
+2025-10-06 21:33:09,023 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_006.png
+2025-10-06 21:33:25,091 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_008.png
+2025-10-06 21:33:47,937 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_010.png
+2025-10-06 21:34:00,551 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_012.png
+2025-10-06 21:34:13,088 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_014.png
+2025-10-06 21:34:25,862 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_016.png
+2025-10-06 21:34:35,056 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_018.png
+2025-10-06 21:34:47,067 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_020.png
+2025-10-06 21:34:49,961 | INFO | pokedata.pipeline | Wrote CSV /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_j_ar3r3x/FirstScan_cards.csv with 10 row(s)
+2025-10-06 21:34:50,008 | INFO | pokedata.review | Stored run 20251007-013449_firstscan-pdf with 10 pages
+2025-10-06 21:34:50,031 | INFO | pokedata.web | Web processing complete: FirstScan.pdf -> FirstScan_cards.csv (10 rows)
