@@ -1158,3 +1158,37 @@ NameError: name 'np' is not defined
 2025-10-07 00:11:23,213 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_002.png: Remote OCR JSON failed validation: ['number']: None is not of type 'string'
 2025-10-07 00:11:27,147 | WARNING | pokedata.remote_ocr | Schema validation failed, payload saved to logs/remote_debug/payload_0066.json
 2025-10-07 00:11:27,147 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_002.png: Remote OCR JSON failed validation: ['number']: None is not of type 'string'
+2025-10-07 00:30:10,448 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474434, dpi=300, limit=1
+2025-10-07 00:30:15,324 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_q01ifx4h/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-07 00:30:15,334 | INFO | pokedata.pipeline | Front-only mode: filtered 74 → 37 images
+2025-10-07 00:30:15,334 | INFO | pokedata.pipeline | Processing 1 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_q01ifx4h/FirstScan.pdf (dpi=300, limit=1)
+2025-10-07 00:30:22,417 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_002.png
+2025-10-07 00:30:26,280 | INFO | pokedata.pipeline | Wrote CSV /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_q01ifx4h/FirstScan_cards.csv with 1 row(s)
+2025-10-07 00:30:26,283 | INFO | pokedata.review | Stored run 20251007-043026_firstscan-pdf with 1 pages
+2025-10-07 00:30:26,287 | INFO | pokedata.web | Web processing complete: FirstScan.pdf -> FirstScan_cards.csv (1 rows)
+2025-10-07 00:30:46,954 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474434, dpi=300, limit=2
+2025-10-07 00:30:51,316 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_ven4kqg3/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-07 00:30:51,323 | INFO | pokedata.pipeline | Front-only mode: filtered 74 → 37 images
+2025-10-07 00:30:51,323 | INFO | pokedata.pipeline | Processing 2 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_ven4kqg3/FirstScan.pdf (dpi=300, limit=2)
+2025-10-07 00:30:57,956 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_002.png
+2025-10-07 00:31:07,522 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_004.png
+2025-10-07 00:31:08,902 | INFO | pokedata.pipeline | Wrote CSV /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_ven4kqg3/FirstScan_cards.csv with 2 row(s)
+2025-10-07 00:31:08,905 | INFO | pokedata.review | Stored run 20251007-043108_firstscan-pdf with 2 pages
+2025-10-07 00:31:08,909 | INFO | pokedata.web | Web processing complete: FirstScan.pdf -> FirstScan_cards.csv (2 rows)
+2025-10-07 00:31:23,881 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474435, dpi=300, limit=10
+2025-10-07 00:31:28,233 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_jsxisk7n/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-07 00:31:28,243 | INFO | pokedata.pipeline | Front-only mode: filtered 74 → 37 images
+2025-10-07 00:31:28,243 | INFO | pokedata.pipeline | Processing 10 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_jsxisk7n/FirstScan.pdf (dpi=300, limit=10)
+2025-10-07 00:31:36,709 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_002.png
+2025-10-07 00:31:50,367 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_004.png
+2025-10-07 00:32:06,676 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_006.png
+2025-10-07 00:32:19,682 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_008.png
+2025-10-07 00:32:40,025 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_010.png
+2025-10-07 00:32:52,510 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_012.png
+2025-10-07 00:33:02,211 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_014.png
+2025-10-07 00:33:14,775 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_016.png
+2025-10-07 00:33:23,335 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_018.png
+2025-10-07 00:33:34,298 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_020.png
+2025-10-07 00:33:35,617 | INFO | pokedata.pipeline | Wrote CSV /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_jsxisk7n/FirstScan_cards.csv with 10 row(s)
+2025-10-07 00:33:35,671 | INFO | pokedata.review | Stored run 20251007-043335_firstscan-pdf with 10 pages
+2025-10-07 00:33:35,709 | INFO | pokedata.web | Web processing complete: FirstScan.pdf -> FirstScan_cards.csv (10 rows)

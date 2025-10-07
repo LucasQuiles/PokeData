@@ -7,6 +7,7 @@ import io
 import json
 import os
 import re
+import copy
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Tuple
 
@@ -168,14 +169,26 @@ def extract_card_fields(pil_image) -> Dict[str, str]:
     data = _normalize_payload(data)
 
     errors = sorted(validator.iter_errors(data), key=lambda e: e.path)
+    validation_messages: List[str] = []
     if errors:
-        formatted = "; ".join(f"{list(err.path)}: {err.message}" for err in errors)
         dump_path = _write_debug_payload(data)
-        logger.warning("Schema validation failed, payload saved to %s", dump_path)
-        raise ValueError(f"Remote OCR JSON failed validation: {formatted}")
+        validation_messages = [f"{list(err.path)}: {err.message}" for err in errors]
+        logger.warning(
+            "Schema validation failed, continuing with repaired payload saved to %s",
+            dump_path,
+        )
+        data = _repair_payload_for_validation(data, errors)
+        errors = sorted(validator.iter_errors(data), key=lambda e: e.path)
+        if errors:
+            validation_messages = [f"{list(err.path)}: {err.message}" for err in errors]
+            logger.warning(
+                "Repaired payload still violates schema; proceeding with best-effort fields",
+            )
 
     card_fields = _map_structured_to_cardrow(data)
     card_fields["_structured_raw"] = data
+    if validation_messages:
+        card_fields["_remote_validation_errors"] = validation_messages
     return card_fields
 
 
@@ -629,6 +642,100 @@ def _normalize_payload(data: Dict[str, object]) -> Dict[str, object]:
         result["notes"] = {"raw": notes_val}
 
     return result
+
+
+def _repair_payload_for_validation(data: Dict[str, object], errors) -> Dict[str, object]:
+    patched = copy.deepcopy(data)
+
+    for err in errors:
+        path = list(err.path)
+        if not path:
+            continue
+        container = patched
+        valid_path = True
+        for key in path[:-1]:
+            if isinstance(key, int):
+                if isinstance(container, list) and 0 <= key < len(container):
+                    container = container[key]
+                else:
+                    valid_path = False
+                    break
+            else:
+                if isinstance(container, dict):
+                    container = container.setdefault(key, {})
+                else:
+                    valid_path = False
+                    break
+        if not valid_path:
+            continue
+
+        leaf = path[-1]
+        default_value = _default_value_for_error(err)
+        if isinstance(leaf, int):
+            if isinstance(container, list) and 0 <= leaf < len(container):
+                container[leaf] = default_value
+        else:
+            if isinstance(container, dict):
+                container[leaf] = default_value
+
+    return patched
+
+
+def _default_value_for_error(err) -> object:
+    if err.validator == "type":
+        schema = err.schema
+        if isinstance(schema, str):
+            return _default_for_schema_type({"type": schema})
+        if isinstance(schema, list):
+            for option in schema:
+                default = _default_for_schema_type({"type": option})
+                if default is not None:
+                    return default
+            return ""
+        return _default_for_schema_type(schema)
+    if err.validator == "oneOf":
+        schema = err.schema
+        options = []
+        if isinstance(schema, list):
+            options = schema
+        elif isinstance(schema, dict):
+            options = schema.get("oneOf", [])
+        for option in options:
+            default = _default_for_schema_type(option)
+            if default is not None:
+                return default
+        return ""
+    if err.validator == "required":
+        return ""
+    if err.validator == "enum":
+        enum_vals = err.schema.get("enum") if isinstance(err.schema, dict) else None
+        return enum_vals[0] if enum_vals else ""
+    return ""
+
+
+def _default_for_schema_type(schema) -> object:
+    if not isinstance(schema, dict):
+        return ""
+    schema_type = schema.get("type")
+    if isinstance(schema_type, list):
+        for item in schema_type:
+            default = _default_for_schema_type({"type": item})
+            if default is not None:
+                return default
+        return ""
+    if schema_type == "string":
+        return ""
+    if schema_type == "integer":
+        return 0
+    if schema_type == "number":
+        return 0
+    if schema_type == "array":
+        return []
+    if schema_type == "object":
+        return {}
+    if schema_type == "boolean":
+        return False
+    return ""
 
 
 def _extract_response_text(response) -> str:

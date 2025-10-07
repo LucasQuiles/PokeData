@@ -51,6 +51,7 @@ except Exception:  # pragma: no cover - best effort import
 USE_DESKEW = True
 SAVE_DEBUG = False
 MAX_OCR_CHARS = 10000
+AUTO_CROP_ENABLED = os.getenv("POKEDATA_AUTO_CROP", "0") == "1"
 
 # Set code mapping placeholder. Add entries as you discover them.
 SET_CODE_MAP: Dict[str, str] = {}
@@ -390,6 +391,8 @@ def _cv2_deskew_if_available(pil_img: Image.Image) -> Image.Image:
 
 
 def _auto_crop_card_if_available(pil_img: Image.Image) -> Image.Image:
+    if not AUTO_CROP_ENABLED:
+        return pil_img
     if not _HAS_CV2:
         return pil_img
     try:
@@ -792,12 +795,16 @@ def process_page(image_path: Path, index: int) -> Tuple[CardRow, Optional[Dict[s
         try:
             fields = extract_card_fields(pil)
             structured_payload = fields.pop("_structured_raw", None)
+            validation_errors = fields.pop("_remote_validation_errors", [])
             remote_used = True
             logger.info("Remote OCR succeeded for %s", image_path.name)
 
             inferred_layout = _infer_layout_from_structured(structured_payload)
             if inferred_layout:
                 layout_id = inferred_layout
+
+            for message in validation_errors:
+                warnings.append(f"remote_schema:{message}")
 
             remote_data = structured_payload if isinstance(structured_payload, dict) else {}
             required_fields = ["name", "hp", "card_number", "artist", "set_code", "set_name"]

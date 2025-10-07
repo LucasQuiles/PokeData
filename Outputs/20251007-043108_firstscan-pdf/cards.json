@@ -1,0 +1,109 @@
+[
+  {
+    "page_index": 1,
+    "image": "page_001.png",
+    "data": {
+      "name": "",
+      "stage": "",
+      "evolvesFrom": "",
+      "hp": "",
+      "types": [],
+      "stamps": [],
+      "promo": {
+        "isPromo": false,
+        "series": "",
+        "promoNumber": ""
+      },
+      "number": "",
+      "set": {
+        "name": "",
+        "code": "",
+        "symbolCode": ""
+      },
+      "setboxLetters": "",
+      "illustrator": "",
+      "text": {
+        "abilities": [],
+        "attacks": [],
+        "weaknesses": [],
+        "resistances": [],
+        "retreatCost": []
+      },
+      "notes": {
+        "unreadable": [
+          "name",
+          "stage",
+          "hp",
+          "types",
+          "number",
+          "set.name",
+          "set.code",
+          "setboxLetters",
+          "printYear",
+          "illustrator",
+          "text.abilities",
+          "text.attacks",
+          "text.weaknesses",
+          "text.resistances",
+          "text.retreatCost"
+        ],
+        "isPromo": false
+      },
+      "_confidence": {}
+    }
+  },
+  {
+    "page_index": 2,
+    "image": "page_002.png",
+    "data": {
+      "name": "",
+      "stage": "",
+      "evolvesFrom": "",
+      "hp": "",
+      "types": [],
+      "stamps": [],
+      "promo": {
+        "isPromo": false,
+        "series": "",
+        "promoNumber": ""
+      },
+      "number": "",
+      "set": {
+        "name": "",
+        "code": "",
+        "symbolCode": ""
+      },
+      "setboxLetters": "",
+      "illustrator": "",
+      "text": {
+        "abilities": [],
+        "attacks": [],
+        "weaknesses": [],
+        "resistances": [],
+        "retreatCost": []
+      },
+      "notes": {
+        "unreadable": [
+          "name",
+          "stage",
+          "evolvesFrom",
+          "hp",
+          "types",
+          "number",
+          "set.name",
+          "set.code",
+          "setboxLetters",
+          "printYear",
+          "illustrator",
+          "text.abilities",
+          "text.attacks",
+          "text.weaknesses",
+          "text.resistances",
+          "text.retreatCost"
+        ],
+        "isPromo": false
+      },
+      "_confidence": {}
+    }
+  }
+]
