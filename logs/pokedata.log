@@ -856,3 +856,271 @@ ValueError: No closing quotation
 2025-10-06 21:57:22,598 | INFO | pokedata.pipeline | Wrote CSV /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_5f6uuq_9/FirstScan_cards.csv with 5 row(s)
 2025-10-06 21:57:22,619 | INFO | pokedata.review | Stored run 20251007-015722_firstscan-pdf with 5 pages
 2025-10-06 21:57:22,641 | INFO | pokedata.web | Web processing complete: FirstScan.pdf -> FirstScan_cards.csv (5 rows)
+2025-10-06 22:06:30,061 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474433, dpi=300, limit=0
+2025-10-06 22:06:34,494 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_8zcr_1wv/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-06 22:06:34,501 | INFO | pokedata.pipeline | Front-only mode: filtered 74 → 37 images
+2025-10-06 22:06:34,501 | INFO | pokedata.pipeline | Processing 37 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_8zcr_1wv/FirstScan.pdf (dpi=300, limit=0)
+2025-10-06 22:06:34,896 | ERROR | pokedata.pipeline | Failed to process /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_8zcr_1wv/FirstScan/FirstScan_page_002.png (index=1)
+Traceback (most recent call last):
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 938, in process_images
+    row, structured = process_page(img, idx)
+                      ~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 697, in process_page
+    layout_id = detect_layout(pil)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 65, in detect_layout
+    color_score = _trainer_color_ratio(header_img)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 186, in _trainer_color_ratio
+    hsv_np = np.asarray(hsv)
+             ^^
+NameError: name 'np' is not defined
+2025-10-06 22:06:35,089 | ERROR | pokedata.pipeline | Failed to process /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_8zcr_1wv/FirstScan/FirstScan_page_004.png (index=2)
+Traceback (most recent call last):
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 938, in process_images
+    row, structured = process_page(img, idx)
+                      ~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 697, in process_page
+    layout_id = detect_layout(pil)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 65, in detect_layout
+    color_score = _trainer_color_ratio(header_img)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 186, in _trainer_color_ratio
+    hsv_np = np.asarray(hsv)
+             ^^
+NameError: name 'np' is not defined
+2025-10-06 22:06:35,295 | ERROR | pokedata.pipeline | Failed to process /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_8zcr_1wv/FirstScan/FirstScan_page_006.png (index=3)
+Traceback (most recent call last):
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 938, in process_images
+    row, structured = process_page(img, idx)
+                      ~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 697, in process_page
+    layout_id = detect_layout(pil)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 65, in detect_layout
+    color_score = _trainer_color_ratio(header_img)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 186, in _trainer_color_ratio
+    hsv_np = np.asarray(hsv)
+             ^^
+NameError: name 'np' is not defined
+2025-10-06 22:06:35,534 | ERROR | pokedata.pipeline | Failed to process /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_8zcr_1wv/FirstScan/FirstScan_page_008.png (index=4)
+Traceback (most recent call last):
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 938, in process_images
+    row, structured = process_page(img, idx)
+                      ~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 697, in process_page
+    layout_id = detect_layout(pil)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 65, in detect_layout
+    color_score = _trainer_color_ratio(header_img)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 186, in _trainer_color_ratio
+    hsv_np = np.asarray(hsv)
+             ^^
+NameError: name 'np' is not defined
+2025-10-06 22:06:35,758 | ERROR | pokedata.pipeline | Failed to process /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_8zcr_1wv/FirstScan/FirstScan_page_010.png (index=5)
+Traceback (most recent call last):
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 938, in process_images
+    row, structured = process_page(img, idx)
+                      ~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 697, in process_page
+    layout_id = detect_layout(pil)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 65, in detect_layout
+    color_score = _trainer_color_ratio(header_img)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 186, in _trainer_color_ratio
+    hsv_np = np.asarray(hsv)
+             ^^
+NameError: name 'np' is not defined
+2025-10-06 22:06:35,950 | ERROR | pokedata.pipeline | Failed to process /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_8zcr_1wv/FirstScan/FirstScan_page_012.png (index=6)
+Traceback (most recent call last):
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 938, in process_images
+    row, structured = process_page(img, idx)
+                      ~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 697, in process_page
+    layout_id = detect_layout(pil)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 65, in detect_layout
+    color_score = _trainer_color_ratio(header_img)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 186, in _trainer_color_ratio
+    hsv_np = np.asarray(hsv)
+             ^^
+NameError: name 'np' is not defined
+2025-10-06 22:06:36,150 | ERROR | pokedata.pipeline | Failed to process /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_8zcr_1wv/FirstScan/FirstScan_page_014.png (index=7)
+Traceback (most recent call last):
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 938, in process_images
+    row, structured = process_page(img, idx)
+                      ~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 697, in process_page
+    layout_id = detect_layout(pil)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 65, in detect_layout
+    color_score = _trainer_color_ratio(header_img)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 186, in _trainer_color_ratio
+    hsv_np = np.asarray(hsv)
+             ^^
+NameError: name 'np' is not defined
+2025-10-06 22:06:36,348 | ERROR | pokedata.pipeline | Failed to process /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_8zcr_1wv/FirstScan/FirstScan_page_016.png (index=8)
+Traceback (most recent call last):
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 938, in process_images
+    row, structured = process_page(img, idx)
+                      ~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 697, in process_page
+    layout_id = detect_layout(pil)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 65, in detect_layout
+    color_score = _trainer_color_ratio(header_img)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 186, in _trainer_color_ratio
+    hsv_np = np.asarray(hsv)
+             ^^
+NameError: name 'np' is not defined
+2025-10-06 22:06:36,583 | ERROR | pokedata.pipeline | Failed to process /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_8zcr_1wv/FirstScan/FirstScan_page_018.png (index=9)
+Traceback (most recent call last):
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 938, in process_images
+    row, structured = process_page(img, idx)
+                      ~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 697, in process_page
+    layout_id = detect_layout(pil)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 65, in detect_layout
+    color_score = _trainer_color_ratio(header_img)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 186, in _trainer_color_ratio
+    hsv_np = np.asarray(hsv)
+             ^^
+NameError: name 'np' is not defined
+2025-10-06 22:06:36,831 | ERROR | pokedata.pipeline | Failed to process /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_8zcr_1wv/FirstScan/FirstScan_page_020.png (index=10)
+Traceback (most recent call last):
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 938, in process_images
+    row, structured = process_page(img, idx)
+                      ~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 697, in process_page
+    layout_id = detect_layout(pil)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 65, in detect_layout
+    color_score = _trainer_color_ratio(header_img)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 186, in _trainer_color_ratio
+    hsv_np = np.asarray(hsv)
+             ^^
+NameError: name 'np' is not defined
+2025-10-06 22:06:37,051 | ERROR | pokedata.pipeline | Failed to process /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_8zcr_1wv/FirstScan/FirstScan_page_022.png (index=11)
+Traceback (most recent call last):
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 938, in process_images
+    row, structured = process_page(img, idx)
+                      ~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 697, in process_page
+    layout_id = detect_layout(pil)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 65, in detect_layout
+    color_score = _trainer_color_ratio(header_img)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 186, in _trainer_color_ratio
+    hsv_np = np.asarray(hsv)
+             ^^
+NameError: name 'np' is not defined
+2025-10-06 22:06:58,369 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474435, dpi=300, limit=10
+2025-10-06 22:07:02,817 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_cobvsnbo/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-06 22:07:02,824 | INFO | pokedata.pipeline | Front-only mode: filtered 74 → 37 images
+2025-10-06 22:07:02,824 | INFO | pokedata.pipeline | Processing 10 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_cobvsnbo/FirstScan.pdf (dpi=300, limit=10)
+2025-10-06 22:07:03,056 | ERROR | pokedata.pipeline | Failed to process /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_cobvsnbo/FirstScan/FirstScan_page_002.png (index=1)
+Traceback (most recent call last):
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 938, in process_images
+    row, structured = process_page(img, idx)
+                      ~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 697, in process_page
+    layout_id = detect_layout(pil)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 65, in detect_layout
+    color_score = _trainer_color_ratio(header_img)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 186, in _trainer_color_ratio
+    hsv_np = np.asarray(hsv)
+             ^^
+NameError: name 'np' is not defined
+2025-10-06 22:07:03,228 | ERROR | pokedata.pipeline | Failed to process /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_cobvsnbo/FirstScan/FirstScan_page_004.png (index=2)
+Traceback (most recent call last):
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 938, in process_images
+    row, structured = process_page(img, idx)
+                      ~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 697, in process_page
+    layout_id = detect_layout(pil)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 65, in detect_layout
+    color_score = _trainer_color_ratio(header_img)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 186, in _trainer_color_ratio
+    hsv_np = np.asarray(hsv)
+             ^^
+NameError: name 'np' is not defined
+2025-10-06 22:07:03,426 | ERROR | pokedata.pipeline | Failed to process /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_cobvsnbo/FirstScan/FirstScan_page_006.png (index=3)
+Traceback (most recent call last):
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 938, in process_images
+    row, structured = process_page(img, idx)
+                      ~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 697, in process_page
+    layout_id = detect_layout(pil)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 65, in detect_layout
+    color_score = _trainer_color_ratio(header_img)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 186, in _trainer_color_ratio
+    hsv_np = np.asarray(hsv)
+             ^^
+NameError: name 'np' is not defined
+2025-10-06 22:07:03,661 | ERROR | pokedata.pipeline | Failed to process /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_cobvsnbo/FirstScan/FirstScan_page_008.png (index=4)
+Traceback (most recent call last):
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 938, in process_images
+    row, structured = process_page(img, idx)
+                      ~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 697, in process_page
+    layout_id = detect_layout(pil)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 65, in detect_layout
+    color_score = _trainer_color_ratio(header_img)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 186, in _trainer_color_ratio
+    hsv_np = np.asarray(hsv)
+             ^^
+NameError: name 'np' is not defined
+2025-10-06 22:07:03,886 | ERROR | pokedata.pipeline | Failed to process /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_cobvsnbo/FirstScan/FirstScan_page_010.png (index=5)
+Traceback (most recent call last):
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 938, in process_images
+    row, structured = process_page(img, idx)
+                      ~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 697, in process_page
+    layout_id = detect_layout(pil)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 65, in detect_layout
+    color_score = _trainer_color_ratio(header_img)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 186, in _trainer_color_ratio
+    hsv_np = np.asarray(hsv)
+             ^^
+NameError: name 'np' is not defined
+2025-10-06 22:07:04,190 | ERROR | pokedata.pipeline | Failed to process /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_cobvsnbo/FirstScan/FirstScan_page_012.png (index=6)
+Traceback (most recent call last):
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 938, in process_images
+    row, structured = process_page(img, idx)
+                      ~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 697, in process_page
+    layout_id = detect_layout(pil)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 65, in detect_layout
+    color_score = _trainer_color_ratio(header_img)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 186, in _trainer_color_ratio
+    hsv_np = np.asarray(hsv)
+             ^^
+NameError: name 'np' is not defined
+2025-10-06 22:07:04,394 | ERROR | pokedata.pipeline | Failed to process /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_cobvsnbo/FirstScan/FirstScan_page_014.png (index=7)
+Traceback (most recent call last):
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 938, in process_images
+    row, structured = process_page(img, idx)
+                      ~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 697, in process_page
+    layout_id = detect_layout(pil)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 65, in detect_layout
+    color_score = _trainer_color_ratio(header_img)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 186, in _trainer_color_ratio
+    hsv_np = np.asarray(hsv)
+             ^^
+NameError: name 'np' is not defined
+2025-10-06 22:07:04,592 | ERROR | pokedata.pipeline | Failed to process /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_cobvsnbo/FirstScan/FirstScan_page_016.png (index=8)
+Traceback (most recent call last):
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 938, in process_images
+    row, structured = process_page(img, idx)
+                      ~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 697, in process_page
+    layout_id = detect_layout(pil)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 65, in detect_layout
+    color_score = _trainer_color_ratio(header_img)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 186, in _trainer_color_ratio
+    hsv_np = np.asarray(hsv)
+             ^^
+NameError: name 'np' is not defined
+2025-10-06 22:07:04,829 | ERROR | pokedata.pipeline | Failed to process /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_cobvsnbo/FirstScan/FirstScan_page_018.png (index=9)
+Traceback (most recent call last):
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 938, in process_images
+    row, structured = process_page(img, idx)
+                      ~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/pipeline.py", line 697, in process_page
+    layout_id = detect_layout(pil)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 65, in detect_layout
+    color_score = _trainer_color_ratio(header_img)
+  File "/Users/lucas/SNEKOPS/PokeData/pokedata_core/region_cropper.py", line 186, in _trainer_color_ratio
+    hsv_np = np.asarray(hsv)
+             ^^
+NameError: name 'np' is not defined

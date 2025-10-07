@@ -285,27 +285,6 @@ def _remote_pointer_to_field(pointer: str) -> Optional[str]:
             return field
     return REMOTE_POINTER_FIELD_MAP.get(lowered)
 
-<<<<<<< ours
-
-def _remote_pointer_to_field(pointer: str) -> Optional[str]:
-    if pointer is None:
-        return None
-    cleaned = str(pointer).strip()
-    if not cleaned:
-        return None
-    cleaned = cleaned.lstrip("/")
-    cleaned = cleaned.replace("/", ".")
-    cleaned = cleaned.replace("~1", "/").replace("~0", "~")
-    cleaned = re.sub(r"\[\d+\]", "", cleaned)
-    lowered = cleaned.lower()
-    for prefix, field in REMOTE_POINTER_FIELD_MAP.items():
-        prefix_lower = prefix.lower()
-        if lowered == prefix_lower or lowered.startswith(prefix_lower + "."):
-            return field
-    return REMOTE_POINTER_FIELD_MAP.get(lowered)
-
-=======
->>>>>>> theirs
 
 @dataclass
 class CardRow:

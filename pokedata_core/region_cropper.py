@@ -6,11 +6,7 @@ import re
 import shlex
 import string
 from dataclasses import dataclass
-<<<<<<< ours
-from typing import Dict, Sequence, Tuple
-=======
 from typing import Dict, List, Sequence, Tuple
->>>>>>> theirs
 
 from PIL import Image, ImageOps
 import pytesseract
@@ -48,8 +44,6 @@ def detect_layout(image: Image.Image) -> str:
     header_box = _normalize_to_box(image, (0.05, 0.02, 0.95, 0.14))
     header_img = image.crop(header_box)
     header_img = ImageOps.expand(header_img, border=5, fill="white")
-<<<<<<< ours
-=======
 
     tokens = _extract_tokens(
         header_img,
@@ -59,16 +53,12 @@ def detect_layout(image: Image.Image) -> str:
     )
     token_text = " ".join(token["text"] for token in tokens)
 
->>>>>>> theirs
     text = pytesseract.image_to_string(
         header_img,
         config=_build_tesseract_config(
             ["--psm", "7", "-c", f"tessedit_char_whitelist={HEADER_WHITELIST}"]
         ),
     )
-<<<<<<< ours
-    if _looks_like_trainer_banner(text):
-=======
     combined = " ".join(part for part in (token_text, text) if part).strip()
 
     token_score = _score_trainer_tokens(tokens)
@@ -81,7 +71,6 @@ def detect_layout(image: Image.Image) -> str:
     if token_score >= 0.12 and color_score >= 0.08:
         return "trainer"
     if color_score >= 0.22 and token_score >= 0.05:
->>>>>>> theirs
         return "trainer"
     return "pokemon"
 
@@ -167,8 +156,6 @@ def _looks_like_trainer_banner(text: str) -> bool:
         return False
     letters = re.sub(r"[^A-Z]", "", text.upper())
     return any(token in letters for token in TRAINER_KEYWORDS)
-<<<<<<< ours
-=======
 
 
 def _score_trainer_tokens(tokens: Sequence[Dict[str, object]]) -> float:
@@ -246,7 +233,6 @@ def _extract_tokens(image: Image.Image, config: str) -> List[Dict[str, object]]:
             }
         )
     return tokens
->>>>>>> theirs
 
 
 def _find_card_number(text: str) -> str:
@@ -297,7 +283,3 @@ def _build_tesseract_config(args: Sequence[str]) -> str:
         else:
             escaped.append(shlex.quote(arg))
     return " ".join(escaped)
-<<<<<<< ours
-=======
-
->>>>>>> theirs
