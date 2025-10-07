@@ -15,6 +15,7 @@ const state = {
   fieldOrder: [
     'name',
     'hp',
+    'card_type',
     'evolves_from',
     'ability_name',
     'ability_text',

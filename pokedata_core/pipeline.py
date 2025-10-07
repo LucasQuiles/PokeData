@@ -53,6 +53,11 @@ SAVE_DEBUG = False
 MAX_OCR_CHARS = 10000
 AUTO_CROP_ENABLED = os.getenv("POKEDATA_AUTO_CROP", "0") == "1"
 
+CARD_TYPE_POKEMON = "pokemon"
+CARD_TYPE_TRAINER = "trainer"
+CARD_TYPE_ENERGY = "energy"
+CARD_TYPE_UNKNOWN = "unknown"
+
 # Set code mapping placeholder. Add entries as you discover them.
 SET_CODE_MAP: Dict[str, str] = {}
 
@@ -114,6 +119,17 @@ def _normalize_text(value: str) -> str:
     for src, dst in PUNCT_REPLACEMENTS.items():
         normalized = normalized.replace(src, dst)
     return normalized.strip()
+
+
+def _load_notes_dict(value: Any) -> Dict[str, Any]:
+    if isinstance(value, dict):
+        return dict(value)
+    if isinstance(value, str) and value.strip():
+        try:
+            return json.loads(value)
+        except json.JSONDecodeError:
+            return {}
+    return {}
 
 
 def _ensure_attack_list(value: Any) -> List[Dict[str, Any]]:
@@ -189,6 +205,21 @@ def _attacks_from_text(text: str) -> List[Dict[str, Any]]:
         damage = _normalize_text(match.group(2))
         attacks.append({"name": name, "cost": [], "damage": damage, "text": ""})
     return attacks
+
+
+def _looks_like_technical_machine(name: str, structured: Optional[Dict[str, Any]]) -> bool:
+    lowered = name.lower()
+    if "technical machine" in lowered:
+        return True
+    if structured and isinstance(structured, dict):
+        text_block = structured.get("text")
+        if isinstance(text_block, dict):
+            rule_texts = text_block.get("rules")
+            if isinstance(rule_texts, list):
+                blob = " ".join(str(item).lower() for item in rule_texts if item)
+                if "technical machine" in blob:
+                    return True
+    return False
 
 
 def _stringify_field(key: str, value: Any) -> str:
@@ -270,6 +301,76 @@ def _is_valid_hp(text: str) -> bool:
     return bool(text and RE_VALID_HP.fullmatch(text))
 
 
+def _determine_card_type(
+    layout_id: str, fields: Dict[str, Any], structured: Optional[Dict[str, Any]]
+) -> str:
+    if layout_id == CARD_TYPE_TRAINER:
+        return CARD_TYPE_TRAINER
+
+    hp_value = str(fields.get("hp", "") or "")
+    attacks_field = _ensure_attack_list(fields.get("attacks"))
+
+    if _is_valid_hp(hp_value):
+        return CARD_TYPE_POKEMON
+
+    remote_attacks: List[Any] = []
+    remote_types: List[str] = []
+    if isinstance(structured, dict):
+        text_block = structured.get("text")
+        if isinstance(text_block, dict):
+            remote_attacks = [item for item in text_block.get("attacks") or [] if item]
+        candidate_types = structured.get("types")
+        if isinstance(candidate_types, list):
+            remote_types = [str(item).strip() for item in candidate_types if str(item).strip()]
+
+    if remote_attacks:
+        # Technical Machines are Trainers with attack text.
+        name = _normalize_text(str(fields.get("name", "")))
+        if _looks_like_technical_machine(name, structured):
+            return CARD_TYPE_TRAINER
+        return CARD_TYPE_POKEMON
+
+    if attacks_field:
+        name = _normalize_text(str(fields.get("name", "")))
+        if _looks_like_technical_machine(name, structured):
+            return CARD_TYPE_TRAINER
+        return CARD_TYPE_POKEMON
+
+    if remote_types:
+        return CARD_TYPE_POKEMON
+
+    notes_obj = _load_notes_dict(fields.get("notes"))
+    if notes_obj.get("layout") == CARD_TYPE_TRAINER:
+        return CARD_TYPE_TRAINER
+
+    types_note = notes_obj.get("types")
+    if isinstance(types_note, list) and any(str(t).strip() for t in types_note):
+        return CARD_TYPE_POKEMON
+
+    name = _normalize_text(str(fields.get("name", "")))
+    ability_text = _normalize_text(str(fields.get("ability_text", "")))
+    combined = " ".join(filter(None, [name.lower(), ability_text.lower()]))
+
+    trainer_tokens = (
+        "supporter",
+        "stadium",
+        "trainer",
+        "technical machine",
+        "pokémon tool",
+    )
+    if not hp_value and not attacks_field and not remote_attacks:
+        if any(token in combined for token in trainer_tokens):
+            return CARD_TYPE_TRAINER
+
+    if "energy" in name.lower() and not _is_valid_hp(hp_value):
+        return CARD_TYPE_ENERGY
+
+    if "energy" in combined and not _is_valid_hp(hp_value):
+        return CARD_TYPE_ENERGY
+
+    return CARD_TYPE_UNKNOWN if not hp_value else CARD_TYPE_POKEMON
+
+
 def _remote_pointer_to_field(pointer: str) -> Optional[str]:
     if pointer is None:
         return None
@@ -321,6 +422,7 @@ def _infer_layout_from_structured(data: Optional[Dict[str, Any]]) -> Optional[st
 class CardRow:
     source_image: str
     page_index: int
+    card_type: str = CARD_TYPE_UNKNOWN
     name: str = ""
     hp: str = ""
     evolves_from: str = ""
@@ -634,9 +736,9 @@ def _extract_with_layout(pil: Image.Image) -> Dict[str, str]:
     return results
 
 
-def _compute_missing_warnings(fields: Dict[str, str]) -> List[str]:
+def _compute_missing_warnings(fields: Dict[str, str], card_type: str) -> List[str]:
     warnings: List[str] = []
-    if not fields.get("hp"):
+    if card_type in {CARD_TYPE_POKEMON, CARD_TYPE_UNKNOWN} and not fields.get("hp"):
         warnings.append("hp_missing")
     if not fields.get("name"):
         warnings.append("name_guess_failed")
@@ -949,16 +1051,9 @@ def process_page(image_path: Path, index: int) -> Tuple[CardRow, Optional[Dict[s
         elif setbox and setbox != fields.get("set_code"):
             fallback_suggestions.setdefault("set_code", setbox)
 
-    notes = fields.get("notes")
-    if isinstance(notes, str) and notes:
-        try:
-            notes_obj = json.loads(notes)
-        except json.JSONDecodeError:
-            notes_obj = {"raw": notes}
-    elif isinstance(notes, dict):
-        notes_obj = notes
-    else:
-        notes_obj = {}
+    notes_obj = _load_notes_dict(fields.get("notes"))
+    if isinstance(fields.get("notes"), str) and fields.get("notes") and not notes_obj:
+        notes_obj = {"raw": fields.get("notes")}
     notes_obj.setdefault("layout", layout_id)
     if remote_unreadable_flags or remote_low_conf_flags:
         remote_section = notes_obj.get("remoteWarnings")
@@ -989,10 +1084,26 @@ def process_page(image_path: Path, index: int) -> Tuple[CardRow, Optional[Dict[s
     if normalization_warnings:
         warnings.extend(normalization_warnings)
 
+    card_type = _determine_card_type(layout_id, fields, structured_payload)
+    if card_type in {CARD_TYPE_TRAINER, CARD_TYPE_ENERGY}:
+        fields["hp"] = ""
+        fields["attacks"] = []
+        warnings = [w for w in warnings if not w.startswith("hp_")]
+    elif card_type == CARD_TYPE_UNKNOWN and fields.get("hp"):
+        card_type = CARD_TYPE_POKEMON
+
+    fields["card_type"] = card_type
+
+    notes_for_card_type = _load_notes_dict(fields.get("notes"))
+    notes_for_card_type.setdefault("layout", layout_id)
+    if card_type:
+        notes_for_card_type["cardType"] = card_type
+    fields["notes"] = json.dumps(notes_for_card_type, ensure_ascii=False)
+
     attacks_list = fields.get("attacks", [])
     fields["attacks"] = json.dumps(attacks_list, ensure_ascii=False) if attacks_list else ""
 
-    missing_warnings = _compute_missing_warnings(fields)
+    missing_warnings = _compute_missing_warnings(fields, card_type)
     warnings = sorted(set(warnings + missing_warnings))
 
     row = CardRow(

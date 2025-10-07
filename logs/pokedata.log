@@ -1192,3 +1192,30 @@ NameError: name 'np' is not defined
 2025-10-07 00:33:35,617 | INFO | pokedata.pipeline | Wrote CSV /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_jsxisk7n/FirstScan_cards.csv with 10 row(s)
 2025-10-07 00:33:35,671 | INFO | pokedata.review | Stored run 20251007-043335_firstscan-pdf with 10 pages
 2025-10-07 00:33:35,709 | INFO | pokedata.web | Web processing complete: FirstScan.pdf -> FirstScan_cards.csv (10 rows)
+2025-10-07 00:56:18,003 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474435, dpi=300, limit=10
+2025-10-07 00:56:23,099 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_i52s9phf/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-07 00:56:23,108 | INFO | pokedata.pipeline | Front-only mode: filtered 74 → 37 images
+2025-10-07 00:56:23,108 | INFO | pokedata.pipeline | Processing 10 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_i52s9phf/FirstScan.pdf (dpi=300, limit=10)
+2025-10-07 00:56:23,252 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_002.png: POKEDATA_OPENAI_API_KEY environment variable not set; remote OCR unavailable.
+2025-10-07 00:56:28,195 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_004.png: POKEDATA_OPENAI_API_KEY environment variable not set; remote OCR unavailable.
+2025-10-07 00:56:30,495 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_006.png: POKEDATA_OPENAI_API_KEY environment variable not set; remote OCR unavailable.
+2025-10-07 00:56:33,078 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_008.png: POKEDATA_OPENAI_API_KEY environment variable not set; remote OCR unavailable.
+2025-10-07 00:56:35,927 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_010.png: POKEDATA_OPENAI_API_KEY environment variable not set; remote OCR unavailable.
+2025-10-07 00:56:39,056 | WARNING | pokedata.pipeline | Remote OCR failed for FirstScan_page_012.png: POKEDATA_OPENAI_API_KEY environment variable not set; remote OCR unavailable.
+2025-10-07 00:57:21,996 | INFO | pokedata.web | Web upload received: filename=FirstScan.pdf, content_length=6474435, dpi=300, limit=10
+2025-10-07 00:57:26,574 | INFO | pokedata.pipeline | Converted /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_f1pfjbvs/FirstScan.pdf into 74 image(s) at 300dpi
+2025-10-07 00:57:26,582 | INFO | pokedata.pipeline | Front-only mode: filtered 74 → 37 images
+2025-10-07 00:57:26,582 | INFO | pokedata.pipeline | Processing 10 image(s) derived from /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_f1pfjbvs/FirstScan.pdf (dpi=300, limit=10)
+2025-10-07 00:57:40,261 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_002.png
+2025-10-07 00:57:57,793 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_004.png
+2025-10-07 00:58:18,037 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_006.png
+2025-10-07 00:58:37,411 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_008.png
+2025-10-07 00:59:09,284 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_010.png
+2025-10-07 00:59:29,727 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_012.png
+2025-10-07 00:59:44,019 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_014.png
+2025-10-07 00:59:53,649 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_016.png
+2025-10-07 01:00:11,058 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_018.png
+2025-10-07 01:00:23,135 | INFO | pokedata.pipeline | Remote OCR succeeded for FirstScan_page_020.png
+2025-10-07 01:00:26,186 | INFO | pokedata.pipeline | Wrote CSV /var/folders/h4/nm6scp6n4v7gjrxwpc07ntgm0000gn/T/pokedata_f1pfjbvs/FirstScan_cards.csv with 10 row(s)
+2025-10-07 01:00:26,213 | INFO | pokedata.review | Stored run 20251007-050026_firstscan-pdf with 10 pages
+2025-10-07 01:00:26,252 | INFO | pokedata.web | Web processing complete: FirstScan.pdf -> FirstScan_cards.csv (10 rows)
