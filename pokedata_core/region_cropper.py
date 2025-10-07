@@ -12,17 +12,9 @@ from typing import Dict, List, Sequence, Tuple
 from PIL import Image, ImageOps
 import pytesseract
 from pytesseract import Output
+from pytesseract.pytesseract import TesseractNotFoundError
 
 from .layouts import POKEMON_LAYOUT, TRAINER_LAYOUT, Layout
-
-__all__ = [
-    "CroppedRegions",
-    "detect_layout",
-    "crop_regions",
-    "extract_title_text",
-    "extract_hp",
-    "extract_bottom_text",
-]
 
 
 logger = logging.getLogger(__name__)
@@ -66,12 +58,16 @@ def detect_layout(image: Image.Image) -> str:
     )
     token_text = " ".join(token["text"] for token in tokens)
 
-    text = pytesseract.image_to_string(
-        header_img,
-        config=_build_tesseract_config(
-            ["--psm", "7", "-c", f"tessedit_char_whitelist={HEADER_WHITELIST}"]
-        ),
-    )
+    try:
+        text = pytesseract.image_to_string(
+            header_img,
+            config=_build_tesseract_config(
+                ["--psm", "7", "-c", f"tessedit_char_whitelist={HEADER_WHITELIST}"]
+            ),
+        )
+    except TesseractNotFoundError:
+        logger.debug("Tesseract not available; skipping header text OCR for layout detection")
+        text = ""
     combined = " ".join(part for part in (token_text, text) if part).strip()
 
     token_score = _score_trainer_tokens(tokens)
@@ -100,12 +96,16 @@ def extract_title_text(crops: CroppedRegions) -> str:
     title_img = crops.regions.get("title")
     if not title_img:
         return ""
-    text = pytesseract.image_to_string(
-        title_img,
-        config=_build_tesseract_config(
-            ["--psm", "7", "-c", f"tessedit_char_whitelist={TITLE_WHITELIST}"]
-        ),
-    ).strip()
+    try:
+        text = pytesseract.image_to_string(
+            title_img,
+            config=_build_tesseract_config(
+                ["--psm", "7", "-c", f"tessedit_char_whitelist={TITLE_WHITELIST}"]
+            ),
+        ).strip()
+    except TesseractNotFoundError:
+        logger.debug("Tesseract not available; title extraction skipped")
+        text = ""
     if crops.layout_id == "trainer":
         text = _strip_trainer_banner(text)
     return text
@@ -117,12 +117,16 @@ def extract_hp(crops: CroppedRegions) -> str:
     hp_img = crops.regions.get("hp")
     if not hp_img:
         return ""
-    text = pytesseract.image_to_string(
-        hp_img,
-        config=_build_tesseract_config(
-            ["--psm", "7", "-c", f"tessedit_char_whitelist={HP_WHITELIST}"]
-        ),
-    ).strip()
+    try:
+        text = pytesseract.image_to_string(
+            hp_img,
+            config=_build_tesseract_config(
+                ["--psm", "7", "-c", f"tessedit_char_whitelist={HP_WHITELIST}"]
+            ),
+        ).strip()
+    except TesseractNotFoundError:
+        logger.debug("Tesseract not available; HP extraction skipped")
+        text = ""
     digits = "".join(ch for ch in text if ch.isdigit())
     return digits[:3]
 
@@ -131,7 +135,11 @@ def extract_bottom_text(crops: CroppedRegions) -> Tuple[str, str, str]:
     meta_img = crops.regions.get("bottom_meta")
     if not meta_img:
         return "", "", ""
-    text = pytesseract.image_to_string(meta_img, config="--psm 6").strip()
+    try:
+        text = pytesseract.image_to_string(meta_img, config="--psm 6").strip()
+    except TesseractNotFoundError:
+        logger.debug("Tesseract not available; bottom metadata extraction skipped")
+        return "", "", ""
     lines = [line.strip() for line in text.splitlines() if line.strip()]
     joined = " ".join(lines)
     card_number = _find_card_number(joined)
@@ -225,7 +233,8 @@ def _extract_tokens(image: Image.Image, config: str) -> List[Dict[str, object]]:
             output_type=Output.DICT,
             config=config,
         )
-    except pytesseract.TesseractError:
+    except (pytesseract.TesseractError, TesseractNotFoundError):
+        logger.debug("Tesseract not available; returning empty token set")
         return []
 
     tokens: List[Dict[str, object]] = []
@@ -301,3 +310,4 @@ def _build_tesseract_config(args: Sequence[str]) -> str:
         else:
             escaped.append(shlex.quote(arg))
     return " ".join(escaped)
+

@@ -25,6 +25,7 @@ from .grading import estimate_grade
 from .logging_utils import get_logger
 from .remote_ocr import extract_card_fields
 from .region_cropper import (
+    CroppedRegions,
     crop_regions,
     detect_layout,
     extract_bottom_text,
@@ -285,6 +286,38 @@ def _remote_pointer_to_field(pointer: str) -> Optional[str]:
             return field
     return REMOTE_POINTER_FIELD_MAP.get(lowered)
 
+<<<<<<< ours
+=======
+
+def _infer_layout_from_structured(data: Optional[Dict[str, Any]]) -> Optional[str]:
+    if not isinstance(data, dict):
+        return None
+
+    text_block = data.get("text")
+    attacks = []
+    abilities = []
+    if isinstance(text_block, dict):
+        attacks = [item for item in text_block.get("attacks") or [] if item]
+        abilities = [item for item in text_block.get("abilities") or [] if item]
+
+    hp_val = data.get("hp")
+    hp_str = str(hp_val or "")
+    types = data.get("types") or []
+    if isinstance(types, dict):
+        types = list(types.values())
+
+    if (
+        (hp_val in (None, "", 0))
+        and not attacks
+        and not abilities
+        and not types
+        and not _is_valid_hp(hp_str)
+    ):
+        return "trainer"
+
+    return None
+
+>>>>>>> theirs
 
 @dataclass
 class CardRow:
@@ -694,16 +727,9 @@ def process_page(image_path: Path, index: int) -> Tuple[CardRow, Optional[Dict[s
     pil = _auto_crop_card_if_available(pil)
     pil = _pil_enhance(pil)
 
-    layout_id = detect_layout(pil)
-    crops = crop_regions(pil, layout_id)
-
+    layout_id = "pokemon"
+    crops: Optional[CroppedRegions] = None
     hp_probe = ""
-    if layout_id == "pokemon":
-        hp_probe = extract_hp(crops)
-        if not _is_valid_hp(hp_probe):
-            layout_id = "trainer"
-            crops = crop_regions(pil, layout_id)
-            hp_probe = ""
 
     page_sha1 = _sha1_of_image(pil)
     fields: Dict[str, str] = {}
@@ -716,12 +742,65 @@ def process_page(image_path: Path, index: int) -> Tuple[CardRow, Optional[Dict[s
     remote_unreadable_flags: Set[str] = set()
     remote_low_conf_flags: Set[str] = set()
 
+    try:
+        pytesseract.get_tesseract_version()
+        tesseract_available = True
+    except pytesseract.pytesseract.TesseractNotFoundError:
+        tesseract_available = False
+        warnings.append("tesseract_missing")
+    except Exception:
+        tesseract_available = True
+
+    def ensure_crops() -> Optional[CroppedRegions]:
+        nonlocal crops, layout_id, hp_probe
+        if crops is not None:
+            return crops
+
+        detected = layout_id
+        if tesseract_available:
+            try:
+                detected = detect_layout(pil)
+            except Exception as exc:
+                warnings.append(f"layout_error:{exc}")
+                detected = layout_id
+
+        try:
+            current_crops = crop_regions(pil, detected)
+        except Exception as exc:
+            warnings.append(f"crop_error:{exc}")
+            crops = None
+            layout_id = detected
+            return None
+
+        layout_id = detected
+        crops = current_crops
+
+        if layout_id == "pokemon" and tesseract_available:
+            hp_text = extract_hp(current_crops)
+            if not _is_valid_hp(hp_text):
+                layout_id = "trainer"
+                try:
+                    crops = crop_regions(pil, layout_id)
+                except Exception as exc:
+                    warnings.append(f"crop_error:{exc}")
+                    crops = None
+                hp_probe_value = ""
+            else:
+                hp_probe_value = hp_text
+            hp_probe = hp_probe_value
+
+        return crops
+
     if REMOTE_OCR_ENABLED:
         try:
             fields = extract_card_fields(pil)
             structured_payload = fields.pop("_structured_raw", None)
             remote_used = True
             logger.info("Remote OCR succeeded for %s", image_path.name)
+
+            inferred_layout = _infer_layout_from_structured(structured_payload)
+            if inferred_layout:
+                layout_id = inferred_layout
 
             remote_data = structured_payload if isinstance(structured_payload, dict) else {}
             required_fields = ["name", "hp", "card_number", "artist", "set_code", "set_name"]
@@ -770,9 +849,12 @@ def process_page(image_path: Path, index: int) -> Tuple[CardRow, Optional[Dict[s
                 for warn in fallback_warnings:
                     warnings.append(f"fallback:{warn}")
 
-                if layout_fields_cached is None:
-                    layout_fields_cached = _extract_with_layout(pil)
-                layout_fields = layout_fields_cached or {}
+                if tesseract_available:
+                    if layout_fields_cached is None:
+                        layout_fields_cached = _extract_with_layout(pil)
+                    layout_fields = layout_fields_cached or {}
+                else:
+                    layout_fields = {}
 
                 for key in sorted(fields_to_refill):
                     candidate = fallback_fields.get(key)
@@ -804,8 +886,11 @@ def process_page(image_path: Path, index: int) -> Tuple[CardRow, Optional[Dict[s
         text = _ocr(pil, lang="eng")
         ocr_len = len(text)
         fields, warnings = parse_text_to_fields(text)
-        layout_fields_cached = _extract_with_layout(pil)
-        layout_fields = layout_fields_cached or {}
+        if tesseract_available:
+            layout_fields_cached = _extract_with_layout(pil)
+            layout_fields = layout_fields_cached or {}
+        else:
+            layout_fields = {}
         if layout_fields:
             for key, value in layout_fields.items():
                 if not value:
@@ -823,38 +908,42 @@ def process_page(image_path: Path, index: int) -> Tuple[CardRow, Optional[Dict[s
                 warnings.remove("artist_missing")
             if layout_fields.get("card_number") and "card_number_missing" in warnings:
                 warnings.remove("card_number_missing")
+
+    crops_obj = ensure_crops() if tesseract_available else None
+
     # Layout-based fallbacks
-    title_text = extract_title_text(crops)
-    if not fields.get("name") and title_text:
-        fields["name"] = title_text
-    elif title_text and title_text != fields.get("name"):
-        fallback_suggestions.setdefault("name", title_text)
+    if crops_obj:
+        title_text = extract_title_text(crops_obj)
+        if not fields.get("name") and title_text:
+            fields["name"] = title_text
+        elif title_text and title_text != fields.get("name"):
+            fallback_suggestions.setdefault("name", title_text)
 
-    if layout_id == "trainer":
-        fields["hp"] = ""
-        fields["attacks"] = []
-        fields.setdefault("ability_name", "")
-        fields.setdefault("ability_text", "")
-    else:
-        hp_text = hp_probe or extract_hp(crops)
-        if not fields.get("hp") and hp_text:
-            fields["hp"] = hp_text
-        elif hp_text and hp_text != fields.get("hp"):
-            fallback_suggestions.setdefault("hp", hp_text)
+        if layout_id == "trainer":
+            fields["hp"] = ""
+            fields["attacks"] = []
+            fields.setdefault("ability_name", "")
+            fields.setdefault("ability_text", "")
+        else:
+            hp_text = hp_probe or extract_hp(crops_obj)
+            if not fields.get("hp") and hp_text:
+                fields["hp"] = hp_text
+            elif hp_text and hp_text != fields.get("hp"):
+                fallback_suggestions.setdefault("hp", hp_text)
 
-    card_number, artist, setbox = extract_bottom_text(crops)
-    if card_number and not fields.get("card_number"):
-        fields["card_number"] = card_number
-    elif card_number and card_number != fields.get("card_number"):
-        fallback_suggestions.setdefault("card_number", card_number)
-    if artist and not fields.get("artist"):
-        fields["artist"] = artist
-    elif artist and artist != fields.get("artist"):
-        fallback_suggestions.setdefault("artist", artist)
-    if setbox and not fields.get("set_code"):
-        fields["set_code"] = setbox
-    elif setbox and setbox != fields.get("set_code"):
-        fallback_suggestions.setdefault("set_code", setbox)
+        card_number, artist, setbox = extract_bottom_text(crops_obj)
+        if card_number and not fields.get("card_number"):
+            fields["card_number"] = card_number
+        elif card_number and card_number != fields.get("card_number"):
+            fallback_suggestions.setdefault("card_number", card_number)
+        if artist and not fields.get("artist"):
+            fields["artist"] = artist
+        elif artist and artist != fields.get("artist"):
+            fallback_suggestions.setdefault("artist", artist)
+        if setbox and not fields.get("set_code"):
+            fields["set_code"] = setbox
+        elif setbox and setbox != fields.get("set_code"):
+            fallback_suggestions.setdefault("set_code", setbox)
 
     notes = fields.get("notes")
     if isinstance(notes, str) and notes:
