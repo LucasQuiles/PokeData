@@ -285,6 +285,7 @@ def _remote_pointer_to_field(pointer: str) -> Optional[str]:
             return field
     return REMOTE_POINTER_FIELD_MAP.get(lowered)
 
+<<<<<<< ours
 
 def _remote_pointer_to_field(pointer: str) -> Optional[str]:
     if pointer is None:
@@ -303,6 +304,8 @@ def _remote_pointer_to_field(pointer: str) -> Optional[str]:
             return field
     return REMOTE_POINTER_FIELD_MAP.get(lowered)
 
+=======
+>>>>>>> theirs
 
 @dataclass
 class CardRow:
@@ -375,6 +378,87 @@ def _cv2_deskew_if_available(pil_img: Image.Image) -> Image.Image:
         return Image.fromarray(rotated)
     except Exception:
         return pil_img
+
+
+def _auto_crop_card_if_available(pil_img: Image.Image) -> Image.Image:
+    if not _HAS_CV2:
+        return pil_img
+    try:
+        import numpy as np
+    except Exception:
+        return pil_img
+
+    try:
+        image = np.array(pil_img)
+        if image.ndim != 3:
+            return pil_img
+        bgr = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
+        gray = cv2.cvtColor(bgr, cv2.COLOR_BGR2GRAY)
+        blur = cv2.GaussianBlur(gray, (5, 5), 0)
+        edged = cv2.Canny(blur, 40, 160)
+        edged = cv2.dilate(edged, np.ones((3, 3), dtype=np.uint8), iterations=1)
+        edged = cv2.erode(edged, np.ones((3, 3), dtype=np.uint8), iterations=1)
+
+        contours, _ = cv2.findContours(
+            edged, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE
+        )
+        if not contours:
+            return pil_img
+        contours = sorted(contours, key=cv2.contourArea, reverse=True)
+        for contour in contours:
+            peri = cv2.arcLength(contour, True)
+            approx = cv2.approxPolyDP(contour, 0.02 * peri, True)
+            if len(approx) != 4:
+                continue
+            warped = _warp_card(image, approx.reshape(4, 2).astype("float32"))
+            if warped is None:
+                continue
+            return Image.fromarray(warped)
+    except Exception:
+        logger.debug("Automatic card crop failed", exc_info=True)
+    return pil_img
+
+
+def _warp_card(image, points):
+    try:
+        import numpy as np
+    except Exception:
+        return None
+
+    rect = _order_points(points)
+    (tl, tr, br, bl) = rect
+    width_a = np.linalg.norm(br - bl)
+    width_b = np.linalg.norm(tr - tl)
+    height_a = np.linalg.norm(tr - br)
+    height_b = np.linalg.norm(tl - bl)
+    max_width = int(max(width_a, width_b))
+    max_height = int(max(height_a, height_b))
+    if max_width < 50 or max_height < 50:
+        return None
+
+    dst = np.array(
+        [[0, 0], [max_width - 1, 0], [max_width - 1, max_height - 1], [0, max_height - 1]],
+        dtype="float32",
+    )
+    M = cv2.getPerspectiveTransform(rect, dst)
+    warped = cv2.warpPerspective(image, M, (max_width, max_height))
+    return warped
+
+
+def _order_points(points):
+    try:
+        import numpy as np
+    except Exception:
+        return points
+
+    rect = np.zeros((4, 2), dtype="float32")
+    s = points.sum(axis=1)
+    rect[0] = points[np.argmin(s)]
+    rect[2] = points[np.argmax(s)]
+    diff = np.diff(points, axis=1)
+    rect[1] = points[np.argmin(diff)]
+    rect[3] = points[np.argmax(diff)]
+    return rect
 
 
 def _sha1_of_image(pil_img: Image.Image) -> str:
@@ -628,6 +712,7 @@ def collect_image_inputs(input_path: Path, dpi: int = 300) -> List[Path]:
 def process_page(image_path: Path, index: int) -> Tuple[CardRow, Optional[Dict[str, str]]]:
     pil = Image.open(image_path).convert("RGB")
     pil = _cv2_deskew_if_available(pil)
+    pil = _auto_crop_card_if_available(pil)
     pil = _pil_enhance(pil)
 
     layout_id = detect_layout(pil)
