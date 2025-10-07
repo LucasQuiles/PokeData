@@ -12,9 +12,10 @@ import json
 import os
 import re
 import shutil
+import unicodedata as ud
 from dataclasses import dataclass, field, asdict
 from pathlib import Path
-from typing import Dict, List, Optional, Pattern, Set, Tuple
+from typing import Any, Dict, List, Optional, Pattern, Sequence, Set, Tuple
 
 import pytesseract
 from PIL import Image, ImageFilter, ImageOps
@@ -82,15 +83,207 @@ REMOTE_POINTER_FIELD_MAP = {
 
 # Regexes & heuristics
 RE_HP = re.compile(r"\bHP\s*(\d{1,3})\b", re.IGNORECASE)
+RE_VALID_HP = re.compile(r"^\d{1,3}$")
 RE_EVOLVES = re.compile(r"\bEvolves\s+from\s+([A-Za-z0-9'\-. ]+)", re.IGNORECASE)
 RE_ARTIST = re.compile(r"\bIllus\.\s*([A-Za-z0-9'\-.\s]+)", re.IGNORECASE)
 RE_CARDNUM = re.compile(r"\b(\d{1,3}\s*/\s*\d{1,3})\b")
 RE_SET_CODE = re.compile(r"\b([A-Z]{2,4})\s*(?=\d{1,3}\s*/\s*\d{1,3})")
+RE_SET_CODE_STRICT = re.compile(r"^[A-Z]{2,4}$")
 RE_WEAKNESS = re.compile(r"\bweakness\b", re.IGNORECASE)
 RE_RESIST = re.compile(r"\bresistance\b", re.IGNORECASE)
 RE_RETREAT = re.compile(r"\bretreat\b", re.IGNORECASE)
 RE_ABILITY_LINE = re.compile(r"\bAbility\b\s*([A-Za-z0-9'\- ]+)", re.IGNORECASE)
 RE_ATTACK_LINE = re.compile(r"([A-Za-z][A-Za-z0-9'\- ]+?)\s+(\d{10,}|[1-9]\d{0,2}\+?)\b")
+
+PUNCT_REPLACEMENTS = {
+    "’": "'",
+    "‘": "'",
+    "“": '"',
+    "”": '"',
+    "–": "-",
+    "—": "-",
+}
+
+
+def _normalize_text(value: str) -> str:
+    if not value:
+        return ""
+    normalized = ud.normalize("NFKC", value)
+    for src, dst in PUNCT_REPLACEMENTS.items():
+        normalized = normalized.replace(src, dst)
+    return normalized.strip()
+
+
+def _ensure_attack_list(value: Any) -> List[Dict[str, Any]]:
+    if not value:
+        return []
+    if isinstance(value, str):
+        return _parse_attack_string(value)
+    attacks: List[Dict[str, Any]] = []
+    if isinstance(value, Sequence):
+        for attack in value:
+            if not isinstance(attack, dict):
+                continue
+            name = _normalize_text(str(attack.get("name", "")))
+            damage = _normalize_text(str(attack.get("damage", "")))
+            text = _normalize_text(str(attack.get("text", "")))
+            cost_tokens: List[str] = []
+            cost_value = attack.get("cost", [])
+            if isinstance(cost_value, Sequence) and not isinstance(cost_value, str):
+                for token in cost_value:
+                    if not isinstance(token, str):
+                        continue
+                    cleaned = _normalize_text(token)
+                    if cleaned:
+                        cost_tokens.append(cleaned)
+            elif isinstance(cost_value, str):
+                cost_tokens = _split_cost_tokens(cost_value)
+            attacks.append(
+                {
+                    "name": name,
+                    "cost": cost_tokens,
+                    "damage": damage,
+                    "text": text,
+                }
+            )
+    return attacks
+
+
+def _split_cost_tokens(cost: str) -> List[str]:
+    tokens = [tok for tok in re.split(r"[\\/\s]+", cost) if tok]
+    return [_normalize_text(tok) for tok in tokens if _normalize_text(tok)]
+
+
+def _parse_attack_string(value: str) -> List[Dict[str, Any]]:
+    attacks: List[Dict[str, Any]] = []
+    if not value:
+        return attacks
+    for part in value.split("|"):
+        segment = part.strip()
+        if not segment:
+            continue
+        pieces = [p.strip() for p in segment.split("::")]
+        name = _normalize_text(pieces[0]) if len(pieces) > 0 else ""
+        cost_str = pieces[1] if len(pieces) > 1 else ""
+        damage = _normalize_text(pieces[2]) if len(pieces) > 2 else ""
+        text = _normalize_text(pieces[3]) if len(pieces) > 3 else ""
+        attacks.append(
+            {
+                "name": name,
+                "cost": _split_cost_tokens(cost_str),
+                "damage": damage,
+                "text": text,
+            }
+        )
+    return attacks
+
+
+def _attacks_from_text(text: str) -> List[Dict[str, Any]]:
+    attacks: List[Dict[str, Any]] = []
+    if not text:
+        return attacks
+    for match in RE_ATTACK_LINE.finditer(text):
+        name = _normalize_text(match.group(1))
+        damage = _normalize_text(match.group(2))
+        attacks.append({"name": name, "cost": [], "damage": damage, "text": ""})
+    return attacks
+
+
+def _stringify_field(key: str, value: Any) -> str:
+    if key == "attacks":
+        attack_list = _ensure_attack_list(value)
+        if not attack_list:
+            return ""
+        return json.dumps(attack_list, ensure_ascii=False)
+    if isinstance(value, (dict, list)):
+        if not value:
+            return ""
+        return json.dumps(value, ensure_ascii=False)
+    if value is None:
+        return ""
+    return _normalize_text(str(value))
+
+
+def _normalize_fields(fields: Dict[str, Any]) -> Tuple[Dict[str, Any], List[str]]:
+    normalized: Dict[str, Any] = dict(fields)
+    warnings: List[str] = []
+
+    text_keys = {
+        "name",
+        "evolves_from",
+        "ability_name",
+        "ability_text",
+        "set_name",
+        "artist",
+        "weakness",
+        "resistance",
+        "retreat",
+        "rarity",
+        "est_grade",
+    }
+    for key in text_keys:
+        value = normalized.get(key)
+        if isinstance(value, str):
+            normalized[key] = _normalize_text(value)
+
+    card_number = normalized.get("card_number")
+    if isinstance(card_number, str):
+        normalized["card_number"] = _normalize_text(card_number).replace(" ", "")
+
+    hp_value = normalized.get("hp", "")
+    if isinstance(hp_value, str):
+        hp_clean = _normalize_text(hp_value)
+        if RE_VALID_HP.fullmatch(hp_clean):
+            normalized["hp"] = hp_clean
+        else:
+            digits = re.findall(r"\d{1,3}", hp_clean)
+            if digits:
+                normalized["hp"] = digits[0]
+            else:
+                normalized["hp"] = ""
+                if hp_clean:
+                    warnings.append("hp_invalid_format")
+
+    set_code = normalized.get("set_code")
+    if isinstance(set_code, str):
+        candidate = _normalize_text(set_code).upper()
+        if candidate and RE_SET_CODE_STRICT.fullmatch(candidate):
+            normalized["set_code"] = candidate
+        else:
+            if candidate:
+                warnings.append("set_code_invalid")
+            normalized["set_code"] = ""
+
+    normalized["attacks"] = _ensure_attack_list(normalized.get("attacks"))
+
+    for key in ("weakness", "resistance"):
+        value = normalized.get(key)
+        if isinstance(value, str):
+            normalized[key] = value.replace("\n", " ")
+
+    return normalized, warnings
+
+
+def _is_valid_hp(text: str) -> bool:
+    return bool(text and RE_VALID_HP.fullmatch(text))
+
+
+def _remote_pointer_to_field(pointer: str) -> Optional[str]:
+    if pointer is None:
+        return None
+    cleaned = str(pointer).strip()
+    if not cleaned:
+        return None
+    cleaned = cleaned.lstrip("/")
+    cleaned = cleaned.replace("/", ".")
+    cleaned = cleaned.replace("~1", "/").replace("~0", "~")
+    cleaned = re.sub(r"\[\d+\]", "", cleaned)
+    lowered = cleaned.lower()
+    for prefix, field in REMOTE_POINTER_FIELD_MAP.items():
+        prefix_lower = prefix.lower()
+        if lowered == prefix_lower or lowered.startswith(prefix_lower + "."):
+            return field
+    return REMOTE_POINTER_FIELD_MAP.get(lowered)
 
 
 def _remote_pointer_to_field(pointer: str) -> Optional[str]:
@@ -282,12 +475,7 @@ def parse_text_to_fields(raw_text: str) -> Tuple[Dict[str, str], List[str]]:
         out["ability_name"] = ""
         out["ability_text"] = ""
 
-    attacks: List[str] = []
-    for mm in RE_ATTACK_LINE.finditer(text):
-        aname = mm.group(1).strip()
-        dmg = mm.group(2).strip()
-        attacks.append(f"{aname} :: {dmg}")
-    out["attacks"] = " | ".join(attacks)
+    out["attacks"] = _attacks_from_text(text)
 
     out["weakness"] = _grab_line_containing(text, RE_WEAKNESS)
     out["resistance"] = _grab_line_containing(text, RE_RESIST)
@@ -445,6 +633,14 @@ def process_page(image_path: Path, index: int) -> Tuple[CardRow, Optional[Dict[s
     layout_id = detect_layout(pil)
     crops = crop_regions(pil, layout_id)
 
+    hp_probe = ""
+    if layout_id == "pokemon":
+        hp_probe = extract_hp(crops)
+        if not _is_valid_hp(hp_probe):
+            layout_id = "trainer"
+            crops = crop_regions(pil, layout_id)
+            hp_probe = ""
+
     page_sha1 = _sha1_of_image(pil)
     fields: Dict[str, str] = {}
     structured_payload: Optional[Dict[str, str]] = None
@@ -572,11 +768,11 @@ def process_page(image_path: Path, index: int) -> Tuple[CardRow, Optional[Dict[s
 
     if layout_id == "trainer":
         fields["hp"] = ""
-        fields.setdefault("attacks", "")
+        fields["attacks"] = []
         fields.setdefault("ability_name", "")
         fields.setdefault("ability_text", "")
     else:
-        hp_text = extract_hp(crops)
+        hp_text = hp_probe or extract_hp(crops)
         if not fields.get("hp") and hp_text:
             fields["hp"] = hp_text
         elif hp_text and hp_text != fields.get("hp"):
@@ -625,9 +821,19 @@ def process_page(image_path: Path, index: int) -> Tuple[CardRow, Optional[Dict[s
         if not isinstance(fallback_section, dict):
             fallback_section = {}
         for key, value in fallback_suggestions.items():
-            fallback_section.setdefault(key, str(value))
-        notes_obj["fallbackSuggestions"] = fallback_section
+            rendered = _stringify_field(key, value)
+            if rendered:
+                fallback_section.setdefault(key, rendered)
+        if fallback_section:
+            notes_obj["fallbackSuggestions"] = fallback_section
     fields["notes"] = json.dumps(notes_obj, ensure_ascii=False)
+
+    fields, normalization_warnings = _normalize_fields(fields)
+    if normalization_warnings:
+        warnings.extend(normalization_warnings)
+
+    attacks_list = fields.get("attacks", [])
+    fields["attacks"] = json.dumps(attacks_list, ensure_ascii=False) if attacks_list else ""
 
     missing_warnings = _compute_missing_warnings(fields)
     warnings = sorted(set(warnings + missing_warnings))

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 import shlex
 import string
 from dataclasses import dataclass
@@ -23,6 +24,7 @@ __all__ = [
 
 
 TRAINER_KEYWORDS = {"TRAINER", "SUPPORTER", "ITEM", "STADIUM"}
+HEADER_WHITELIST = string.ascii_uppercase
 TITLE_WHITELIST = string.ascii_letters + string.digits + "'-."
 HP_WHITELIST = string.digits
 
@@ -41,10 +43,14 @@ def detect_layout(image: Image.Image) -> str:
     header_box = _normalize_to_box(image, (0.05, 0.02, 0.95, 0.14))
     header_img = image.crop(header_box)
     header_img = ImageOps.expand(header_img, border=5, fill="white")
-    text = pytesseract.image_to_string(header_img, config="--psm 7").upper()
-    for token in TRAINER_KEYWORDS:
-        if token in text:
-            return "trainer"
+    text = pytesseract.image_to_string(
+        header_img,
+        config=_build_tesseract_config(
+            ["--psm", "7", "-c", f"tessedit_char_whitelist={HEADER_WHITELIST}"]
+        ),
+    )
+    if _looks_like_trainer_banner(text):
+        return "trainer"
     return "pokemon"
 
 
@@ -110,12 +116,25 @@ def _normalize_to_box(image: Image.Image, box: Tuple[float, float, float, float]
 
 
 def _strip_trainer_banner(text: str) -> str:
-    upper = text.upper()
-    for token in TRAINER_KEYWORDS:
-        if upper.startswith(token):
-            idx = text.upper().find(token)
-            text = text[idx + len(token) :]
-    return text.strip(" :-")
+    if not text:
+        return ""
+
+    cleaned = text.strip()
+    cleaned = re.sub(r"^[^A-Za-z]+", "", cleaned)
+    cleaned = re.sub(
+        r"^(TRAINER|SUPPORTER|ITEM|STADIUM)\b[:\-]*\s*",
+        "",
+        cleaned,
+        flags=re.IGNORECASE,
+    )
+    return cleaned.strip(" :-")
+
+
+def _looks_like_trainer_banner(text: str) -> bool:
+    if not text:
+        return False
+    letters = re.sub(r"[^A-Z]", "", text.upper())
+    return any(token in letters for token in TRAINER_KEYWORDS)
 
 
 def _find_card_number(text: str) -> str:

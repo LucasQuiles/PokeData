@@ -205,7 +205,7 @@ def _map_structured_to_cardrow(data: Dict[str, object]) -> Dict[str, str]:
     text_block = data.get("text", {})
     abilities: List[str] = []
     ability_details: List[str] = []
-    attacks = []
+    attacks: List[Dict[str, str]] = []
     weaknesses = []
     resistances = []
     retreat_cost = []
@@ -229,14 +229,19 @@ def _map_structured_to_cardrow(data: Dict[str, object]) -> Dict[str, str]:
         for attack in text_block.get("attacks", []) or []:
             if not isinstance(attack, dict):
                 continue
-            name = attack.get("name", "")
+            name = str(attack.get("name", "")) if attack.get("name") is not None else ""
             cost_list = [c for c in attack.get("cost", []) or [] if isinstance(c, str)]
             damage = attack.get("damage", "")
             effect = attack.get("text", "")
-            cost_str = "/".join(cost_list)
             damage_str = str(damage) if damage is not None else ""
-            pieces = [part for part in [name, cost_str, damage_str, effect] if part]
-            attacks.append(" :: ".join(pieces))
+            attacks.append(
+                {
+                    "name": name,
+                    "cost": cost_list,
+                    "damage": damage_str,
+                    "text": str(effect) if effect not in (None, []) else "",
+                }
+            )
 
         # Weaknesses / Resistances
         for wk in text_block.get("weaknesses", []) or []:
@@ -258,7 +263,7 @@ def _map_structured_to_cardrow(data: Dict[str, object]) -> Dict[str, str]:
     elif abilities and not fields["ability_text"]:
         fields["ability_text"] = "; ".join(abilities)
     if attacks:
-        fields["attacks"] = " | ".join(attacks)
+        fields["attacks"] = attacks
     if weaknesses:
         fields["weakness"] = " | ".join(weaknesses)
     if resistances:
