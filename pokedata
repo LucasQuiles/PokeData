@@ -54,6 +54,45 @@ die() {
   exit 1
 }
 
+append_no_proxy_value() {
+  local var="$1"
+  local value="$2"
+  local current="${!var-}"
+
+  current="${current//[[:space:]]/}"
+
+  if [[ -z "$current" ]]; then
+    current="$value"
+  else
+    local padded=",${current},"
+    if [[ "$padded" != *",${value},"* ]]; then
+      current+=",$value"
+    fi
+  fi
+
+  export "$var"="$current"
+}
+
+configure_local_proxy_bypass() {
+  local updated=0
+  for env_var in NO_PROXY no_proxy; do
+    local before="${!env_var-}"
+    append_no_proxy_value "$env_var" "127.0.0.1"
+    append_no_proxy_value "$env_var" "localhost"
+    if [[ "${!env_var-}" != "${before-}" ]]; then
+      updated=1
+    fi
+  done
+
+  if (( updated )); then
+    echo "Ensured local addresses bypass HTTP proxy via NO_PROXY=${NO_PROXY:-} no_proxy=${no_proxy:-}"
+  fi
+
+  if [[ -n "${HTTP_PROXY:-${http_proxy:-}}" || -n "${HTTPS_PROXY:-${https_proxy:-}}" ]]; then
+    echo "Detected proxy configuration; local requests will bypass via NO_PROXY"
+  fi
+}
+
 check_python() {
   if ! command -v python3 >/dev/null 2>&1; then
     die "python3 not found. Install Python 3.9+ and retry."
@@ -353,6 +392,7 @@ launch_server() {
 main() {
   check_python
   check_system_deps
+  configure_local_proxy_bypass
   ensure_virtualenv
   verify_python_packages
   if (( MISSING_DEPS != 0 )); then
