@@ -1,9 +1,15 @@
-"""Layout detection and region cropping helpers."""
+"""Layout detection and region-specific OCR helpers."""
 
 from __future__ import annotations
 
 <<<<<<< ours
+<<<<<<< ours
+<<<<<<< ours
 import io
+=======
+>>>>>>> theirs
+=======
+>>>>>>> theirs
 =======
 >>>>>>> theirs
 import shlex
@@ -17,6 +23,15 @@ import pytesseract
 
 from .layouts import POKEMON_LAYOUT, TRAINER_LAYOUT, Layout
 
+__all__ = [
+    "CroppedRegions",
+    "detect_layout",
+    "crop_regions",
+    "extract_title_text",
+    "extract_hp",
+    "extract_bottom_text",
+]
+
 
 TRAINER_KEYWORDS = {"TRAINER", "SUPPORTER", "ITEM", "STADIUM"}
 TITLE_WHITELIST = string.ascii_letters + string.digits + "'-."
@@ -25,6 +40,8 @@ HP_WHITELIST = string.digits
 
 @dataclass
 class CroppedRegions:
+    """Container for image crops keyed by semantic region name."""
+
     layout_id: str
     layout: Layout
     regions: Dict[str, Image.Image]
@@ -59,9 +76,21 @@ def extract_title_text(crops: CroppedRegions) -> str:
 <<<<<<< ours
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
+<<<<<<< ours
         config="--psm 7 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\'-.",
 =======
         config="--psm 7 -c tessedit_char_whitelist=\"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'-.\"",
+>>>>>>> theirs
+=======
+        config=_build_tesseract_config(
+            ["--psm", "7", "-c", f"tessedit_char_whitelist={TITLE_WHITELIST}"]
+        ),
+>>>>>>> theirs
+=======
+        config=_build_tesseract_config(
+            ["--psm", "7", "-c", f"tessedit_char_whitelist={TITLE_WHITELIST}"]
+        ),
 >>>>>>> theirs
 =======
         config=_build_tesseract_config(
@@ -157,28 +186,21 @@ def _find_setbox(text: str) -> str:
 
 
 def _build_tesseract_config(args: Sequence[str]) -> str:
-<<<<<<< ours
-    """Return a shell-safe config string for pytesseract."""
-
-    return shlex.join(args)
-=======
     """Return a shell-safe config string for pytesseract.
 
-    pytesseract internally applies :func:`shlex.split` to the string we pass
-    via ``config``.  The default quoting produced by :func:`shlex.join`
-    serialises apostrophes by breaking the string into multiple segments such
-    as ``'foo'"'"'bar`` which confuses the downstream splitter when it is
-    handed back verbatim.  To keep the whitelist arguments stable we escape
-    individual components manually, preferring double quotes when a value
-    contains a single quote.
+    pytesseract's ``config`` parameter is a string that is split with
+    :func:`shlex.split` internally.  Any raw single quotes therefore start a
+    quoted segment which raises ``ValueError('No closing quotation')`` unless
+    they are escaped.  We expand single quotes using the standard POSIX
+    ``'"'"'`` pattern so that the downstream splitter reconstructs the original
+    argument verbatim.
     """
 
     escaped: list[str] = []
     for arg in args:
-        if "'" in arg and '"' not in arg:
-            escaped.append(f'"{arg}"')
+        if "'" in arg:
+            escaped.append("'" + arg.replace("'", "'\"'\"'") + "'")
         else:
             escaped.append(shlex.quote(arg))
     return " ".join(escaped)
->>>>>>> theirs
 
