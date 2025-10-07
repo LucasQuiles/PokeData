@@ -2,9 +2,14 @@
 
 from __future__ import annotations
 
+<<<<<<< ours
 import io
+=======
+>>>>>>> theirs
+import shlex
+import string
 from dataclasses import dataclass
-from typing import Dict, Tuple
+from typing import Dict, Sequence, Tuple
 
 import numpy as np
 from PIL import Image, ImageOps
@@ -14,6 +19,8 @@ from .layouts import POKEMON_LAYOUT, TRAINER_LAYOUT, Layout
 
 
 TRAINER_KEYWORDS = {"TRAINER", "SUPPORTER", "ITEM", "STADIUM"}
+TITLE_WHITELIST = string.ascii_letters + string.digits + "'-."
+HP_WHITELIST = string.digits
 
 
 @dataclass
@@ -50,9 +57,21 @@ def extract_title_text(crops: CroppedRegions) -> str:
     text = pytesseract.image_to_string(
         title_img,
 <<<<<<< ours
+<<<<<<< ours
+<<<<<<< ours
         config="--psm 7 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\'-.",
 =======
         config="--psm 7 -c tessedit_char_whitelist=\"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'-.\"",
+>>>>>>> theirs
+=======
+        config=_build_tesseract_config(
+            ["--psm", "7", "-c", f"tessedit_char_whitelist={TITLE_WHITELIST}"]
+        ),
+>>>>>>> theirs
+=======
+        config=_build_tesseract_config(
+            ["--psm", "7", "-c", f"tessedit_char_whitelist={TITLE_WHITELIST}"]
+        ),
 >>>>>>> theirs
     ).strip()
     if crops.layout_id == "trainer":
@@ -68,7 +87,9 @@ def extract_hp(crops: CroppedRegions) -> str:
         return ""
     text = pytesseract.image_to_string(
         hp_img,
-        config="--psm 7 -c tessedit_char_whitelist=0123456789",
+        config=_build_tesseract_config(
+            ["--psm", "7", "-c", f"tessedit_char_whitelist={HP_WHITELIST}"]
+        ),
     ).strip()
     digits = "".join(ch for ch in text if ch.isdigit())
     return digits[:3]
@@ -133,4 +154,31 @@ def _find_setbox(text: str) -> str:
     if match:
         return match.group(0)
     return ""
+
+
+def _build_tesseract_config(args: Sequence[str]) -> str:
+<<<<<<< ours
+    """Return a shell-safe config string for pytesseract."""
+
+    return shlex.join(args)
+=======
+    """Return a shell-safe config string for pytesseract.
+
+    pytesseract internally applies :func:`shlex.split` to the string we pass
+    via ``config``.  The default quoting produced by :func:`shlex.join`
+    serialises apostrophes by breaking the string into multiple segments such
+    as ``'foo'"'"'bar`` which confuses the downstream splitter when it is
+    handed back verbatim.  To keep the whitelist arguments stable we escape
+    individual components manually, preferring double quotes when a value
+    contains a single quote.
+    """
+
+    escaped: list[str] = []
+    for arg in args:
+        if "'" in arg and '"' not in arg:
+            escaped.append(f'"{arg}"')
+        else:
+            escaped.append(shlex.quote(arg))
+    return " ".join(escaped)
+>>>>>>> theirs
 
