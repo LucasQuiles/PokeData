@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pokedata.local/schemas/stage1_schema.json",
+  "title": "Stage 1: Card Identification Schema",
+  "description": "Simplified schema for initial card identification (name, type, HP, stage, evolvesFrom)",
+  "type": "object",
+  "required": ["name", "cardType", "hp", "stage", "evolvesFrom"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Card name as printed on the card",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "cardType": {
+      "type": "string",
+      "enum": ["pokemon", "trainer", "energy"],
+      "description": "Card type classification based on visual cues"
+    },
+    "hp": {
+      "oneOf": [
+        {
+          "type": "integer",
+          "minimum": 10,
+          "maximum": 500,
+          "description": "Hit points for Pokémon cards"
+        },
+        {
+          "type": "null",
+          "description": "Null for Trainer and Energy cards"
+        }
+      ],
+      "description": "Hit points (Pokémon only, null for Trainer/Energy)"
+    },
+    "stage": {
+      "oneOf": [
+        {
+          "type": "string",
+          "enum": [
+            "Basic",
+            "Stage 1",
+            "Stage 2",
+            "Mega Evolution",
+            "BREAK",
+            "LEGEND",
+            "Restored",
+            "VMAX",
+            "VSTAR",
+            "V",
+            "GX",
+            "EX",
+            "ex"
+          ],
+          "description": "Evolution stage for Pokémon cards"
+        },
+        {
+          "type": "null",
+          "description": "Null for Trainer and Energy cards, or if stage cannot be determined"
+        }
+      ],
+      "description": "Evolution stage (Pokémon only)"
+    },
+    "evolvesFrom": {
+      "oneOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "description": "Previous evolution name"
+        },
+        {
+          "type": "null",
+          "description": "Null if card doesn't evolve or is Basic stage"
+        }
+      ],
+      "description": "Previous evolution (if applicable)"
+    },
+    "_confidence": {
+      "type": "object",
+      "description": "Confidence scores per field (0.0-1.0)",
+      "properties": {
+        "name": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0,
+          "description": "Confidence in name extraction"
+        },
+        "cardType": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0,
+          "description": "Confidence in card type classification"
+        },
+        "hp": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0,
+          "description": "Confidence in HP extraction (or confidence that HP is absent)"
+        },
+        "stage": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0,
+          "description": "Confidence in stage detection"
+        },
+        "evolvesFrom": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0,
+          "description": "Confidence in evolution prerequisite"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
